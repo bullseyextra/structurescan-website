@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="bg-ink text-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Link href="/" className="inline-flex h-16">
+          <Link href="/" className="inline-flex h-[4.5rem]">
             <Logo variant="dark" />
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">

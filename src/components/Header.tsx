@@ -34,10 +34,10 @@ function HeaderBar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/80 bg-cream/95 backdrop-blur-md">
-      <div className="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto flex h-[5.25rem] max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
-          className="inline-flex h-14 items-center sm:h-[4.25rem]"
+          className="inline-flex h-[4.35rem] items-center sm:h-[4.75rem]"
           aria-label={`${site.name} home`}
         >
           <Logo />

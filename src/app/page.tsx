@@ -20,7 +20,7 @@ export default function HomePage() {
         <img
           src="/images/concrete-work.jpg"
           alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-30"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-linear-to-r from-ink via-ink/88 to-ink/55" />
         <div className="radar-grid pointer-events-none absolute inset-0" />
@@ -54,9 +54,14 @@ export default function HomePage() {
           <h2 className="font-display mt-3 max-w-2xl text-4xl font-bold uppercase leading-none tracking-wide">
             Subsurface information before you cut, core, or dig
           </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+            {services.map((service, index) => (
+              <div
+                key={service.slug}
+                className={`lg:col-span-2 ${index === 3 ? "lg:col-start-2" : ""}`}
+              >
+                <ServiceCard service={service} index={index} />
+              </div>
             ))}
           </div>
         </Container>

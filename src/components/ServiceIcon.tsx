@@ -10,7 +10,7 @@ export function ServiceIcon({ slug }: { slug: ServiceSlug }) {
   };
 
   return (
-    <span className="inline-flex h-12 w-12 items-center justify-center border border-line text-ink">
+    <span className="inline-flex h-12 w-12 items-center justify-center bg-ink text-cream">
       <svg viewBox="0 0 32 32" className="h-7 w-7" aria-hidden="true">
         {slug === "concrete-scanning" ? (
           <>
