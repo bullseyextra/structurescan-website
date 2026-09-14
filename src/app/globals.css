@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0c0c0d;
+  --ink-2: #17181a;
+  --ink-3: #2a2b2e;
+  --paper: #f4f2ee;
+  --paper-2: #ebe7e0;
+  --white: #fffcf8;
+  --red: #c8102e;
+  --red-dark: #9a0c23;
+  --muted: #5e5c58;
+  --line: #d9d4cb;
+  --ring-gray: #8a8a8a;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-cream: var(--white);
+  --color-brand: var(--red);
+  --color-brand-dark: var(--red-dark);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --font-sans: var(--font-barlow);
+  --font-display: var(--font-display);
+  --font-script: var(--font-script);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--red);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+.radar-grid {
+  background-image:
+    radial-gradient(circle at 50% 40%, rgb(200 16 46 / 0.08), transparent 42%),
+    repeating-radial-gradient(
+      circle at 50% 48%,
+      transparent 0,
+      transparent 28px,
+      rgb(255 255 255 / 0.04) 29px,
+      transparent 30px
+    );
+}
+
+.hairline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--line),
+    transparent
+  );
+}
