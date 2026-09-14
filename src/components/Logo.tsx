@@ -1,16 +1,23 @@
 type LogoProps = {
-  variant?: "light" | "dark";
+  onDark?: boolean;
   className?: string;
 };
 
-export function Logo({ variant = "light", className = "" }: LogoProps) {
-  const src = variant === "dark" ? "/logo-on-dark.svg" : "/logo.svg";
+export function Logo({ onDark = false, className = "" }: LogoProps) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt="Structure Scan Inc."
-      className={`h-full w-auto ${className}`}
-    />
+    <span
+      className={`inline-flex h-full items-center ${
+        onDark ? "rounded-2xl bg-cream px-2 py-1" : ""
+      } ${className}`}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/logo.png"
+        alt="Structure Scan Inc."
+        width={169}
+        height={100}
+        className="h-full w-auto"
+      />
+    </span>
   );
 }

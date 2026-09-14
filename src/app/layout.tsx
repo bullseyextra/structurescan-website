@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow, Barlow_Condensed, Kaushan_Script } from "next/font/google";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
@@ -20,13 +20,6 @@ const display = Barlow_Condensed({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
-  display: "swap",
-});
-
-const script = Kaushan_Script({
-  variable: "--font-script",
-  subsets: ["latin"],
-  weight: "400",
   display: "swap",
 });
 
@@ -68,7 +61,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0c0c0d",
+  themeColor: "#c8102e",
   width: "device-width",
   initialScale: 1,
 };
@@ -77,7 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-CA"
-      className={`${barlow.variable} ${display.variable} ${script.variable} h-full antialiased`}
+      className={`${barlow.variable} ${display.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-paper text-ink flex flex-col">
         <SkipLink />

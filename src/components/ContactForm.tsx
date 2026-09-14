@@ -72,11 +72,11 @@ export function ContactForm() {
   if (submitted) {
     return (
       <div
-        className="border border-line bg-cream p-6"
+        className="border border-line bg-cream p-6 rounded-3xl"
         role="status"
         aria-live="polite"
       >
-        <h3 className="font-display text-2xl font-bold uppercase tracking-wide">
+        <h3 className="font-display text-2xl font-bold tracking-tight">
           Open your email app to send
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
@@ -99,7 +99,7 @@ export function ContactForm() {
       id="quote"
       onSubmit={onSubmit}
       noValidate
-      className="relative border border-line bg-cream p-6 sm:p-8"
+      className="relative rounded-3xl border border-line bg-cream p-6 sm:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field
@@ -147,7 +147,7 @@ export function ContactForm() {
             id={`${formId}-service`}
             value={values.service}
             onChange={(event) => update("service", event.target.value)}
-            className="mt-2 w-full border border-line bg-paper px-3 py-3 text-base"
+            className="mt-2 w-full rounded-2xl border border-line bg-paper px-3 py-3 text-base"
           >
             <option value="">Select a service</option>
             {services.map((service) => (
@@ -174,7 +174,7 @@ export function ContactForm() {
             onChange={(event) => update("message", event.target.value)}
             aria-invalid={Boolean(errors.message)}
             aria-describedby={errors.message ? `${formId}-message-error` : undefined}
-            className="mt-2 w-full border border-line bg-paper px-3 py-3 text-base"
+            className="mt-2 w-full rounded-2xl border border-line bg-paper px-3 py-3 text-base"
           />
           {errors.message ? (
             <p id={`${formId}-message-error`} className="mt-1 text-sm text-brand">
@@ -195,9 +195,9 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className="mt-6 inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white hover:bg-brand-dark"
+        className="mt-6 inline-flex items-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand-dark"
       >
-        Send quote request
+        Send it over
       </button>
       <p className="mt-4 text-xs leading-relaxed text-muted">
         Submitting opens an email to {site.email}. We do not publish hours or
@@ -245,7 +245,7 @@ function Field({
         onChange={(event) => onChange(event.target.value)}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
-        className="mt-2 w-full border border-line bg-paper px-3 py-3 text-base"
+        className="mt-2 w-full rounded-2xl border border-line bg-paper px-3 py-3 text-base"
       />
       {error ? (
         <p id={`${id}-error`} className="mt-1 text-sm text-brand">

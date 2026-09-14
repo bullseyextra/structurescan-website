@@ -20,8 +20,8 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0c0c0d",
-          color: "#f4f2ee",
+          background: "#f7f1e8",
+          color: "#241c18",
           padding: "72px",
         }}
       >
@@ -29,7 +29,7 @@ export default function OpenGraphImage() {
           style={{
             display: "flex",
             fontSize: 22,
-            letterSpacing: "0.28em",
+            letterSpacing: "0.22em",
             textTransform: "uppercase",
             color: "#c8102e",
             fontWeight: 600,
@@ -40,11 +40,10 @@ export default function OpenGraphImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              fontSize: 84,
+              fontSize: 76,
               fontWeight: 800,
               letterSpacing: "-0.03em",
-              textTransform: "uppercase",
-              lineHeight: 0.9,
+              lineHeight: 1.05,
             }}
           >
             {site.promise}
@@ -53,7 +52,7 @@ export default function OpenGraphImage() {
             style={{
               marginTop: 28,
               fontSize: 28,
-              color: "rgba(244,242,238,0.72)",
+              color: "#6b5f56",
             }}
           >
             GPR, utility locating, and damage prevention · Winnipeg
@@ -64,7 +63,7 @@ export default function OpenGraphImage() {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 22,
-            color: "rgba(244,242,238,0.7)",
+            color: "#4a3c36",
           }}
         >
           <span>{site.name}</span>

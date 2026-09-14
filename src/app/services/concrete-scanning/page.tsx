@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
-import { Container, Eyebrow, Section } from "@/components/LayoutBits";
+import {
+  Container,
+  Eyebrow,
+  Heading,
+  MediaSplit,
+  Section,
+} from "@/components/LayoutBits";
 import { pageMeta } from "@/lib/seo";
 import { equipment } from "@/lib/site";
 
@@ -41,9 +47,9 @@ export default function ConcreteScanningPage() {
     <>
       <PageHero
         eyebrow="Ground penetrating radar"
-        title="Concrete scanning services"
-        lead="Non-destructive insights you can trust before cutting, coring, or drilling. Clear deliverables, including 2D and 3D imaging, a digital archive, and real-time reporting on site."
-        imageSrc="/images/industrial-interior.jpg"
+        title="Concrete scanning, without the guesswork"
+        lead="A friendly, non-destructive look inside the slab before anyone cuts, cores, or drills. Clear deliverables, including 2D and 3D imaging, a digital archive, and real-time reporting on site."
+        imageSrc="/images/slab-marks.jpg"
       />
       <Section>
         <Container>
@@ -54,12 +60,15 @@ export default function ConcreteScanningPage() {
               { label: "Concrete scanning" },
             ]}
           />
-          <div className="mt-10 grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-7">
+          <div className="mt-10">
+            <MediaSplit
+              imageSrc="/images/equipment-gpr.jpg"
+              imageAlt="Handheld GPR scanner and tablet showing a concrete scan"
+            >
               <Eyebrow>On the job</Eyebrow>
-              <h2 className="font-display mt-3 text-4xl font-bold uppercase leading-none tracking-wide">
+              <Heading className="text-4xl">
                 Cut or core with a map, not a guess
-              </h2>
+              </Heading>
               <p className="mt-5 leading-relaxed text-muted">
                 Structure Scan uses ground penetrating radar to locate rebar,
                 pipes, and hidden features in concrete. We mark findings and
@@ -67,34 +76,40 @@ export default function ConcreteScanningPage() {
                 same day. Reports are private and confidential. On-site data
                 processing and real-time reporting are available.
               </p>
-            </div>
-            <ul className="grid gap-2 lg:col-span-5">
-              {targets.map((item) => (
-                <li
-                  key={item}
-                  className="border-l-2 border-brand bg-cream px-4 py-3 font-semibold"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+            </MediaSplit>
           </div>
+          <ul className="mt-10 grid gap-2 sm:grid-cols-2">
+            {targets.map((item) => (
+              <li
+                key={item}
+                className="rounded-2xl border-l-4 border-brand bg-cream px-4 py-3 font-semibold"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </Container>
       </Section>
 
       <Section className="bg-cream">
         <Container>
-          <Eyebrow>How GPR works</Eyebrow>
-          <h2 className="font-display mt-3 max-w-3xl text-4xl font-bold uppercase leading-none tracking-wide">
-            A radar wave, a change in material, a mark on the slab
-          </h2>
-          <p className="mt-5 max-w-3xl leading-relaxed text-muted">
-            A high-frequency radar wave is sent into the ground or concrete. The
-            two-way travel time is measured. Wave speed depends on the material
-            it is moving through. When the wave crosses a boundary—a change in
-            physical properties—an anomaly appears in the data. A certified GPR
-            technician can mark that target in real time.
-          </p>
+          <MediaSplit
+            imageSrc="/images/concrete-pour.jpg"
+            imageAlt="Hands finishing a concrete pour in daylight"
+            reverse
+          >
+            <Eyebrow>How GPR works</Eyebrow>
+            <Heading className="text-4xl">
+              A radar wave, a change in material, a mark on the slab
+            </Heading>
+            <p className="mt-5 leading-relaxed text-muted">
+              A high-frequency radar wave is sent into the ground or concrete.
+              The two-way travel time is measured. Wave speed depends on the
+              material it is moving through. When the wave crosses a boundary—a
+              change in physical properties—an anomaly appears in the data. A
+              certified GPR technician can mark that target in real time.
+            </p>
+          </MediaSplit>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {[
               {
@@ -122,11 +137,16 @@ export default function ConcreteScanningPage() {
                 body: "Mapping reflector strength helps locate areas of concrete deterioration.",
               },
             ].map((item) => (
-              <article key={item.title} className="border border-line bg-paper p-5">
-                <h3 className="font-display text-xl font-bold uppercase tracking-wide">
+              <article
+                key={item.title}
+                className="rounded-3xl border border-line bg-paper p-5"
+              >
+                <Heading as="h3" className="text-xl">
                   {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+                </Heading>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
               </article>
             ))}
           </div>
@@ -136,34 +156,37 @@ export default function ConcreteScanningPage() {
       <Section>
         <Container>
           <Eyebrow>Equipment</Eyebrow>
-          <h2 className="font-display mt-3 text-4xl font-bold uppercase leading-none tracking-wide">
-            Proceq GPR on every crew
-          </h2>
+          <Heading className="mt-3 text-4xl">Proceq GPR on every crew</Heading>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {equipment.map((item) => (
-              <article key={item.name} className="border border-line bg-cream p-5">
-                <h3 className="font-display text-xl font-bold uppercase tracking-wide">
+              <article
+                key={item.name}
+                className="rounded-3xl border border-line bg-cream p-5"
+              >
+                <Heading as="h3" className="text-xl">
                   {item.name}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{item.use}</p>
+                </Heading>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {item.use}
+                </p>
               </article>
             ))}
           </div>
         </Container>
       </Section>
 
-      <Section className="bg-paper-2">
+      <Section className="bg-sand">
         <Container>
-          <h2 className="font-display text-4xl font-bold uppercase tracking-wide">
-            Who we scan for
-          </h2>
+          <Heading className="text-4xl">Who we scan for</Heading>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {audiences.map((item) => (
-              <article key={item.title} className="bg-cream p-6">
-                <h3 className="font-display text-xl font-bold uppercase tracking-wide">
+              <article key={item.title} className="rounded-3xl bg-cream p-6">
+                <Heading as="h3" className="text-xl">
                   {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+                </Heading>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
               </article>
             ))}
           </div>

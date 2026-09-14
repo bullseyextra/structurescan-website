@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
-import { Container } from "@/components/LayoutBits";
+import { Container, Heading } from "@/components/LayoutBits";
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -9,18 +9,22 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <Container className="py-24">
-      <p className="font-display text-sm font-semibold uppercase tracking-[0.28em] text-brand">
+      <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-brand">
         404
       </p>
-      <h1 className="font-display mt-3 text-5xl font-bold uppercase tracking-wide">
+      <Heading as="h1" className="mt-3 text-5xl">
         That page isn’t here
-      </h1>
+      </Heading>
       <p className="mt-4 max-w-xl text-muted">
         The address may be from the old WordPress site. Try the home page, or
-        call if you need a scan or locate.
+        call if you need a scan or locate—we’re happy to point you the right
+        way.
       </p>
-      <div className="mt-8">
+      <div className="mt-8 flex flex-wrap gap-3">
         <ButtonLink href="/">Back home</ButtonLink>
+        <ButtonLink href="/contact" variant="outline">
+          Talk to us
+        </ButtonLink>
       </div>
     </Container>
   );

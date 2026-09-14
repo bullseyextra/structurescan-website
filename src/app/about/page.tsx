@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CtaBand, PageHero } from "@/components/PageHero";
-import { Container, Eyebrow, Section } from "@/components/LayoutBits";
+import {
+  Container,
+  Eyebrow,
+  Heading,
+  MediaSplit,
+  Section,
+} from "@/components/LayoutBits";
 import { pageMeta } from "@/lib/seo";
 import { equipment, site, values } from "@/lib/site";
 
@@ -17,16 +23,20 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About"
-        title="A Winnipeg company built on damage prevention"
-        lead="Founded in 1999 by Tony Brunette. Still family-owned. Still in the business of showing crews what’s below before they dig, cut, or drill."
+        title="A Winnipeg family company, built on damage prevention"
+        lead="Founded in 1999 by Tony Brunette. Still family-owned. Still glad to show crews what’s below before they dig, cut, or drill."
+        imageSrc="/images/gpr-winnipeg.jpg"
       />
       <Section>
-        <Container className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-7">
+        <Container>
+          <MediaSplit
+            imageSrc="/images/sunny-crew.jpg"
+            imageAlt="Crew standing together on a sunlit construction deck"
+          >
             <Eyebrow>Story</Eyebrow>
-            <h2 className="font-display mt-3 text-4xl font-bold uppercase leading-none tracking-wide">
+            <Heading className="text-4xl">
               From one technician’s shop to a family company
-            </h2>
+            </Heading>
             <div className="mt-6 space-y-4 leading-relaxed text-muted">
               <p>
                 Structure Scan Inc. was founded in {site.founded} by Tony
@@ -55,51 +65,56 @@ export default function AboutPage() {
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <ButtonLink href="/about/team" variant="outline">
-                Meet the team
+                Meet the crew
               </ButtonLink>
               <ButtonLink href="/about/certifications" variant="outline">
                 Certifications
               </ButtonLink>
             </div>
-          </div>
-          <aside className="space-y-6 lg:col-span-5">
-            <div className="border border-line bg-cream p-6">
-              <h3 className="font-display text-xl font-bold uppercase tracking-wide">
-                Mission
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                Protect people, property, and infrastructure through accurate,
-                non-invasive utility locating and GPR services. Prevent damage
-                and downtime by combining technology with expert insight—and by
-                being honest, straightforward, and easy to work with.
-              </p>
-            </div>
-            <div className="border border-line bg-cream p-6">
-              <h3 className="font-display text-xl font-bold uppercase tracking-wide">
-                Vision
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                To be the industry leader in safe, reliable utility locating and
-                GPR services—setting the standard for trust, innovation, and
-                damage prevention across the regions we serve.
-              </p>
-            </div>
-          </aside>
+          </MediaSplit>
         </Container>
       </Section>
       <Section className="bg-cream">
+        <Container className="grid gap-6 lg:grid-cols-2">
+          <div className="rounded-3xl bg-paper p-6 sm:p-8">
+            <Heading as="h3" className="text-2xl">
+              Mission
+            </Heading>
+            <p className="mt-3 leading-relaxed text-muted">
+              Protect people, property, and infrastructure through accurate,
+              non-invasive utility locating and GPR services. Prevent damage
+              and downtime by combining technology with expert insight—and by
+              being honest, straightforward, and easy to work with.
+            </p>
+          </div>
+          <div className="rounded-3xl bg-paper p-6 sm:p-8">
+            <Heading as="h3" className="text-2xl">
+              Vision
+            </Heading>
+            <p className="mt-3 leading-relaxed text-muted">
+              To be the industry leader in safe, reliable utility locating and
+              GPR services—setting the standard for trust, innovation, and
+              damage prevention across the regions we serve.
+            </p>
+          </div>
+        </Container>
+      </Section>
+      <Section className="bg-sand">
         <Container>
           <Eyebrow>Values</Eyebrow>
-          <h2 className="font-display mt-3 text-4xl font-bold uppercase tracking-wide">
-            How we work
-          </h2>
+          <Heading className="mt-3 text-4xl">How we like to work</Heading>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {values.map((item) => (
-              <article key={item.name} className="border border-line bg-paper p-5">
-                <h3 className="font-display text-xl font-bold uppercase tracking-wide">
+              <article
+                key={item.name}
+                className="rounded-3xl bg-cream p-5 card-shadow"
+              >
+                <Heading as="h3" className="text-xl">
                   {item.name}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+                </Heading>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
               </article>
             ))}
           </div>
@@ -107,23 +122,34 @@ export default function AboutPage() {
       </Section>
       <Section>
         <Container>
-          <Eyebrow>Equipment</Eyebrow>
-          <h2 className="font-display mt-3 max-w-3xl text-4xl font-bold uppercase leading-none tracking-wide">
-            Proceq GPR, GPS-referenced locates, careful marks
-          </h2>
-          <p className="mt-5 max-w-3xl leading-relaxed text-muted">
-            Technicians work with Proceq GPR equipment. For utility locating, GPS
-            referenced information is a core part of how we deliver maps. We also
-            use environmentally safer marking paints so the work on the ground
-            matches the care we take below it.
-          </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <MediaSplit
+            imageSrc="/images/equipment-gpr.jpg"
+            imageAlt="Handheld ground penetrating radar scanner and tablet showing a concrete scan"
+            reverse
+          >
+            <Eyebrow>Equipment</Eyebrow>
+            <Heading className="text-4xl">
+              Proceq GPR, GPS-referenced locates, careful marks
+            </Heading>
+            <p className="mt-5 leading-relaxed text-muted">
+              Technicians work with Proceq GPR equipment. For utility locating,
+              GPS referenced information is a core part of how we deliver maps.
+              We also use environmentally safer marking paints so the work on
+              the ground matches the care we take below it.
+            </p>
+          </MediaSplit>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
             {equipment.map((item) => (
-              <article key={item.name} className="border border-line bg-cream p-5">
-                <h3 className="font-display text-xl font-bold uppercase tracking-wide">
+              <article
+                key={item.name}
+                className="rounded-3xl border border-line bg-cream p-5"
+              >
+                <Heading as="h3" className="text-xl">
                   {item.name}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{item.use}</p>
+                </Heading>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {item.use}
+                </p>
               </article>
             ))}
           </div>

@@ -72,7 +72,7 @@ function HeaderBar() {
           />
           <Link
             href="/contact"
-            className={`rounded-full px-3 py-2 text-[0.95rem] font-semibold uppercase tracking-[0.14em] ${
+            className={`rounded-full px-3 py-2 text-[0.95rem] font-semibold ${
               pathname.startsWith("/contact")
                 ? "text-brand"
                 : "text-ink hover:text-brand"
@@ -91,9 +91,9 @@ function HeaderBar() {
           </a>
           <Link
             href="/contact#quote"
-            className="inline-flex items-center rounded-full border-2 border-brand bg-ink px-4 py-2 text-sm font-semibold uppercase tracking-[0.14em] text-white hover:bg-ink-2"
+            className="inline-flex items-center rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark"
           >
-            Estimate request
+            Book a scan
           </Link>
         </div>
 
@@ -127,7 +127,7 @@ function HeaderBar() {
           <nav aria-label="Mobile" className="flex flex-col gap-1">
             <Link
               href="/services"
-              className="rounded-lg px-3 py-3 font-semibold uppercase tracking-[0.12em]"
+              className="rounded-2xl px-3 py-3 font-semibold"
             >
               All services
             </Link>
@@ -142,7 +142,7 @@ function HeaderBar() {
             ))}
             <Link
               href="/about"
-              className="mt-2 rounded-lg px-3 py-3 font-semibold uppercase tracking-[0.12em]"
+              className="mt-2 rounded-2xl px-3 py-3 font-semibold"
             >
               About
             </Link>
@@ -157,7 +157,7 @@ function HeaderBar() {
             ))}
             <Link
               href="/contact"
-              className="mt-2 rounded-lg px-3 py-3 font-semibold uppercase tracking-[0.12em]"
+              className="mt-2 rounded-2xl px-3 py-3 font-semibold"
             >
               Contact
             </Link>
@@ -205,7 +205,7 @@ function NavDropdown({
       <div className="flex items-center">
         <Link
           href={href}
-          className={`rounded-full px-3 py-2 text-[0.95rem] font-semibold uppercase tracking-[0.14em] ${
+          className={`rounded-full px-3 py-2 text-[0.95rem] font-semibold ${
             current ? "text-brand" : "text-ink hover:text-brand"
           }`}
         >
@@ -235,7 +235,7 @@ function NavDropdown({
       {open ? (
         <ul
           id={id}
-          className="absolute left-0 top-full z-20 min-w-56 border border-line bg-cream py-2 shadow-[0_16px_40px_rgba(12,12,13,0.12)]"
+          className="absolute left-0 top-full z-20 min-w-56 rounded-2xl border border-line bg-cream py-2 card-shadow"
         >
           {items.map((item) => (
             <li key={item.href}>

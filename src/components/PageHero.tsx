@@ -21,29 +21,28 @@ export function PageHero({
         <img
           src={imageSrc}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-35"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
       ) : null}
-      <div className="absolute inset-0 bg-linear-to-b from-ink/70 via-ink/80 to-ink" />
-      <div className="radar-grid pointer-events-none absolute inset-0 opacity-70" />
+      <div className="hero-scrim absolute inset-0" />
       <Container className="relative py-20 sm:py-28">
         {eyebrow ? (
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.28em] text-brand">
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-white drop-shadow">
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="font-display mt-4 max-w-4xl text-4xl font-bold uppercase leading-[0.95] tracking-wide sm:text-6xl">
+        <h1 className="font-display mt-4 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-balance drop-shadow-[0_2px_18px_rgba(36,28,24,0.45)] sm:text-6xl">
           {title}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/80">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream drop-shadow-[0_2px_12px_rgba(36,28,24,0.5)]">
           {lead}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink href={`tel:${site.phoneTel}`} variant="primary" external>
-            Call {site.phoneDisplay}
+          <ButtonLink href="/contact#quote" variant="primary">
+            Book a scan
           </ButtonLink>
-          <ButtonLink href="/contact#quote" variant="ghost">
-            Request a quote
+          <ButtonLink href={`tel:${site.phoneTel}`} variant="ghost" external>
+            Talk to us
           </ButtonLink>
         </div>
       </Container>
@@ -52,28 +51,32 @@ export function PageHero({
 }
 
 export function CtaBand({
-  title = "Ready to scan or locate?",
-  body = "Call the Winnipeg office or send a quote request. We’ll help you choose the right service for the job.",
+  title = "Got a job coming up?",
+  body = "Call the Winnipeg office or send a note. We’ll help you pick the right service—no jargon wall, just a clear next step.",
 }: {
   title?: string;
   body?: string;
 }) {
   return (
-    <section className="bg-ink text-cream">
-      <Container className="flex flex-col items-start justify-between gap-6 py-14 sm:flex-row sm:items-center">
-        <div className="max-w-xl">
-          <h2 className="font-display text-3xl font-bold uppercase tracking-wide">
-            {title}
-          </h2>
-          <p className="mt-3 text-cream/75">{body}</p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <ButtonLink href={`tel:${site.phoneTel}`} variant="primary" external>
-            Call {site.phoneDisplay}
-          </ButtonLink>
-          <ButtonLink href="/contact#quote" variant="ghost">
-            Request a quote
-          </ButtonLink>
+    <section className="bg-paper pb-16">
+      <Container>
+        <div className="rounded-3xl bg-brand px-6 py-12 text-white sm:px-10">
+          <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
+            <div className="max-w-xl">
+              <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                {title}
+              </h2>
+              <p className="mt-3 text-white/90">{body}</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <ButtonLink href="/contact#quote" variant="cream">
+                Book a scan
+              </ButtonLink>
+              <ButtonLink href={`tel:${site.phoneTel}`} variant="ghost" external>
+                Talk to us
+              </ButtonLink>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

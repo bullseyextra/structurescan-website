@@ -25,7 +25,7 @@ npm start
 - Next.js App Router, TypeScript, Tailwind CSS
 - Pages: home, services (all five), about, team, certifications, contact, privacy
 - Permanent redirects from old WordPress URLs (see `next.config.ts`)
-- SVG logo recreated from the oval radar mark (not a pixelated download)
+- Live-site oval radar logo (`public/logo.png`) in the header, footer, and favicon
 - Unique titles, Open Graph image, JSON-LD `LocalBusiness`, `sitemap.xml`, `robots.txt`
 - Accessible contact form (opens email to `info@structurescan.ca`) plus optional links to the existing Jotform estimate / schedule / consultation forms
 - Sticky click-to-call bar on small screens

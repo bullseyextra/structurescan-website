@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
-import { Container, Section } from "@/components/LayoutBits";
+import {
+  Container,
+  Eyebrow,
+  Heading,
+  MediaSplit,
+  Section,
+} from "@/components/LayoutBits";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
@@ -34,8 +40,9 @@ export default function ThermographyPage() {
     <>
       <PageHero
         eyebrow="Non-invasive inspection"
-        title="Thermographic imaging"
+        title="Find the heat lines first"
         lead="Locate in-floor heating lines embedded in concrete slabs without cutting, drilling, or disruption."
+        imageSrc="/images/thermo.jpg"
       />
       <Section>
         <Container>
@@ -46,19 +53,35 @@ export default function ThermographyPage() {
               { label: "Thermography" },
             ]}
           />
-          <p className="mt-10 max-w-3xl text-lg leading-relaxed text-muted">
-            Structure Scan uses non-invasive thermographic imaging to find
-            in-floor and radiant heating lines in concrete. If you need to cut
-            or core a slab that may contain heat pipes, this is the way to see
-            them first.
-          </p>
+          <div className="mt-10">
+            <MediaSplit
+              imageSrc="/images/thermo.jpg"
+              imageAlt="Thermographic overlay showing heating lines in a concrete floor"
+            >
+              <Eyebrow>In-floor heat</Eyebrow>
+              <Heading className="text-4xl">
+                See the warm lines before you cut
+              </Heading>
+              <p className="mt-5 text-lg leading-relaxed text-muted">
+                Structure Scan uses non-invasive thermographic imaging to find
+                in-floor and radiant heating lines in concrete. If you need to
+                cut or core a slab that may contain heat pipes, this is the way
+                to see them first.
+              </p>
+            </MediaSplit>
+          </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {points.map((item) => (
-              <article key={item.title} className="border border-line bg-cream p-6">
-                <h2 className="font-display text-xl font-bold uppercase tracking-wide">
+              <article
+                key={item.title}
+                className="rounded-3xl border border-line bg-cream p-6"
+              >
+                <Heading as="h2" className="text-xl">
                   {item.title}
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+                </Heading>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
               </article>
             ))}
           </div>

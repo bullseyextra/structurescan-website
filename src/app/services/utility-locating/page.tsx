@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
-import { Container, Eyebrow, Section } from "@/components/LayoutBits";
+import {
+  Container,
+  Eyebrow,
+  Heading,
+  MediaSplit,
+  Section,
+} from "@/components/LayoutBits";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
@@ -15,9 +21,9 @@ export default function UtilityLocatingPage() {
     <>
       <PageHero
         eyebrow="Know what’s below"
-        title="Utility locating services"
+        title="Utility locating, marked and mapped"
         lead="Trained technicians use electromagnetic locating equipment to find buried pipes and cables before digging starts—then mark them on the surface."
-        imageSrc="/images/utility-trench.jpg"
+        imageSrc="/images/excavator-sky.jpg"
       />
       <Section>
         <Container>
@@ -28,12 +34,15 @@ export default function UtilityLocatingPage() {
               { label: "Utility locating" },
             ]}
           />
-          <div className="mt-10 grid gap-10 lg:grid-cols-2">
-            <div>
+          <div className="mt-10">
+            <MediaSplit
+              imageSrc="/images/locate-tech.jpg"
+              imageAlt="Technician marking a buried utility on a gravel site"
+            >
               <Eyebrow>EM locating</Eyebrow>
-              <h2 className="font-display mt-3 text-4xl font-bold uppercase leading-none tracking-wide">
+              <Heading className="text-4xl">
                 Water, gas, electric, sewer, and telecom
-              </h2>
+              </Heading>
               <p className="mt-5 leading-relaxed text-muted">
                 We locate private and public utilities and mark them on the
                 surface so you can avoid striking lines. Electromagnetic
@@ -42,27 +51,32 @@ export default function UtilityLocatingPage() {
                 utilities, underground storage tanks, voids, or unexpected
                 buried objects that other methods can miss.
               </p>
-            </div>
-            <div className="border border-line bg-cream p-6">
-              <h3 className="font-display text-2xl font-bold uppercase tracking-wide">
-                Geo-referenced maps
-              </h3>
-              <p className="mt-3 leading-relaxed text-muted">
-                We produce professional utility maps using GNSS satellite
-                positioning and mapping software. You receive submeter-accurate
-                digital and printed maps that show the path of each pipe and
-                cable we locate. Keep them for planning, permitting, future
-                maintenance, and the next crew on the site.
-              </p>
-            </div>
+            </MediaSplit>
           </div>
         </Container>
       </Section>
       <Section className="bg-cream">
         <Container>
-          <h2 className="font-display text-4xl font-bold uppercase tracking-wide">
-            Who this is for
-          </h2>
+          <MediaSplit
+            imageSrc="/images/utility-map.jpg"
+            imageAlt="Aerial utility map with colour-coded service paths"
+            reverse
+          >
+            <Eyebrow>Take-home maps</Eyebrow>
+            <Heading className="text-4xl">Geo-referenced maps</Heading>
+            <p className="mt-5 leading-relaxed text-muted">
+              We produce professional utility maps using GNSS satellite
+              positioning and mapping software. You receive submeter-accurate
+              digital and printed maps that show the path of each pipe and
+              cable we locate. Keep them for planning, permitting, future
+              maintenance, and the next crew on the site.
+            </p>
+          </MediaSplit>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Heading className="text-4xl">Who this is for</Heading>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
               {
@@ -78,11 +92,16 @@ export default function UtilityLocatingPage() {
                 body: "Whether you are coordinating repairs, landscaping, or new installations, locating reduces the chance of service disruptions and damaged assets across a portfolio of sites.",
               },
             ].map((item) => (
-              <article key={item.title} className="border border-line p-6">
-                <h3 className="font-display text-xl font-bold uppercase tracking-wide">
+              <article
+                key={item.title}
+                className="rounded-3xl border border-line bg-cream p-6"
+              >
+                <Heading as="h3" className="text-xl">
                   {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+                </Heading>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
               </article>
             ))}
           </div>

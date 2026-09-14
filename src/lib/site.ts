@@ -47,9 +47,11 @@ export const services = [
     summary:
       "See what’s inside the slab before you cut or core. Rebar, post-tension cables, conduits, voids, and more—mapped in 2D and 3D.",
     heroEyebrow: "Ground penetrating radar",
-    heroTitle: "Concrete scanning services",
+    heroTitle: "Concrete scanning, without the guesswork",
     heroLead:
-      "Non-destructive insights you can trust before cutting, coring, or drilling.",
+      "A friendly, non-destructive look inside the slab before anyone cuts, cores, or drills.",
+    image: "/images/equipment-gpr.jpg",
+    heroImage: "/images/slab-marks.jpg",
   },
   {
     slug: "utility-locating",
@@ -61,8 +63,11 @@ export const services = [
     summary:
       "Electromagnetic locating of water, gas, electric, sewer, and telecom—private and public—with surface marks and geo-referenced maps.",
     heroEyebrow: "Know what’s below",
-    heroTitle: "Utility locating services",
-    heroLead: "Private and public locates so crews can dig with confidence.",
+    heroTitle: "Utility locating, marked and mapped",
+    heroLead:
+      "Private and public locates so crews can dig with confidence—and a little less stress.",
+    image: "/images/locate-tech.jpg",
+    heroImage: "/images/excavator-sky.jpg",
   },
   {
     slug: "locate-management",
@@ -74,9 +79,11 @@ export const services = [
     summary:
       "Call Before You Dig ticket coordination, public locates, private sweeps, and GPS-mapped deliverables—without the paperwork scramble.",
     heroEyebrow: "Locate management system",
-    heroTitle: "Locate management",
+    heroTitle: "We’ll wrangle the locates",
     heroLead:
-      "One coordinated path from tickets and public locates to private sweeps and mapped results.",
+      "Tickets, public locates, private sweeps, and GPS maps—one coordinated file instead of a messy inbox.",
+    image: "/images/utility-map.jpg",
+    heroImage: "/images/office-plans.jpg",
   },
   {
     slug: "thermography",
@@ -88,9 +95,11 @@ export const services = [
     summary:
       "Locate in-floor and radiant heating lines in concrete without cutting, drilling, or disruption.",
     heroEyebrow: "Non-invasive inspection",
-    heroTitle: "Thermographic imaging",
+    heroTitle: "Find the heat lines first",
     heroLead:
-      "Pinpoint heating lines in concrete slabs so you can cut or core without hitting them.",
+      "Pinpoint in-floor heating in the slab so you can cut or core without a chilly surprise.",
+    image: "/images/thermo.jpg",
+    heroImage: "/images/thermo.jpg",
   },
   {
     slug: "sewer-camera",
@@ -102,9 +111,11 @@ export const services = [
     summary:
       "Residential sewer laterals and weeping tile: blockages, cracks, depths, pre-renovation and real estate inspections.",
     heroEyebrow: "Sewer & weeping tile",
-    heroTitle: "Sewer camera inspections",
+    heroTitle: "A camera in the line, not a hole in the yard",
     heroLead:
-      "Inspect residential drain lines and weeping tile without digging.",
+      "Inspect residential drain lines and weeping tile without digging up the lawn.",
+    image: "/images/deck.jpg",
+    heroImage: "/images/deck.jpg",
   },
 ] as const;
 
@@ -151,27 +162,27 @@ export const technicians = [
 export const values = [
   {
     name: "Safety first",
-    body: "Every scan and locate is performed with the goal of protecting workers, the public, and critical infrastructure.",
+    body: "Every scan and locate is about sending people home in one piece—and keeping the pipes, cables, and concrete around them intact.",
   },
   {
     name: "Accuracy & reliability",
-    body: "We deliver precise, dependable data that decision-makers can trust.",
+    body: "We deliver precise, dependable data that crews and engineers can actually use on site.",
   },
   {
     name: "Integrity",
-    body: "We are honest, straightforward, and committed to doing the right thing on every project.",
+    body: "Straight talk. If we see it, we say it. If we don’t, we won’t pretend we did.",
   },
   {
     name: "Clear communication",
-    body: "We make complex subsurface information easy to understand and act on.",
+    body: "Subsurface data is only helpful if you can understand it. We mark it, map it, and explain it in plain language.",
   },
   {
     name: "Expertise",
-    body: "Our technicians stay trained and certified so we can provide a professional level of service.",
+    body: "Our technicians stay trained and certified so the person on your slab knows the gear and the job.",
   },
   {
     name: "Client partnership",
-    body: "We work as an extension of your team—responsive, easy to work with, and focused on your project’s success.",
+    body: "We’re easier to reach than a faceless dispatch line. Call, and you’ll talk to the people who actually do the work.",
   },
 ] as const;
 

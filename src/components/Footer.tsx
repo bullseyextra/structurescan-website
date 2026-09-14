@@ -4,20 +4,20 @@ import { services, site } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-cream">
+    <footer className="bg-ink-2 text-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-12">
         <div className="md:col-span-5">
           <Link href="/" className="inline-flex h-[4.5rem]">
-            <Logo variant="dark" />
+            <Logo onDark />
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
-            {site.tagline}. Family-owned damage prevention from Winnipeg since{" "}
-            {site.founded}.
+            {site.tagline}. A Winnipeg family shop since {site.founded}—still
+            glad you called.
           </p>
         </div>
 
         <div className="md:col-span-3">
-          <h2 className="font-display text-lg font-semibold uppercase tracking-[0.18em] text-cream">
+          <h2 className="font-display text-lg font-semibold tracking-tight text-cream">
             Services
           </h2>
           <ul className="mt-4 space-y-2 text-sm text-cream/75">
@@ -32,7 +32,7 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-4">
-          <h2 className="font-display text-lg font-semibold uppercase tracking-[0.18em] text-cream">
+          <h2 className="font-display text-lg font-semibold tracking-tight text-cream">
             Contact
           </h2>
           <address className="mt-4 space-y-2 text-sm not-italic leading-relaxed text-cream/75">

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
-import { Container, Eyebrow, Section } from "@/components/LayoutBits";
+import {
+  Container,
+  Eyebrow,
+  Heading,
+  MediaSplit,
+  Section,
+} from "@/components/LayoutBits";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -22,16 +28,30 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Call, email, or send a quote request"
+        title="Say hello. We’ll help you book the right scan."
         lead="The office is in Winnipeg. We work across Manitoba, Saskatchewan, Western Ontario, and Nunavut."
+        imageSrc="/images/commercial-property.jpg"
       />
       <Section>
+        <Container>
+          <MediaSplit
+            imageSrc="/images/excavator.jpg"
+            imageAlt="Illustrated excavator working under a bright sky"
+          >
+            <Eyebrow>We’re easy to reach</Eyebrow>
+            <Heading className="text-4xl">Call, email, or send a note</Heading>
+            <p className="mt-5 leading-relaxed text-muted">
+              No maze of menus. If you know the address and what you need—scan,
+              locate, camera, or “not sure”—we’ll take it from there.
+            </p>
+          </MediaSplit>
+        </Container>
+      </Section>
+      <Section className="bg-cream">
         <Container className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Eyebrow>Office</Eyebrow>
-            <h2 className="font-display mt-3 text-4xl font-bold uppercase tracking-wide">
-              Structure Scan Inc.
-            </h2>
+            <Heading className="mt-3 text-4xl">{site.name}</Heading>
             <address className="mt-6 space-y-3 not-italic leading-relaxed">
               <p>
                 {site.address.street}
@@ -58,9 +78,9 @@ export default function ContactPage() {
               hours, pricing, or response times here—call the office for
               scheduling.
             </p>
-            <div className="mt-8">
-              <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-muted">
-                Existing request forms
+            <div className="mt-8 rounded-3xl bg-paper p-5">
+              <p className="font-display text-sm font-semibold tracking-tight text-ink">
+                Prefer the forms you already use?
               </p>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
@@ -94,24 +114,20 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="lg:col-span-7">
-            <h2 className="font-display mb-4 text-3xl font-bold uppercase tracking-wide">
-              Request a quote
-            </h2>
+            <Heading className="mb-4 text-3xl">Tell us about the job</Heading>
             <ContactForm />
           </div>
         </Container>
       </Section>
-      <Section className="bg-cream pt-0">
+      <Section>
         <Container>
-          <h2 className="font-display text-3xl font-bold uppercase tracking-wide">
-            Map
-          </h2>
+          <Heading className="text-3xl">Find the shop</Heading>
           <p className="mt-2 text-sm text-muted">{site.address.line}</p>
-          <div className="mt-5 overflow-hidden border border-line">
+          <div className="mt-5 overflow-hidden rounded-3xl border border-line">
             <iframe
               title={`Map of ${site.address.line}`}
               src={mapSrc}
-              className="h-80 w-full grayscale"
+              className="h-80 w-full"
               loading="lazy"
             />
           </div>

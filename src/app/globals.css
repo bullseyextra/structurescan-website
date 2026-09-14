@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #0c0c0d;
-  --ink-2: #17181a;
-  --ink-3: #2a2b2e;
-  --paper: #f4f2ee;
-  --paper-2: #ebe7e0;
-  --white: #fffcf8;
+  --ink: #241c18;
+  --ink-2: #332824;
+  --ink-3: #4a3c36;
+  --paper: #f7f1e8;
+  --paper-2: #efe4d6;
+  --white: #fffaf3;
   --red: #c8102e;
   --red-dark: #9a0c23;
-  --muted: #5e5c58;
-  --line: #d9d4cb;
-  --ring-gray: #8a8a8a;
+  --muted: #6b5f56;
+  --line: #e4d5c4;
+  --sand: #f3ddc4;
+  --sky: #e7eef2;
 }
 
 @theme inline {
@@ -25,9 +26,10 @@
   --color-brand-dark: var(--red-dark);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-sand: var(--sand);
+  --color-sky: var(--sky);
   --font-sans: var(--font-barlow);
   --font-display: var(--font-display);
-  --font-script: var(--font-script);
 }
 
 html {
@@ -60,27 +62,22 @@ body {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
 
-.font-script {
-  font-family: var(--font-script), cursive;
-}
-
-.radar-grid {
-  background-image:
-    radial-gradient(circle at 50% 40%, rgb(200 16 46 / 0.08), transparent 42%),
-    repeating-radial-gradient(
-      circle at 50% 48%,
-      transparent 0,
-      transparent 28px,
-      rgb(255 255 255 / 0.04) 29px,
-      transparent 30px
+.hero-scrim {
+  background:
+    linear-gradient(
+      105deg,
+      rgb(36 28 24 / 0.62) 0%,
+      rgb(36 28 24 / 0.28) 46%,
+      rgb(36 28 24 / 0.08) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(36 28 24 / 0.22) 0%,
+      transparent 38%,
+      rgb(36 28 24 / 0.38) 100%
     );
 }
 
-.hairline {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--line),
-    transparent
-  );
+.card-shadow {
+  box-shadow: 0 18px 40px rgb(36 28 24 / 0.08);
 }

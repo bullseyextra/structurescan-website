@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         <p className="font-display text-sm font-semibold uppercase tracking-[0.28em] text-brand">
           Legal
         </p>
-        <h1 className="font-display mt-3 text-4xl font-bold uppercase tracking-wide">
+        <h1 className="font-display mt-3 text-4xl font-bold tracking-tight">
           Privacy policy
         </h1>
         <p className="mt-4 text-sm text-muted">Last updated September 2026.</p>
@@ -28,7 +28,7 @@ export default function PrivacyPage() {
             does not cover information collected only in person or by phone,
             except where that information is later stored with a web inquiry.
           </p>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
             Who we are
           </h2>
           <p>
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
             <br />
             Phone: {site.phoneDisplay}
           </p>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
             What we collect
           </h2>
           <p>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
             address, browser type, and pages requested, used to operate and
             secure the site.
           </p>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
             Why we collect it
           </h2>
           <ul className="list-disc space-y-2 pl-5">
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
             <li>To improve how this website works</li>
             <li>To meet legal and safety obligations related to a job</li>
           </ul>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
             Sharing
           </h2>
           <p>
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
             may disclose information if required by law or to protect the
             safety of people or property.
           </p>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
             Retention and security
           </h2>
           <p>
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
             providers use encrypted connections. Access is limited to people
             who need it to do their jobs.
           </p>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
             Your rights
           </h2>
           <p>
@@ -94,7 +94,7 @@ export default function PrivacyPage() {
             complain to the Office of the Privacy Commissioner of Canada, or to
             the privacy commissioner in your province or territory.
           </p>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-ink">
             Changes
           </h2>
           <p>

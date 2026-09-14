@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
-import { Container, Eyebrow, Section } from "@/components/LayoutBits";
+import {
+  Container,
+  Eyebrow,
+  Heading,
+  MediaSplit,
+  Section,
+} from "@/components/LayoutBits";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
@@ -34,9 +40,9 @@ export default function LocateManagementPage() {
     <>
       <PageHero
         eyebrow="Locate management system"
-        title="From tickets to GPS-mapped results"
+        title="We’ll wrangle the locates"
         lead="We coordinate Call Before You Dig tickets, public locates, and private sweeps, then deliver GPS-mapped information your crew can actually use."
-        imageSrc="/images/utility-trench.jpg"
+        imageSrc="/images/office-plans.jpg"
       />
       <Section>
         <Container>
@@ -48,17 +54,32 @@ export default function LocateManagementPage() {
             ]}
           />
           <div className="mt-10">
-            <Eyebrow>The problem we take off your plate</Eyebrow>
-            <h2 className="font-display mt-3 max-w-3xl text-4xl font-bold uppercase leading-none tracking-wide">
-              Locate chaos is a project risk
-            </h2>
+            <MediaSplit
+              imageSrc="/images/excavator.jpg"
+              imageAlt="Illustrated excavator under a bright sky"
+            >
+              <Eyebrow>The problem we take off your plate</Eyebrow>
+              <Heading className="text-4xl">
+                Locate chaos is a project risk
+              </Heading>
+              <p className="mt-5 leading-relaxed text-muted">
+                You shouldn’t need a second full-time job just to keep tickets,
+                PDFs, and paint marks in the same conversation. That’s the
+                scramble we handle.
+              </p>
+            </MediaSplit>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {problems.map((item) => (
-                <article key={item.title} className="border border-line bg-cream p-6">
-                  <h3 className="font-display text-xl font-bold uppercase tracking-wide">
+                <article
+                  key={item.title}
+                  className="rounded-3xl border border-line bg-cream p-6"
+                >
+                  <Heading as="h3" className="text-xl">
                     {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+                  </Heading>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    {item.body}
+                  </p>
                 </article>
               ))}
             </div>
@@ -66,12 +87,14 @@ export default function LocateManagementPage() {
         </Container>
       </Section>
       <Section className="bg-cream">
-        <Container className="grid gap-10 lg:grid-cols-2">
-          <div>
+        <Container>
+          <MediaSplit
+            imageSrc="/images/utility-map.jpg"
+            imageAlt="Colour-coded utility map over a parking lot"
+            reverse
+          >
             <Eyebrow>How it works</Eyebrow>
-            <h2 className="font-display mt-3 text-4xl font-bold uppercase leading-none tracking-wide">
-              One coordinated locate file
-            </h2>
+            <Heading className="text-4xl">One coordinated locate file</Heading>
             <ol className="mt-6 space-y-4">
               {[
                 "Call Before You Dig ticket coordination so public utilities are requested and tracked.",
@@ -87,11 +110,11 @@ export default function LocateManagementPage() {
                 </li>
               ))}
             </ol>
-          </div>
-          <aside className="border border-line bg-paper p-6">
-            <h3 className="font-display text-2xl font-bold uppercase tracking-wide">
+          </MediaSplit>
+          <aside className="mt-10 rounded-3xl bg-paper p-6">
+            <Heading as="h3" className="text-2xl">
               Built for the field
-            </h3>
+            </Heading>
             <p className="mt-3 leading-relaxed text-muted">
               Structure Scan has been producing GPS-referenced locate
               information for years. The locate management system is how we turn
