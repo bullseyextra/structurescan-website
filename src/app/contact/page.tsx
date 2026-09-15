@@ -6,8 +6,10 @@ import {
   Eyebrow,
   Heading,
   MediaSplit,
+  Prose,
   Section,
 } from "@/components/LayoutBits";
+import { DarkBand } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -30,20 +32,25 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Say hello. We’ll help you book the right scan."
         lead="The office is in Winnipeg. We work across Manitoba, Saskatchewan, Western Ontario, and Nunavut."
-        imageSrc="/images/commercial-property.jpg"
+        imageSrc="/images/gpr-legislature.jpg"
+        imageAlt="Structure Scan technician scanning with GPR in Winnipeg"
       />
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/excavator.jpg"
-            imageAlt="Illustrated excavator working under a bright sky"
+            imageSrc="/images/marked-slab.jpg"
+            imageAlt="Marked concrete slab after a GPR scan"
           >
             <Eyebrow>We’re easy to reach</Eyebrow>
             <Heading className="text-4xl">Call, email, or send a note</Heading>
-            <p className="mt-5 leading-relaxed text-muted">
-              No maze of menus. If you know the address and what you need—scan,
-              locate, camera, or “not sure”—we’ll take it from there.
-            </p>
+            <Prose>
+              <p className="mt-5">
+                No maze of menus. If you know the address and what you
+                need—scan, locate, camera, or “not sure”—we’ll take it from
+                there. Site photos, drawings, and a description of the cut or
+                dig help us show up with the right gear.
+              </p>
+            </Prose>
           </MediaSplit>
         </Container>
       </Section>
@@ -119,6 +126,18 @@ export default function ContactPage() {
           </div>
         </Container>
       </Section>
+      <DarkBand
+        eyebrow="Where we work"
+        title="Winnipeg shop, regional coverage"
+        imageSrc="/images/hydro-site.jpg"
+        imageAlt="Industrial site along a river in the prairie region"
+      >
+        <p>
+          {site.address.line}. If the job is in {site.serviceArea.join(", ")},
+          start with a call or the form. We’ll tell you whether we can be there
+          and which service belongs on the ticket.
+        </p>
+      </DarkBand>
       <Section>
         <Container>
           <Heading className="text-3xl">Find the shop</Heading>

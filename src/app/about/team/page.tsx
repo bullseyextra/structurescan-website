@@ -5,8 +5,10 @@ import {
   Eyebrow,
   Heading,
   MediaSplit,
+  Prose,
   Section,
 } from "@/components/LayoutBits";
+import { DarkBand } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
 import { leadership, technicians } from "@/lib/site";
 
@@ -24,23 +26,34 @@ export default function TeamPage() {
         eyebrow="People"
         title="The crew behind the scans"
         lead="Owners, founder, and the technicians who scan and locate. Family-owned, Winnipeg-based, and a little more fun than the average damage-prevention shop."
-        imageSrc="/images/crew-slab.jpg"
+        imageSrc="/images/gpr-bridge.jpg"
+        imageAlt="Two Structure Scan technicians at a marked bridge abutment"
       />
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/office-plans.jpg"
-            imageAlt="People reviewing construction plans around a table"
+            imageSrc="/images/gpr-legislature.jpg"
+            imageAlt="Technician with a GPR cart on the Manitoba Legislative Building grounds"
           >
             <Eyebrow>Family first</Eyebrow>
             <Heading className="text-4xl">
               Hobby farms, archery, dance recitals, and GPR
             </Heading>
-            <p className="mt-5 leading-relaxed text-muted">
-              The bios below are the real ones. We like outdoor projects, kids’
-              sports, and getting the scan right the first time. If you call the
-              office, you’re talking to this group—not a call centre.
-            </p>
+            <Prose>
+              <p className="mt-5">
+                The bios below are the real ones. We like outdoor projects,
+                kids’ sports, and getting the scan right the first time. If you
+                call the office, you’re talking to this group—not a call
+                centre.
+              </p>
+              <p>
+                Michael came up under his father, Tony. Allan learned the
+                trade after coming in from outside the industry. Janine keeps
+                the office and the staff moving. Tony is still Founder, still
+                in the story, and still the person who started this shop in
+                1999.
+              </p>
+            </Prose>
           </MediaSplit>
         </Container>
       </Section>
@@ -67,22 +80,21 @@ export default function TeamPage() {
           </div>
         </Container>
       </Section>
+      <DarkBand
+        eyebrow="Field team"
+        title="The people on the slab and in the gravel"
+        imageSrc="/images/locate-tech.jpg"
+        imageAlt="Lead locate work: electromagnetic locator and paint on gravel"
+      >
+        <p>
+          If you have a safety question, Max is the Safety Officer. If you have
+          a GPR question, start with Andrew. Locates, Ryan. They are the ones
+          who will be on your site with the cart, the wand, and the paint.
+        </p>
+      </DarkBand>
       <Section>
         <Container>
-          <MediaSplit
-            imageSrc="/images/locate-tech.jpg"
-            imageAlt="Field technician using a utility locator on gravel"
-            reverse
-          >
-            <Eyebrow>Field team</Eyebrow>
-            <Heading className="text-4xl">Technicians</Heading>
-            <p className="mt-5 leading-relaxed text-muted">
-              These are the people on the slab and in the field. If you have a
-              safety question, Max is the Safety Officer. If you have a GPR
-              question, start with Andrew. Locates, Ryan.
-            </p>
-          </MediaSplit>
-          <ul className="mt-10 grid gap-4 md:grid-cols-3">
+          <ul className="grid gap-4 md:grid-cols-3">
             {technicians.map((person) => (
               <li
                 key={person.name}

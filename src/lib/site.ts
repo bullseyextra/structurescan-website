@@ -45,13 +45,13 @@ export const services = [
     navLabel: "Concrete scanning",
     cardTitle: "Concrete scanning / GPR",
     summary:
-      "See what’s inside the slab before you cut or core. Rebar, post-tension cables, conduits, voids, and more—mapped in 2D and 3D.",
+      "See what’s inside the slab before you cut or core. Rebar, post-tension cables, conduits, voids, and thickness—marked on the concrete and available in 2D and 3D.",
     heroEyebrow: "Ground penetrating radar",
     heroTitle: "Concrete scanning, without the guesswork",
     heroLead:
-      "A friendly, non-destructive look inside the slab before anyone cuts, cores, or drills.",
-    image: "/images/equipment-gpr.jpg",
-    heroImage: "/images/slab-marks.jpg",
+      "A non-destructive look inside the slab, wall, or deck before anyone cuts, cores, or drills—then a mark you can work from.",
+    image: "/images/marked-slab.jpg",
+    heroImage: "/images/marked-slab.jpg",
   },
   {
     slug: "utility-locating",
@@ -61,13 +61,13 @@ export const services = [
     navLabel: "Utility locating",
     cardTitle: "Utility locating",
     summary:
-      "Electromagnetic locating of water, gas, electric, sewer, and telecom—private and public—with surface marks and geo-referenced maps.",
+      "Electromagnetic locating of water, gas, electric, sewer, and telecom—private and public—with paint on the ground and geo-referenced maps to take home.",
     heroEyebrow: "Know what’s below",
     heroTitle: "Utility locating, marked and mapped",
     heroLead:
-      "Private and public locates so crews can dig with confidence—and a little less stress.",
-    image: "/images/locate-tech.jpg",
-    heroImage: "/images/excavator-sky.jpg",
+      "Find the pipes and cables before the bucket goes in. Surface marks for the crew on site, maps for the file afterward.",
+    image: "/images/painted-locates.jpg",
+    heroImage: "/images/painted-locates.jpg",
   },
   {
     slug: "locate-management",
@@ -77,13 +77,13 @@ export const services = [
     navLabel: "Locate management",
     cardTitle: "Locate management (LMS)",
     summary:
-      "Call Before You Dig ticket coordination, public locates, private sweeps, and GPS-mapped deliverables—without the paperwork scramble.",
+      "Call Before You Dig tickets, public locates, private sweeps, and GPS-mapped deliverables—one coordinated file instead of a messy inbox.",
     heroEyebrow: "Locate management system",
     heroTitle: "We’ll wrangle the locates",
     heroLead:
-      "Tickets, public locates, private sweeps, and GPS maps—one coordinated file instead of a messy inbox.",
-    image: "/images/utility-map.jpg",
-    heroImage: "/images/office-plans.jpg",
+      "Tickets, public locates, private sweeps, and GPS maps in one package your superintendent can actually use.",
+    image: "/images/map-5.jpg",
+    heroImage: "/images/aerial-locate.jpg",
   },
   {
     slug: "thermography",
@@ -93,13 +93,13 @@ export const services = [
     navLabel: "Thermography",
     cardTitle: "Thermographic imaging",
     summary:
-      "Locate in-floor and radiant heating lines in concrete without cutting, drilling, or disruption.",
+      "Locate in-floor and radiant heating lines in concrete without cutting, drilling, or disruption—then mark the layout on the slab.",
     heroEyebrow: "Non-invasive inspection",
     heroTitle: "Find the heat lines first",
     heroLead:
       "Pinpoint in-floor heating in the slab so you can cut or core without a chilly surprise.",
-    image: "/images/thermo.jpg",
-    heroImage: "/images/thermo.jpg",
+    image: "/images/heat-lines.jpg",
+    heroImage: "/images/heat-lines.jpg",
   },
   {
     slug: "sewer-camera",
@@ -109,17 +109,101 @@ export const services = [
     navLabel: "Sewer camera",
     cardTitle: "Sewer camera inspections",
     summary:
-      "Residential sewer laterals and weeping tile: blockages, cracks, depths, pre-renovation and real estate inspections.",
+      "Residential sewer laterals and weeping tile: blockages, cracks, depths, pre-renovation and real estate inspections—without digging up the yard.",
     heroEyebrow: "Sewer & weeping tile",
     heroTitle: "A camera in the line, not a hole in the yard",
     heroLead:
-      "Inspect residential drain lines and weeping tile without digging up the lawn.",
-    image: "/images/deck.jpg",
-    heroImage: "/images/deck.jpg",
+      "Inspect residential drain lines and weeping tile without excavation, so you know what’s actually in the pipe.",
+    image: "/images/sewer-right.jpg",
+    heroImage: "/images/sewer-camera.jpg",
   },
 ] as const;
 
 export type ServiceSlug = (typeof services)[number]["slug"];
+
+export const processSteps = [
+  {
+    label: "Scan",
+    title: "Collect the picture",
+    body: "GPR on concrete and in the field. Electromagnetic locators on conductive services. Camera in the line when you need to see the pipe itself.",
+    image: "/images/gpr-legislature.jpg",
+    alt: "Structure Scan technician pushing a GPR cart across the Manitoba Legislative Building grounds",
+  },
+  {
+    label: "Mark",
+    title: "Put it on the ground",
+    body: "Paint, tape, and notes where the crew will actually work—rebar grids, post-tension paths, heat lines, and buried utilities.",
+    image: "/images/painted-locates.jpg",
+    alt: "Colour-coded utility paint marks on a concrete pad at a rural service station",
+  },
+  {
+    label: "Deliver",
+    title: "Leave a record",
+    body: "2D and 3D concrete imaging, geo-referenced utility maps, and a digital archive you can hand to the next trade on site.",
+    image: "/images/map-1.jpg",
+    alt: "Aerial utility map with colour-coded service paths around a commercial building",
+  },
+] as const;
+
+export const mapGallery = [
+  {
+    src: "/images/map-1.jpg",
+    alt: "Colour-coded utility paths mapped over a large commercial parking lot",
+  },
+  {
+    src: "/images/map-2.jpg",
+    alt: "Utility map showing services around a pair of commercial buildings",
+  },
+  {
+    src: "/images/map-3.jpg",
+    alt: "Mapped utilities crossing a paved parking lot",
+  },
+  {
+    src: "/images/map-4.jpg",
+    alt: "Close-in utility map of a busy parking lot",
+  },
+  {
+    src: "/images/map-5.jpg",
+    alt: "Corridor-scale utility mapping along a highway interchange",
+  },
+  {
+    src: "/images/map-6.jpg",
+    alt: "Geo-referenced utility map across a developed site",
+  },
+] as const;
+
+export const fieldGallery = [
+  {
+    src: "/images/marked-slab.jpg",
+    alt: "GPR findings marked on a concrete slab with tape, notes, and a scanner case nearby",
+    caption: "Marked slab after a concrete scan",
+  },
+  {
+    src: "/images/gpr-bridge.jpg",
+    alt: "Two technicians standing at a bridge abutment covered in orange GPR grid marks",
+    caption: "Bridge abutment, mapped in place",
+  },
+  {
+    src: "/images/gpr-tower.jpg",
+    alt: "Masonry tower with vertical red scan lines marked on the block face",
+    caption: "Vertical scanning on masonry",
+  },
+  {
+    src: "/images/painted-locates.jpg",
+    alt: "Yellow and red locate paint on concrete in front of fuel pumps",
+    caption: "Painted locates, ready to dig around",
+  },
+  {
+    src: "/images/locate-tech.jpg",
+    alt: "Locate technician marking a buried utility on gravel with an electromagnetic locator",
+    caption: "EM locate, marked as we go",
+  },
+  {
+    src: "/images/gpr-3d.jpg",
+    alt: "Three-dimensional GPR overlay showing a reinforcement grid in a concrete floor",
+    caption: "3D imaging of what’s in the slab",
+  },
+] as const;
 
 export const leadership = [
   {

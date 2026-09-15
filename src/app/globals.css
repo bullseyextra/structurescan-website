@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #241c18;
-  --ink-2: #332824;
+  --ink: #1c1714;
+  --ink-2: #2a221e;
   --ink-3: #4a3c36;
   --paper: #f7f1e8;
   --paper-2: #efe4d6;
@@ -66,18 +66,35 @@ body {
   background:
     linear-gradient(
       105deg,
-      rgb(36 28 24 / 0.62) 0%,
-      rgb(36 28 24 / 0.28) 46%,
-      rgb(36 28 24 / 0.08) 100%
+      rgb(28 23 20 / 0.55) 0%,
+      rgb(28 23 20 / 0.22) 48%,
+      rgb(28 23 20 / 0.08) 100%
     ),
     linear-gradient(
       180deg,
-      rgb(36 28 24 / 0.22) 0%,
-      transparent 38%,
-      rgb(36 28 24 / 0.38) 100%
+      rgb(28 23 20 / 0.18) 0%,
+      transparent 40%,
+      rgb(28 23 20 / 0.42) 100%
     );
 }
 
 .card-shadow {
-  box-shadow: 0 18px 40px rgb(36 28 24 / 0.08);
+  box-shadow: 0 18px 40px rgb(28 23 20 / 0.08);
+}
+
+.grid-texture {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 20% 30%, black 20%, transparent 78%);
+}
+
+.photo-scrim {
+  background: linear-gradient(
+    180deg,
+    rgb(28 23 20 / 0.08) 0%,
+    rgb(28 23 20 / 0.18) 42%,
+    rgb(28 23 20 / 0.82) 100%
+  );
 }

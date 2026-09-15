@@ -5,8 +5,10 @@ import {
   Eyebrow,
   Heading,
   MediaSplit,
+  Prose,
   Section,
 } from "@/components/LayoutBits";
+import { DarkBand } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
@@ -41,8 +43,9 @@ export default function ThermographyPage() {
       <PageHero
         eyebrow="Non-invasive inspection"
         title="Find the heat lines first"
-        lead="Locate in-floor heating lines embedded in concrete slabs without cutting, drilling, or disruption."
-        imageSrc="/images/thermo.jpg"
+        lead="Locate in-floor heating lines embedded in concrete slabs without cutting, drilling, or disruption—then mark the layout where the saw will actually run."
+        imageSrc="/images/heat-lines.jpg"
+        imageAlt="Concrete shop floor with in-floor heating paths marked in red around vehicle lifts"
       />
       <Section>
         <Container>
@@ -55,19 +58,36 @@ export default function ThermographyPage() {
           />
           <div className="mt-10">
             <MediaSplit
-              imageSrc="/images/thermo.jpg"
-              imageAlt="Thermographic overlay showing heating lines in a concrete floor"
+              imageSrc="/images/heat-lines.jpg"
+              imageAlt="Red layout marks showing radiant heating lines in a concrete floor"
             >
               <Eyebrow>In-floor heat</Eyebrow>
               <Heading className="text-4xl">
                 See the warm lines before you cut
               </Heading>
-              <p className="mt-5 text-lg leading-relaxed text-muted">
-                Structure Scan uses non-invasive thermographic imaging to find
-                in-floor and radiant heating lines in concrete. If you need to
-                cut or core a slab that may contain heat pipes, this is the way
-                to see them first.
-              </p>
+              <Prose>
+                <p className="mt-5">
+                  Structure Scan uses non-invasive thermographic imaging to
+                  find in-floor and radiant heating lines in concrete. If you
+                  need to cut or core a slab that may contain heat pipes, this
+                  is the way to see them first—without opening the floor to
+                  “check.”
+                </p>
+                <p>
+                  The useful part is not a colourful picture on a tablet. It is
+                  a layout you can work from: lines marked on the slab so the
+                  people with the saws know where the loops run, including
+                  around equipment pads, lifts, and the messy parts of a shop
+                  floor where a drawing from ten years ago no longer matches
+                  reality.
+                </p>
+                <p>
+                  Pair it with GPR when you also need rebar, post-tension, or
+                  conduits in the same slab. Heat lines are one question.
+                  Everything else in the concrete is another. We can help you
+                  decide which service—or both—belongs on the ticket.
+                </p>
+              </Prose>
             </MediaSplit>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -87,6 +107,19 @@ export default function ThermographyPage() {
           </div>
         </Container>
       </Section>
+      <DarkBand
+        eyebrow="When to call"
+        title="Renovation, core drilling, and any slab that might be warm"
+        imageSrc="/images/marked-slab.jpg"
+        imageAlt="Marked concrete slab after scanning"
+      >
+        <p>
+          Thermography is the right first call when the known risk is in-floor
+          heat. If the slab is a mystery in every other way too—rebar layout,
+          conduits, thickness—ask for concrete scanning on the same visit. One
+          crew, two looks, fewer surprises.
+        </p>
+      </DarkBand>
       <CtaBand />
     </>
   );

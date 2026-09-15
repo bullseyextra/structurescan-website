@@ -6,11 +6,25 @@ import {
   Eyebrow,
   Heading,
   MediaSplit,
+  Prose,
   Section,
 } from "@/components/LayoutBits";
 import { ServiceCard } from "@/components/ServiceCard";
+import {
+  DarkBand,
+  ProcessTrio,
+  ProofGallery,
+  ServiceRibbon,
+  SplitHero,
+} from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
-import { certifications, services, site } from "@/lib/site";
+import {
+  certifications,
+  fieldGallery,
+  mapGallery,
+  services,
+  site,
+} from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Damage prevention, GPR & utility locating",
@@ -21,47 +35,44 @@ export const metadata: Metadata = pageMeta({
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink text-cream">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/gpr-winnipeg.jpg"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
-        />
-        <div className="hero-scrim absolute inset-0" />
-        <Container className="relative py-24 sm:py-32">
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-white drop-shadow">
-            {site.tagline}
-          </p>
-          <h1 className="font-display mt-5 max-w-3xl text-5xl font-extrabold leading-[1.05] tracking-tight text-balance drop-shadow-[0_2px_18px_rgba(36,28,24,0.45)] sm:text-7xl">
-            {site.promise}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream drop-shadow-[0_2px_12px_rgba(36,28,24,0.5)]">
-            We’re a Winnipeg family company. We scan concrete, locate utilities,
-            and help crews protect people, pipes, and property—so the job can
-            keep moving.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <ButtonLink href="/contact#quote" variant="primary" size="lg">
-              Book a scan
-            </ButtonLink>
-            <ButtonLink href={`tel:${site.phoneTel}`} variant="ghost" size="lg" external>
-              Talk to us
-            </ButtonLink>
-          </div>
-        </Container>
-      </section>
+      <SplitHero
+        eyebrow={site.tagline}
+        title={
+          <>
+            See what’s below.{" "}
+            <span className="text-brand">Then get to work.</span>
+          </>
+        }
+        lead="Contractors, engineers, and owners call Structure Scan when they need a clear picture before anyone cuts, cores, or digs. We’re a Winnipeg family company. We scan concrete, locate utilities, and leave marks and maps the crew can actually use."
+        imageSrc="/images/marked-slab.jpg"
+        imageAlt="Concrete slab marked with GPR findings, tape, notes, and a scanner case on the floor"
+      />
+
+      <ServiceRibbon />
+      <ProcessTrio />
 
       <Section>
         <Container>
           <Eyebrow>Services</Eyebrow>
-          <Heading className="mt-3 max-w-2xl text-4xl">
+          <Heading className="mt-3 max-w-3xl text-4xl sm:text-5xl">
             Five ways we keep you out of trouble underground
           </Heading>
-          <p className="mt-4 max-w-2xl leading-relaxed text-muted">
-            Need a scan, a locate, or a look inside a drain? Start here—we’ll
-            help you pick the right service for the job.
-          </p>
+          <Prose>
+            <p className="mt-4 max-w-3xl">
+              Hitting rebar, a post-tension cable, a gas line, or a heat pipe is
+              the kind of surprise that stops a job. Structure Scan is the
+              crew you call first: ground penetrating radar in concrete,
+              electromagnetic locates in the field, a camera in the drain when
+              you need to see the pipe, and maps you can keep after we leave.
+            </p>
+            <p className="max-w-3xl">
+              Not sure which service you need? If you’re cutting or coring,
+              start with GPR. If you’re digging, start with locates. If the slab
+              might have in-floor heat, add thermography. If the question is
+              inside a lateral or weeping tile, that’s the camera. Or just call
+              the office—we’ll sort it with you.
+            </p>
+          </Prose>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-6">
             {services.map((service, index) => (
               <div
@@ -75,29 +86,86 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      <DarkBand
+        eyebrow="On the ground"
+        title="Paint on the pad. Notes on the slab. A map for the file."
+        imageSrc="/images/painted-locates.jpg"
+        imageAlt="Yellow and red utility locate marks painted on concrete in front of fuel pumps"
+        reverse
+      >
+        <p>
+          Every unmarked line is a chance to hit something you didn’t budget
+          for. We show up with GPR, electromagnetic locators, and people who
+          like solving puzzles under the surface. Findings get marked where the
+          work will happen—tape and crayon on a slab, colour-coded paint on
+          gravel or asphalt—so the next trade isn’t guessing from a PDF in the
+          truck.
+        </p>
+        <p>
+          When you need a record, we produce geo-referenced utility maps and
+          concrete imaging you can hand to an engineer, a superintendent, or
+          the crew that shows up next month. Private. Confidential. Written so
+          a human can read it.
+        </p>
+      </DarkBand>
+
       <Section className="bg-cream">
         <Container>
+          <Eyebrow>Proof, not stock</Eyebrow>
+          <Heading className="mt-3 max-w-3xl text-4xl">
+            Real scans. Real marks. Real maps.
+          </Heading>
+          <p className="mt-4 max-w-3xl leading-relaxed text-muted">
+            This is the work: a marked interior slab, a bridge abutment gridded
+            in orange, a masonry tower scanned vertically, locates painted
+            before the excavator rolls, and GPS maps of what we found. No
+            generic skyline. No invented job names.
+          </p>
+          <div className="mt-10">
+            <ProofGallery items={fieldGallery} />
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
           <MediaSplit
-            imageSrc="/images/locate-tech.jpg"
-            imageAlt="Technician marking a buried utility on a gravel site"
+            imageSrc="/images/map-5.jpg"
+            imageAlt="Corridor-scale utility mapping along a highway interchange"
             reverse
+            caption="GPS-mapped utilities, colour-coded for the file"
           >
-            <Eyebrow>On the job</Eyebrow>
+            <Eyebrow>Deliverables</Eyebrow>
             <Heading className="mt-3 text-4xl">
-              Daylight, hi-vis, and a clear mark on the ground
+              What you take home from a locate
             </Heading>
-            <p className="mt-5 leading-relaxed text-muted">
-              Structure Scan shows up with GPR, electromagnetic locators, and
-              people who like solving puzzles under the surface. We mark what we
-              find, map it when you need a record, and leave you with a picture
-              you can work from.
-            </p>
-            <div className="mt-6">
-              <ButtonLink href="/services" variant="outline">
-                See all services
+            <Prose>
+              <p className="mt-5">
+                Public locates often arrive as scattered PDFs, emails, and
+                sketches that don’t quite line up. Our locate work is built to
+                be used: surface marks for the people holding the shovel, and
+                geo-referenced maps—submeter digital and printed—showing the
+                path of each pipe and cable we located.
+              </p>
+              <p>
+                Keep them for planning, permitting, future maintenance, and the
+                next contractor who asks “what’s under the parking lot?” If you
+                also need tickets coordinated and private sweeps folded in,
+                that’s locate management.
+              </p>
+            </Prose>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <ButtonLink href="/services/utility-locating" variant="outline">
+                Utility locating
+              </ButtonLink>
+              <ButtonLink href="/services/locate-management" variant="outline">
+                Locate management
               </ButtonLink>
             </div>
           </MediaSplit>
+          <div className="mt-10">
+            <ProofGallery items={mapGallery.slice(0, 3)} />
+          </div>
         </Container>
       </Section>
 
@@ -122,18 +190,29 @@ export default function HomePage() {
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/sunny-crew.jpg"
-            imageAlt="Construction crew standing on a sunlit concrete deck"
+            imageSrc="/images/gpr-legislature.jpg"
+            imageAlt="Structure Scan technician using a GPR cart on the Manitoba Legislative Building grounds"
           >
-            <Eyebrow>Service area</Eyebrow>
+            <Eyebrow>Family business</Eyebrow>
             <Heading className="mt-3 text-4xl">
-              Based in Winnipeg. Happy to travel.
+              A Winnipeg shop since {site.founded}
             </Heading>
-            <p className="mt-5 leading-relaxed text-muted">
-              From the shop at {site.address.street}, we work across{" "}
-              {site.serviceArea.slice(0, 3).join(", ")}, and {site.serviceArea[3]}.
-              If the job is in those regions, give us a call.
-            </p>
+            <Prose>
+              <p className="mt-5">
+                Tony Brunette started Structure Scan in Winnipeg in{" "}
+                {site.founded}. Michael Brunette (Owner/CFO) and Allan Gunter
+                (Owner/CEO) own it now, with Janine Gunter as COO. Tony remains
+                Founder. Same family, same idea: give crews a clear picture of
+                what’s below before they dig, cut, or drill.
+              </p>
+              <p>
+                From the shop at {site.address.street}, we work across{" "}
+                {site.serviceArea.slice(0, 3).join(", ")}, and{" "}
+                {site.serviceArea[3]}. If the job is in those regions, give us a
+                call. You’ll talk to the people who actually do the work—not a
+                call centre reading a script.
+              </p>
+            </Prose>
             <ul className="mt-6 grid grid-cols-2 gap-3">
               {site.serviceArea.map((area) => (
                 <li
@@ -144,28 +223,6 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-          </MediaSplit>
-        </Container>
-      </Section>
-
-      <Section className="bg-cream">
-        <Container>
-          <MediaSplit
-            imageSrc="/images/gpr-winnipeg.jpg"
-            imageAlt="Structure Scan technician using ground penetrating radar on the Manitoba Legislative Building grounds"
-            reverse
-          >
-            <Eyebrow>Family business</Eyebrow>
-            <Heading className="mt-3 text-4xl">
-              A family company since {site.founded}
-            </Heading>
-            <p className="mt-5 leading-relaxed text-muted">
-              Tony Brunette started Structure Scan in Winnipeg in {site.founded}.
-              Michael Brunette (Owner/CFO) and Allan Gunter (Owner/CEO) own it
-              now, with Janine Gunter as COO. Tony remains Founder. Same family,
-              same idea: give crews a clear picture of what’s below before they
-              dig, cut, or drill.
-            </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <ButtonLink href="/about" variant="outline">
                 Read the story
@@ -180,11 +237,17 @@ export default function HomePage() {
               </p>
               <p className="mt-3 text-lg">{site.address.line}</p>
               <p className="mt-4">
-                <a className="font-semibold text-brand" href={`tel:${site.phoneTel}`}>
+                <a
+                  className="font-semibold text-brand"
+                  href={`tel:${site.phoneTel}`}
+                >
                   {site.phoneDisplay}
                 </a>
                 <br />
-                <a className="font-semibold text-brand" href={`mailto:${site.email}`}>
+                <a
+                  className="font-semibold text-brand"
+                  href={`mailto:${site.email}`}
+                >
                   {site.email}
                 </a>
               </p>

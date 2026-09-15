@@ -5,6 +5,7 @@ import {
   Eyebrow,
   Heading,
   MediaSplit,
+  Prose,
   Section,
 } from "@/components/LayoutBits";
 import { pageMeta } from "@/lib/seo";
@@ -24,21 +25,25 @@ export default function CertificationsPage() {
         eyebrow="Qualifications"
         title="Certified crews, current training"
         lead="Company certifications, technician competency, and industry roles. An accurate analysis of a worksite by an experienced technician saves time, prevents mistakes, and avoids hazards."
-        imageSrc="/images/site-saws.jpg"
+        imageSrc="/images/gpr-tower.jpg"
+        imageAlt="Vertically marked masonry tower after GPR scanning"
       />
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/worker-energy.jpg"
-            imageAlt="Construction worker in an orange hard hat on a job site"
+            imageSrc="/images/hydro-site.jpg"
+            imageAlt="Industrial river site with substations and transmission infrastructure"
           >
             <Eyebrow>Company</Eyebrow>
             <Heading className="text-4xl">Structure Scan is</Heading>
-            <p className="mt-5 leading-relaxed text-muted">
-              Technicians demonstrate a proven level of competency and stay
-              current on damage prevention practices, with ongoing testing and
-              training.
-            </p>
+            <Prose>
+              <p className="mt-5">
+                Technicians demonstrate a proven level of competency and stay
+                current on damage prevention practices, with ongoing testing and
+                training. Facility access credentials matter on the jobs we are
+                invited onto—rail, energy, and government sites included.
+              </p>
+            </Prose>
           </MediaSplit>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {certifications.map((item) => (

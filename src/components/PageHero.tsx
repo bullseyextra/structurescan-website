@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/LayoutBits";
+import { SplitHero } from "@/components/VisualBands";
 import { site } from "@/lib/site";
 
 export function PageHero({
@@ -8,33 +9,40 @@ export function PageHero({
   title,
   lead,
   imageSrc,
+  imageAlt,
 }: {
   eyebrow?: string;
   title: string;
   lead: string;
   imageSrc?: string;
+  imageAlt?: string;
 }) {
+  if (imageSrc) {
+    return (
+      <SplitHero
+        eyebrow={eyebrow}
+        title={title}
+        lead={lead}
+        imageSrc={imageSrc}
+        imageAlt={imageAlt || ""}
+        compact
+      />
+    );
+  }
+
   return (
     <section className="relative overflow-hidden bg-ink text-cream">
-      {imageSrc ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={imageSrc}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-      ) : null}
-      <div className="hero-scrim absolute inset-0" />
+      <div className="grid-texture pointer-events-none absolute inset-0" />
       <Container className="relative py-20 sm:py-28">
         {eyebrow ? (
-          <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-white drop-shadow">
+          <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-white/80">
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="font-display mt-4 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-balance drop-shadow-[0_2px_18px_rgba(36,28,24,0.45)] sm:text-6xl">
+        <h1 className="font-display mt-4 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-balance sm:text-6xl">
           {title}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream drop-shadow-[0_2px_12px_rgba(36,28,24,0.5)]">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/85">
           {lead}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">

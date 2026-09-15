@@ -5,8 +5,10 @@ import {
   Eyebrow,
   Heading,
   MediaSplit,
+  Prose,
   Section,
 } from "@/components/LayoutBits";
+import { DarkBand, ProofGallery } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
 import { equipment } from "@/lib/site";
 
@@ -30,15 +32,15 @@ const targets = [
 const audiences = [
   {
     title: "Trades & contractors",
-    body: "You cannot see what’s inside concrete before cutting or coring. Scanning removes the guesswork: rebar, post-tension cables, conduits, and other embedded objects, marked so you can work without an expensive surprise.",
+    body: "You cannot see what’s inside concrete before cutting or coring. Scanning removes the guesswork: rebar, post-tension cables, conduits, and other embedded objects, marked so you can work without an expensive surprise. Safer for the crew, cleaner for the schedule.",
   },
   {
     title: "Engineers & authorities",
-    body: "GPR scanning supports quality control before and after construction. It is a non-destructive way to evaluate what sits inside a structure without disrupting the workflow.",
+    body: "GPR scanning supports quality control before and after construction. It is a non-destructive way to evaluate what sits inside a structure—cover, layout, deterioration clues—without opening the slab or stopping the workflow.",
   },
   {
     title: "Property owners & managers",
-    body: "A single missed embedment can mean repairs and downtime. Scanning gives you a clear picture before renovation or maintenance work starts.",
+    body: "A single missed embedment can mean repairs, downtime, and a tenant conversation nobody wants. Scanning gives you a clear picture before renovation or maintenance work starts, so the people with the saws are not the first to find the cable.",
   },
 ];
 
@@ -48,8 +50,9 @@ export default function ConcreteScanningPage() {
       <PageHero
         eyebrow="Ground penetrating radar"
         title="Concrete scanning, without the guesswork"
-        lead="A friendly, non-destructive look inside the slab before anyone cuts, cores, or drills. Clear deliverables, including 2D and 3D imaging, a digital archive, and real-time reporting on site."
-        imageSrc="/images/slab-marks.jpg"
+        lead="A non-destructive look inside the slab before anyone cuts, cores, or drills. Findings marked on the concrete, with 2D and 3D imaging, a digital archive, and on-site reporting when you need answers the same day."
+        imageSrc="/images/marked-slab.jpg"
+        imageAlt="Concrete floor marked with GPR scan notes, tape, and a scanner case"
       />
       <Section>
         <Container>
@@ -62,20 +65,31 @@ export default function ConcreteScanningPage() {
           />
           <div className="mt-10">
             <MediaSplit
-              imageSrc="/images/equipment-gpr.jpg"
-              imageAlt="Handheld GPR scanner and tablet showing a concrete scan"
+              imageSrc="/images/gpr-tower.jpg"
+              imageAlt="Masonry tower with vertical red GPR scan lines marked on the block"
+              caption="Vertical scanning—marks on the face of the work, not just a report in email"
             >
               <Eyebrow>On the job</Eyebrow>
               <Heading className="text-4xl">
                 Cut or core with a map, not a guess
               </Heading>
-              <p className="mt-5 leading-relaxed text-muted">
-                Structure Scan uses ground penetrating radar to locate rebar,
-                pipes, and hidden features in concrete. We mark findings and
-                provide results that are straightforward enough to act on the
-                same day. Reports are private and confidential. On-site data
-                processing and real-time reporting are available.
-              </p>
+              <Prose>
+                <p className="mt-5">
+                  Structure Scan uses ground penetrating radar to locate rebar,
+                  pipes, post-tension cables, and hidden features in concrete.
+                  We mark findings on the slab, wall, or deck so the saw
+                  operator can see them. Reports are private and confidential.
+                  On-site data processing and real-time reporting are available
+                  when the schedule cannot wait for a PDF to land overnight.
+                </p>
+                <p>
+                  This is the same work whether you are opening a floor for a
+                  new mechanical riser, checking cover on a bridge deck, or
+                  confirming what sits inside a masonry shaft before you cut a
+                  door. The tool changes with the structure. The point does
+                  not: know what’s in it before you damage it.
+                </p>
+              </Prose>
             </MediaSplit>
           </div>
           <ul className="mt-10 grid gap-2 sm:grid-cols-2">
@@ -94,21 +108,32 @@ export default function ConcreteScanningPage() {
       <Section className="bg-cream">
         <Container>
           <MediaSplit
-            imageSrc="/images/concrete-pour.jpg"
-            imageAlt="Hands finishing a concrete pour in daylight"
+            imageSrc="/images/gpr-3d.jpg"
+            imageAlt="Three-dimensional GPR overlay of a reinforcement grid in a concrete floor"
             reverse
+            caption="3D imaging of reinforcement and anomalies in the slab"
           >
             <Eyebrow>How GPR works</Eyebrow>
             <Heading className="text-4xl">
               A radar wave, a change in material, a mark on the slab
             </Heading>
-            <p className="mt-5 leading-relaxed text-muted">
-              A high-frequency radar wave is sent into the ground or concrete.
-              The two-way travel time is measured. Wave speed depends on the
-              material it is moving through. When the wave crosses a boundary—a
-              change in physical properties—an anomaly appears in the data. A
-              certified GPR technician can mark that target in real time.
-            </p>
+            <Prose>
+              <p className="mt-5">
+                A high-frequency radar wave is sent into the ground or
+                concrete. The two-way travel time is measured. Wave speed
+                depends on the material it is moving through. When the wave
+                crosses a boundary—a change in physical properties—an anomaly
+                appears in the data. A certified GPR technician can mark that
+                target in real time.
+              </p>
+              <p>
+                Two-way travel time is also how we talk about thickness and
+                depth: slab thickness, concrete cover over steel, and depth to
+                subsurface targets. An optical survey wheel encoder is used to
+                map depth and location of rebar directly on the concrete, so
+                the marks match the data—not a sketch from memory.
+              </p>
+            </Prose>
           </MediaSplit>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {[
@@ -153,10 +178,60 @@ export default function ConcreteScanningPage() {
         </Container>
       </Section>
 
+      <DarkBand
+        eyebrow="Heavy structures"
+        title="Decks, abutments, and vertical work—not just office slabs"
+        imageSrc="/images/gpr-bridge.jpg"
+        imageAlt="Two Structure Scan technicians at a large concrete bridge abutment marked with an orange scan grid"
+      >
+        <p>
+          Concrete scanning is not only a tidy interior floor. We scan bridge
+          abutments, decks, and vertical masonry when the question is “what’s
+          in this, and where can we cut?” The GS8000 is the unit we reach for
+          on deeper and open-field work, including shallow scanning for
+          concrete cover on bridge decks and applications such as underground
+          storage tanks.
+        </p>
+        <p>
+          Handheld Proceq units handle the close work: columns, walls, and
+          tighter interiors where a cart cannot go. Technicians carry GP8000
+          or GP8800 units capable of scanning through 24+ inches of concrete.
+        </p>
+      </DarkBand>
+
       <Section>
         <Container>
           <Eyebrow>Equipment</Eyebrow>
           <Heading className="mt-3 text-4xl">Proceq GPR on every crew</Heading>
+          <p className="mt-4 max-w-3xl leading-relaxed text-muted">
+            We name the gear because contractors ask. These are the units on
+            the truck—not a mystery “advanced system,” and not someone else’s
+            product line.
+          </p>
+          <div className="mt-8 mb-8 grid gap-4 sm:grid-cols-2">
+            <figure className="overflow-hidden rounded-3xl bg-cream p-4 card-shadow">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/equipment-handheld.jpg"
+                alt="Handheld Proceq GPR scanner against concrete with a tablet showing the scan"
+                className="mx-auto h-40 w-auto object-contain"
+              />
+              <figcaption className="mt-3 text-center text-sm text-muted">
+                Handheld GP8000 / GP8800 on concrete
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-3xl bg-cream p-4 card-shadow">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/equipment-cart.jpg"
+                alt="Proceq GS8000 cart and tablet showing a mapped scan"
+                className="mx-auto h-40 w-auto object-contain"
+              />
+              <figcaption className="mt-3 text-center text-sm text-muted">
+                GS8000 cart for open-field and deeper work
+              </figcaption>
+            </figure>
+          </div>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {equipment.map((item) => (
               <article
@@ -189,6 +264,33 @@ export default function ConcreteScanningPage() {
                 </p>
               </article>
             ))}
+          </div>
+        </Container>
+      </Section>
+      <Section className="bg-cream">
+        <Container>
+          <Eyebrow>From jobs</Eyebrow>
+          <Heading className="mt-3 text-4xl">Scanning evidence</Heading>
+          <div className="mt-8">
+            <ProofGallery
+              items={[
+                {
+                  src: "/images/marked-slab.jpg",
+                  alt: "Marked interior slab after GPR scanning",
+                  caption: "Interior slab, marked in place",
+                },
+                {
+                  src: "/images/gpr-tower.jpg",
+                  alt: "Vertical scan marks on a masonry tower",
+                  caption: "Vertical masonry scan",
+                },
+                {
+                  src: "/images/gpr-3d.jpg",
+                  alt: "3D GPR overlay of a slab",
+                  caption: "3D imaging of the grid",
+                },
+              ]}
+            />
           </div>
         </Container>
       </Section>

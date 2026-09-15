@@ -5,9 +5,12 @@ import {
   Eyebrow,
   Heading,
   MediaSplit,
+  Prose,
   Section,
 } from "@/components/LayoutBits";
+import { DarkBand, ProofGallery } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
+import { mapGallery } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Locate management",
@@ -42,7 +45,8 @@ export default function LocateManagementPage() {
         eyebrow="Locate management system"
         title="We’ll wrangle the locates"
         lead="We coordinate Call Before You Dig tickets, public locates, and private sweeps, then deliver GPS-mapped information your crew can actually use."
-        imageSrc="/images/office-plans.jpg"
+        imageSrc="/images/aerial-locate.jpg"
+        imageAlt="Aerial view of a commercial site with colour-coded utility paths overlaid"
       />
       <Section>
         <Container>
@@ -55,18 +59,28 @@ export default function LocateManagementPage() {
           />
           <div className="mt-10">
             <MediaSplit
-              imageSrc="/images/excavator.jpg"
-              imageAlt="Illustrated excavator under a bright sky"
+              imageSrc="/images/map-1.jpg"
+              imageAlt="Utility map of a large commercial parking lot with colour-coded services"
             >
               <Eyebrow>The problem we take off your plate</Eyebrow>
               <Heading className="text-4xl">
                 Locate chaos is a project risk
               </Heading>
-              <p className="mt-5 leading-relaxed text-muted">
-                You shouldn’t need a second full-time job just to keep tickets,
-                PDFs, and paint marks in the same conversation. That’s the
-                scramble we handle.
-              </p>
+              <Prose>
+                <p className="mt-5">
+                  You shouldn’t need a second full-time job just to keep
+                  tickets, PDFs, and paint marks in the same conversation.
+                  Public locates are necessary. They are also often incomplete
+                  for private plant, and they rarely arrive as one clean
+                  drawing. That’s the scramble we handle.
+                </p>
+                <p>
+                  Structure Scan has been producing GPS-referenced locate
+                  information for years. Locate management is how we turn that
+                  field work plus the public process into a single, usable
+                  package instead of a folder of mismatched files.
+                </p>
+              </Prose>
             </MediaSplit>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {problems.map((item) => (
@@ -86,42 +100,43 @@ export default function LocateManagementPage() {
           </div>
         </Container>
       </Section>
+      <DarkBand
+        eyebrow="How it works"
+        title="One coordinated locate file"
+        imageSrc="/images/painted-locates.jpg"
+        imageAlt="Painted utility locates on a concrete pad"
+        reverse
+      >
+        <ol className="space-y-4">
+          {[
+            "Call Before You Dig ticket coordination so public utilities are requested and tracked.",
+            "Public locates gathered and reviewed against the work area.",
+            "Private sweeps for services the public process does not cover.",
+            "GPS-mapped deliverables that document what was found, where, and in a format you can keep.",
+          ].map((step, index) => (
+            <li key={step} className="flex gap-4">
+              <span className="font-display text-2xl font-bold text-brand">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <p className="pt-1 leading-relaxed text-cream/80">{step}</p>
+            </li>
+          ))}
+        </ol>
+      </DarkBand>
       <Section className="bg-cream">
         <Container>
-          <MediaSplit
-            imageSrc="/images/utility-map.jpg"
-            imageAlt="Colour-coded utility map over a parking lot"
-            reverse
-          >
-            <Eyebrow>How it works</Eyebrow>
-            <Heading className="text-4xl">One coordinated locate file</Heading>
-            <ol className="mt-6 space-y-4">
-              {[
-                "Call Before You Dig ticket coordination so public utilities are requested and tracked.",
-                "Public locates gathered and reviewed against the work area.",
-                "Private sweeps for services the public process does not cover.",
-                "GPS-mapped deliverables that document what was found, where, and in a format you can keep.",
-              ].map((step, index) => (
-                <li key={step} className="flex gap-4">
-                  <span className="font-display text-2xl font-bold text-brand">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <p className="pt-1 leading-relaxed text-muted">{step}</p>
-                </li>
-              ))}
-            </ol>
-          </MediaSplit>
-          <aside className="mt-10 rounded-3xl bg-paper p-6">
-            <Heading as="h3" className="text-2xl">
-              Built for the field
-            </Heading>
-            <p className="mt-3 leading-relaxed text-muted">
-              Structure Scan has been producing GPS-referenced locate
-              information for years. The locate management system is how we turn
-              that work into a single, usable package instead of a folder of
-              mismatched files.
-            </p>
-          </aside>
+          <Eyebrow>Utility map gallery</Eyebrow>
+          <Heading className="mt-3 text-4xl">
+            The maps that replace the messy inbox
+          </Heading>
+          <p className="mt-4 max-w-3xl leading-relaxed text-muted">
+            Parking lots, building envelopes, and larger corridors—colour-coded
+            paths you can share with the superintendent, the engineer, and the
+            next contractor.
+          </p>
+          <div className="mt-8">
+            <ProofGallery items={mapGallery} />
+          </div>
         </Container>
       </Section>
       <CtaBand />

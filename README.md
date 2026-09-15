@@ -26,6 +26,7 @@ npm start
 - Pages: home, services (all five), about, team, certifications, contact, privacy
 - Permanent redirects from old WordPress URLs (see `next.config.ts`)
 - Live-site oval radar logo (`public/logo.png`) in the header, footer, and favicon
+- Field photography from Structure Scan jobs (marked slabs, painted locates, GPR carts, GPS maps)—not generic construction stock
 - Unique titles, Open Graph image, JSON-LD `LocalBusiness`, `sitemap.xml`, `robots.txt`
 - Accessible contact form (opens email to `info@structurescan.ca`) plus optional links to the existing Jotform estimate / schedule / consultation forms
 - Sticky click-to-call bar on small screens

@@ -28,9 +28,17 @@ export function Section({
   );
 }
 
-export function Eyebrow({ children }: { children: React.ReactNode }) {
+export function Eyebrow({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <p className="font-display text-sm font-semibold uppercase tracking-[0.22em] text-brand">
+    <p
+      className={`font-display text-sm font-semibold uppercase tracking-[0.22em] text-brand ${className}`}
+    >
       {children}
     </p>
   );
@@ -88,7 +96,7 @@ export function MediaSplit({
         <Photo
           src={imageSrc}
           alt={imageAlt}
-          className="h-full max-h-[28rem] w-full rounded-3xl object-cover card-shadow"
+          className="h-full max-h-[32rem] w-full rounded-3xl object-cover card-shadow"
         />
         {caption ? (
           <figcaption className="mt-3 text-sm text-muted">{caption}</figcaption>
@@ -96,5 +104,11 @@ export function MediaSplit({
       </figure>
       <div>{children}</div>
     </div>
+  );
+}
+
+export function Prose({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="space-y-4 leading-relaxed text-muted">{children}</div>
   );
 }
