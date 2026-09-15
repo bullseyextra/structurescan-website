@@ -235,18 +235,23 @@ function NavDropdown({
       {open ? (
         <ul
           id={id}
-          className="absolute left-0 top-full z-20 min-w-56 rounded-2xl border border-line bg-cream py-2 card-shadow"
+          className="absolute left-0 top-full z-50 min-w-56 pt-2"
         >
-          {items.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="block px-4 py-2.5 text-sm text-ink hover:bg-paper-2 hover:text-brand"
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          <li className="rounded-2xl border border-line bg-cream py-2 card-shadow">
+            <ul>
+              {items.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block px-4 py-2.5 text-sm text-ink hover:bg-paper-2 hover:text-brand"
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
         </ul>
       ) : null}
     </div>
