@@ -10,7 +10,7 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
-import { equipment } from "@/lib/site";
+import { equipment, media } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Concrete scanning & GPR",
@@ -51,8 +51,8 @@ export default function ConcreteScanningPage() {
         eyebrow="Ground penetrating radar"
         title="Concrete scanning, without the guesswork"
         lead="A non-destructive look inside the slab before anyone cuts, cores, or drills. Findings marked on the concrete, with 2D and 3D imaging, a digital archive, and on-site reporting when you need answers the same day."
-        imageSrc="/images/marked-slab.jpg"
-        imageAlt="Concrete floor marked with GPR scan notes, tape, and a scanner case"
+        imageSrc={media.rebarGrid}
+        imageAlt="Rebar grid marked on a concrete slab beside a tablet showing the GPR radargram"
       />
       <Section>
         <Container>
@@ -65,9 +65,9 @@ export default function ConcreteScanningPage() {
           />
           <div className="mt-10">
             <MediaSplit
-              imageSrc="/images/gpr-tower.jpg"
-              imageAlt="Masonry tower with vertical red GPR scan lines marked on the block"
-              caption="Vertical scanning—marks on the face of the work, not just a report in email"
+              imageSrc={media.warehouseGrid}
+              imageAlt="Warehouse floor gridded in white chalk ahead of a concrete scan"
+              caption="Scan grid on the slab—marks on the face of the work, not just a report in email"
             >
               <Eyebrow>On the job</Eyebrow>
               <Heading className="text-4xl">
@@ -108,10 +108,10 @@ export default function ConcreteScanningPage() {
       <Section className="bg-cream">
         <Container>
           <MediaSplit
-            imageSrc="/images/gpr-3d.jpg"
-            imageAlt="Three-dimensional GPR overlay of a reinforcement grid in a concrete floor"
+            imageSrc={media.slabThickness}
+            imageAlt="GPR thickness and cover marks on a concrete slab"
             reverse
-            caption="3D imaging of reinforcement and anomalies in the slab"
+            caption="Thickness, cover, and layout marked from the scan"
           >
             <Eyebrow>How GPR works</Eyebrow>
             <Heading className="text-4xl">
@@ -181,8 +181,8 @@ export default function ConcreteScanningPage() {
       <DarkBand
         eyebrow="Heavy structures"
         title="Decks, abutments, and vertical work—not just office slabs"
-        imageSrc="/images/gpr-bridge.jpg"
-        imageAlt="Two Structure Scan technicians at a large concrete bridge abutment marked with an orange scan grid"
+        imageSrc={media.structural}
+        imageAlt="Structural components marked on a concrete surface after GPR scanning"
       >
         <p>
           Concrete scanning is not only a tidy interior floor. We scan bridge
@@ -212,7 +212,7 @@ export default function ConcreteScanningPage() {
             <figure className="overflow-hidden rounded-3xl bg-cream p-4 card-shadow">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/equipment-handheld.jpg"
+                src={media.equipmentHandheld}
                 alt="Handheld Proceq GPR scanner against concrete with a tablet showing the scan"
                 className="mx-auto h-40 w-auto object-contain"
               />
@@ -223,7 +223,7 @@ export default function ConcreteScanningPage() {
             <figure className="overflow-hidden rounded-3xl bg-cream p-4 card-shadow">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/equipment-cart.jpg"
+                src={media.equipmentCart}
                 alt="Proceq GS8000 cart and tablet showing a mapped scan"
                 className="mx-auto h-40 w-auto object-contain"
               />
@@ -275,19 +275,34 @@ export default function ConcreteScanningPage() {
             <ProofGallery
               items={[
                 {
-                  src: "/images/marked-slab.jpg",
+                  src: media.rebarGrid,
                   alt: "Marked interior slab after GPR scanning",
-                  caption: "Interior slab, marked in place",
+                  caption: "Rebar grid, marked in place",
                 },
                 {
-                  src: "/images/gpr-tower.jpg",
-                  alt: "Vertical scan marks on a masonry tower",
-                  caption: "Vertical masonry scan",
+                  src: media.dowel,
+                  alt: "Yellow chalk grid marking dowels in a sidewalk",
+                  caption: "Dowel identification",
                 },
                 {
-                  src: "/images/gpr-3d.jpg",
-                  alt: "3D GPR overlay of a slab",
-                  caption: "3D imaging of the grid",
+                  src: media.conduit,
+                  alt: "Conduit paths marked on a concrete slab",
+                  caption: "Conduit identification",
+                },
+                {
+                  src: media.slabThickness,
+                  alt: "Slab thickness and cover marked from a GPR scan",
+                  caption: "Slab thickness",
+                },
+                {
+                  src: media.voids,
+                  alt: "Void detection markings on a scanned surface",
+                  caption: "Void detection",
+                },
+                {
+                  src: media.structural,
+                  alt: "Structural components marked after GPR scanning",
+                  caption: "Structural components",
                 },
               ]}
             />

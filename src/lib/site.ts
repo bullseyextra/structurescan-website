@@ -36,6 +36,43 @@ export const site = {
   },
 } as const;
 
+export const media = {
+  logo: "/media/logos/logo-transparent.png",
+  logoOval: "/media/logos/structure-scan-inc-new.png",
+  winnipeg: "/media/hero/structure-scan-gpr-winnipeg.jpg",
+  brighter: "/media/hero/brighter.jpg",
+  warehouseTechs: "/media/hero/warehouse-techs.jpg",
+  warehouseGrid: "/media/hero/warehouse.jpg",
+  rebarGrid: "/media/gpr/rebar-grid.jpg",
+  slabThickness: "/media/gpr/slab-thickness.jpg",
+  dowel: "/media/gpr/dowel-identification.jpg",
+  conduit: "/media/gpr/conduit-id.jpg",
+  structural: "/media/gpr/structural-component.jpg",
+  voids: "/media/gpr/void-detection.jpg",
+  inFloorHeat: "/media/gpr/in-floor-heat.jpg",
+  gprJobs: "/media/gpr/gpr-jobs.jpg",
+  gp8100: "/media/gpr/gp8100.jpg",
+  equipmentHandheld: "/media/gpr/equipment-handheld.jpg",
+  equipmentCart: "/media/gpr/equipment-cart.jpg",
+  map1: "/media/utility/utility-map-1.jpg",
+  map2: "/media/utility/utility-map-2.jpg",
+  map3: "/media/utility/utility-map-3.jpg",
+  map4: "/media/utility/utility-map-4.jpg",
+  map5: "/media/utility/utility-map-5.jpg",
+  map6: "/media/utility/utility-map-6.jpg",
+  lmsFlow: "/media/utility/lms-flow.png",
+  sewerCam: "/media/sewer/trenchless-sewer-camera.jpg",
+  sewerSee: "/media/sewer/what-sewer-cameras-see.jpg",
+  thermo1: "/media/thermo/thermo-1.jpg",
+  thermo2: "/media/thermo/thermo-2.jpg",
+  paintedLocates: "/media/field/painted-locates.jpg",
+  locateTech: "/media/field/locate-tech.jpg",
+  gprBridge: "/media/field/gpr-bridge.jpg",
+  gprTower: "/media/field/gpr-tower.jpg",
+  markedSlab: "/media/field/marked-slab.jpg",
+  gpr3d: "/media/field/gpr-3d.jpg",
+} as const;
+
 export const services = [
   {
     slug: "concrete-scanning",
@@ -50,8 +87,8 @@ export const services = [
     heroTitle: "Concrete scanning, without the guesswork",
     heroLead:
       "A non-destructive look inside the slab, wall, or deck before anyone cuts, cores, or drills—then a mark you can work from.",
-    image: "/images/marked-slab.jpg",
-    heroImage: "/images/marked-slab.jpg",
+    image: media.rebarGrid,
+    heroImage: media.rebarGrid,
   },
   {
     slug: "utility-locating",
@@ -66,8 +103,8 @@ export const services = [
     heroTitle: "Utility locating, marked and mapped",
     heroLead:
       "Find the pipes and cables before the bucket goes in. Surface marks for the crew on site, maps for the file afterward.",
-    image: "/images/painted-locates.jpg",
-    heroImage: "/images/painted-locates.jpg",
+    image: media.map1,
+    heroImage: media.map1,
   },
   {
     slug: "locate-management",
@@ -82,8 +119,8 @@ export const services = [
     heroTitle: "We’ll wrangle the locates",
     heroLead:
       "Tickets, public locates, private sweeps, and GPS maps in one package your superintendent can actually use.",
-    image: "/images/map-5.jpg",
-    heroImage: "/images/aerial-locate.jpg",
+    image: media.warehouseTechs,
+    heroImage: media.warehouseTechs,
   },
   {
     slug: "thermography",
@@ -98,8 +135,8 @@ export const services = [
     heroTitle: "Find the heat lines first",
     heroLead:
       "Pinpoint in-floor heating in the slab so you can cut or core without a chilly surprise.",
-    image: "/images/heat-lines.jpg",
-    heroImage: "/images/heat-lines.jpg",
+    image: media.thermo1,
+    heroImage: media.thermo1,
   },
   {
     slug: "sewer-camera",
@@ -114,8 +151,8 @@ export const services = [
     heroTitle: "A camera in the line, not a hole in the yard",
     heroLead:
       "Inspect residential drain lines and weeping tile without excavation, so you know what’s actually in the pipe.",
-    image: "/images/sewer-right.jpg",
-    heroImage: "/images/sewer-camera.jpg",
+    image: media.sewerCam,
+    heroImage: media.sewerCam,
   },
 ] as const;
 
@@ -126,82 +163,82 @@ export const processSteps = [
     label: "Scan",
     title: "Collect the picture",
     body: "GPR on concrete and in the field. Electromagnetic locators on conductive services. Camera in the line when you need to see the pipe itself.",
-    image: "/images/gpr-legislature.jpg",
+    image: media.winnipeg,
     alt: "Structure Scan technician pushing a GPR cart across the Manitoba Legislative Building grounds",
   },
   {
     label: "Mark",
     title: "Put it on the ground",
     body: "Paint, tape, and notes where the crew will actually work—rebar grids, post-tension paths, heat lines, and buried utilities.",
-    image: "/images/painted-locates.jpg",
-    alt: "Colour-coded utility paint marks on a concrete pad at a rural service station",
+    image: media.rebarGrid,
+    alt: "Rebar grid marked on a concrete slab beside a tablet showing the GPR radargram",
   },
   {
     label: "Deliver",
     title: "Leave a record",
     body: "2D and 3D concrete imaging, geo-referenced utility maps, and a digital archive you can hand to the next trade on site.",
-    image: "/images/map-1.jpg",
+    image: media.map1,
     alt: "Aerial utility map with colour-coded service paths around a commercial building",
   },
 ] as const;
 
 export const mapGallery = [
   {
-    src: "/images/map-1.jpg",
+    src: media.map1,
     alt: "Colour-coded utility paths mapped over a large commercial parking lot",
   },
   {
-    src: "/images/map-2.jpg",
+    src: media.map2,
     alt: "Utility map showing services around a pair of commercial buildings",
   },
   {
-    src: "/images/map-3.jpg",
+    src: media.map3,
     alt: "Mapped utilities crossing a paved parking lot",
   },
   {
-    src: "/images/map-4.jpg",
+    src: media.map4,
     alt: "Close-in utility map of a busy parking lot",
   },
   {
-    src: "/images/map-5.jpg",
+    src: media.map5,
     alt: "Corridor-scale utility mapping along a highway interchange",
   },
   {
-    src: "/images/map-6.jpg",
+    src: media.map6,
     alt: "Geo-referenced utility map across a developed site",
   },
 ] as const;
 
 export const fieldGallery = [
   {
-    src: "/images/marked-slab.jpg",
-    alt: "GPR findings marked on a concrete slab with tape, notes, and a scanner case nearby",
+    src: media.rebarGrid,
+    alt: "Red rebar marks on a slab next to a tablet displaying GPR data",
     caption: "Marked slab after a concrete scan",
   },
   {
-    src: "/images/gpr-bridge.jpg",
-    alt: "Two technicians standing at a bridge abutment covered in orange GPR grid marks",
-    caption: "Bridge abutment, mapped in place",
+    src: media.dowel,
+    alt: "Yellow chalk grid marking dowel locations in a sidewalk slab",
+    caption: "Dowel identification, marked in place",
   },
   {
-    src: "/images/gpr-tower.jpg",
-    alt: "Masonry tower with vertical red scan lines marked on the block face",
-    caption: "Vertical scanning on masonry",
+    src: media.warehouseGrid,
+    alt: "Warehouse floor gridded in white chalk ahead of a concrete scan",
+    caption: "Scan grid on a warehouse slab",
   },
   {
-    src: "/images/painted-locates.jpg",
-    alt: "Yellow and red locate paint on concrete in front of fuel pumps",
+    src: media.thermo1,
+    alt: "In-floor heating loops marked in red around vehicle lifts",
+    caption: "Heat lines marked around shop lifts",
+  },
+  {
+    src: media.paintedLocates,
+    alt: "Colour-coded utility paint marks on a concrete pad",
     caption: "Painted locates, ready to dig around",
   },
   {
-    src: "/images/locate-tech.jpg",
-    alt: "Locate technician marking a buried utility on gravel with an electromagnetic locator",
-    caption: "EM locate, marked as we go",
-  },
-  {
-    src: "/images/gpr-3d.jpg",
-    alt: "Three-dimensional GPR overlay showing a reinforcement grid in a concrete floor",
-    caption: "3D imaging of what’s in the slab",
+    src: media.gprJobs,
+    alt: "Structure Scan technician operating a GPR cart in an open field",
+    caption: "Open-field GPR with the GS cart",
   },
 ] as const;
 

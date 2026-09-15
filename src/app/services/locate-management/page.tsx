@@ -5,12 +5,13 @@ import {
   Eyebrow,
   Heading,
   MediaSplit,
+  Photo,
   Prose,
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
-import { mapGallery } from "@/lib/site";
+import { mapGallery, media } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Locate management",
@@ -45,8 +46,8 @@ export default function LocateManagementPage() {
         eyebrow="Locate management system"
         title="We’ll wrangle the locates"
         lead="We coordinate Call Before You Dig tickets, public locates, and private sweeps, then deliver GPS-mapped information your crew can actually use."
-        imageSrc="/images/aerial-locate.jpg"
-        imageAlt="Aerial view of a commercial site with colour-coded utility paths overlaid"
+        imageSrc={media.warehouseTechs}
+        imageAlt="Technicians reviewing scan data on a warehouse slab"
       />
       <Section>
         <Container>
@@ -59,7 +60,7 @@ export default function LocateManagementPage() {
           />
           <div className="mt-10">
             <MediaSplit
-              imageSrc="/images/map-1.jpg"
+              imageSrc={media.map1}
               imageAlt="Utility map of a large commercial parking lot with colour-coded services"
             >
               <Eyebrow>The problem we take off your plate</Eyebrow>
@@ -97,14 +98,24 @@ export default function LocateManagementPage() {
                 </article>
               ))}
             </div>
+            <figure className="mt-12 overflow-hidden rounded-3xl bg-ink p-4 sm:p-8">
+              <Photo
+                src={media.lmsFlow}
+                alt="Locate Management System step-by-step flow from ticket submission through compilation and delivery"
+                className="mx-auto h-auto w-full"
+              />
+              <figcaption className="mt-4 text-center text-sm text-cream/75">
+                Ticket to delivery: how a locate management file is built
+              </figcaption>
+            </figure>
           </div>
         </Container>
       </Section>
       <DarkBand
         eyebrow="How it works"
         title="One coordinated locate file"
-        imageSrc="/images/painted-locates.jpg"
-        imageAlt="Painted utility locates on a concrete pad"
+        imageSrc={media.map3}
+        imageAlt="GPS-mapped utilities across a commercial parking lot"
         reverse
       >
         <ol className="space-y-4">

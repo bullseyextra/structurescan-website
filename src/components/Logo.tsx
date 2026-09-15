@@ -12,10 +12,10 @@ export function Logo({ onDark = false, className = "" }: LogoProps) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/logo.png"
+        src="/media/logos/logo-transparent.png"
         alt="Structure Scan Inc."
-        width={169}
-        height={100}
+        width={265}
+        height={180}
         className="h-full w-auto"
       />
     </span>

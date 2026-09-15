@@ -10,6 +10,7 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
+import { media } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Thermographic imaging",
@@ -44,7 +45,7 @@ export default function ThermographyPage() {
         eyebrow="Non-invasive inspection"
         title="Find the heat lines first"
         lead="Locate in-floor heating lines embedded in concrete slabs without cutting, drilling, or disruption—then mark the layout where the saw will actually run."
-        imageSrc="/images/heat-lines.jpg"
+        imageSrc={media.thermo1}
         imageAlt="Concrete shop floor with in-floor heating paths marked in red around vehicle lifts"
       />
       <Section>
@@ -58,8 +59,8 @@ export default function ThermographyPage() {
           />
           <div className="mt-10">
             <MediaSplit
-              imageSrc="/images/heat-lines.jpg"
-              imageAlt="Red layout marks showing radiant heating lines in a concrete floor"
+              imageSrc={media.thermo2}
+              imageAlt="Red layout marks showing radiant heating lines under a vehicle lift"
             >
               <Eyebrow>In-floor heat</Eyebrow>
               <Heading className="text-4xl">
@@ -110,8 +111,8 @@ export default function ThermographyPage() {
       <DarkBand
         eyebrow="When to call"
         title="Renovation, core drilling, and any slab that might be warm"
-        imageSrc="/images/marked-slab.jpg"
-        imageAlt="Marked concrete slab after scanning"
+        imageSrc={media.inFloorHeat}
+        imageAlt="In-floor heating layout marked on a concrete slab"
       >
         <p>
           Thermography is the right first call when the known risk is in-floor

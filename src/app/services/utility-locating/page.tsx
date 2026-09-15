@@ -10,7 +10,7 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
-import { mapGallery } from "@/lib/site";
+import { mapGallery, media } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Utility locating",
@@ -26,8 +26,8 @@ export default function UtilityLocatingPage() {
         eyebrow="Know what’s below"
         title="Utility locating, marked and mapped"
         lead="Trained technicians use electromagnetic locating equipment to find buried pipes and cables before digging starts—then mark them on the surface and, when you need a record, map them."
-        imageSrc="/images/painted-locates.jpg"
-        imageAlt="Colour-coded utility paint marks on a concrete pad at a service station"
+        imageSrc={media.map1}
+        imageAlt="Colour-coded utility paths mapped over a commercial parking lot"
       />
       <Section>
         <Container>
@@ -40,8 +40,8 @@ export default function UtilityLocatingPage() {
           />
           <div className="mt-10">
             <MediaSplit
-              imageSrc="/images/locate-tech.jpg"
-              imageAlt="Technician marking a buried utility on a gravel site with an electromagnetic locator"
+              imageSrc={media.paintedLocates}
+              imageAlt="Colour-coded utility paint marks on a concrete pad"
             >
               <Eyebrow>EM locating</Eyebrow>
               <Heading className="text-4xl">
@@ -71,8 +71,8 @@ export default function UtilityLocatingPage() {
       <DarkBand
         eyebrow="Before the excavator"
         title="Hitting a line is a people problem first, a money problem second"
-        imageSrc="/images/hydro-site.jpg"
-        imageAlt="Industrial site along a river with substations and transmission lines in the distance"
+        imageSrc={media.map5}
+        imageAlt="Corridor-scale utility mapping along a developed site"
       >
         <p>
           A gas line, power cable, or water main is not an abstract risk. It
@@ -90,7 +90,7 @@ export default function UtilityLocatingPage() {
       <Section className="bg-cream">
         <Container>
           <MediaSplit
-            imageSrc="/images/map-2.jpg"
+            imageSrc={media.map2}
             imageAlt="Aerial utility map with colour-coded service paths around commercial buildings"
             reverse
           >

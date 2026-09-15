@@ -10,6 +10,7 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
+import { media } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Sewer camera inspections",
@@ -25,8 +26,8 @@ export default function SewerCameraPage() {
         eyebrow="Sewer & weeping tile"
         title="A camera in the line, not a hole in the yard"
         lead="Inspect residential drain lines and weeping tile systems without digging or disruption—so you know whether the problem is roots, a crack, a belly, or something else before anyone excavates."
-        imageSrc="/images/sewer-right.jpg"
-        imageAlt="Interior view of a drain pipe captured during a camera inspection"
+        imageSrc={media.sewerCam}
+        imageAlt="Trenchless sewer camera inspection of an underground drain line"
       />
       <Section>
         <Container>
@@ -39,7 +40,7 @@ export default function SewerCameraPage() {
           />
           <div className="mt-10">
             <MediaSplit
-              imageSrc="/images/sewer-camera.jpg"
+              imageSrc={media.sewerSee}
               imageAlt="Sewer camera views showing pipe interiors, debris, and standing water"
             >
               <Eyebrow>Residential work</Eyebrow>
@@ -108,8 +109,8 @@ export default function SewerCameraPage() {
       <DarkBand
         eyebrow="Before you dig"
         title="Eliminate the guesswork in the pipe"
-        imageSrc="/images/hydro-site.jpg"
-        imageAlt="Infrastructure site along a river under a clear sky"
+        imageSrc={media.sewerCam}
+        imageAlt="Camera inspection of a residential sewer lateral"
       >
         <p>
           The camera is for when the question is inside the line. If the

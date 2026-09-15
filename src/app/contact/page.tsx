@@ -11,7 +11,7 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { media, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Contact",
@@ -32,13 +32,13 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Say hello. We’ll help you book the right scan."
         lead="The office is in Winnipeg. We work across Manitoba, Saskatchewan, Western Ontario, and Nunavut."
-        imageSrc="/images/gpr-legislature.jpg"
+        imageSrc={media.brighter}
         imageAlt="Structure Scan technician scanning with GPR in Winnipeg"
       />
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/marked-slab.jpg"
+            imageSrc={media.rebarGrid}
             imageAlt="Marked concrete slab after a GPR scan"
           >
             <Eyebrow>We’re easy to reach</Eyebrow>
@@ -129,8 +129,8 @@ export default function ContactPage() {
       <DarkBand
         eyebrow="Where we work"
         title="Winnipeg shop, regional coverage"
-        imageSrc="/images/hydro-site.jpg"
-        imageAlt="Industrial site along a river in the prairie region"
+        imageSrc={media.winnipeg}
+        imageAlt="Structure Scan field work in Winnipeg"
       >
         <p>
           {site.address.line}. If the job is in {site.serviceArea.join(", ")},

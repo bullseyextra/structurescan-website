@@ -11,7 +11,7 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
-import { equipment, fieldGallery, site, values } from "@/lib/site";
+import { equipment, fieldGallery, media, site, values } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "About Structure Scan",
@@ -27,14 +27,14 @@ export default function AboutPage() {
         eyebrow="About"
         title="A Winnipeg family company, built on damage prevention"
         lead="Founded in 1999 by Tony Brunette. Still family-owned. Still glad to show crews what’s below before they dig, cut, or drill."
-        imageSrc="/images/gpr-legislature.jpg"
+        imageSrc={media.winnipeg}
         imageAlt="Structure Scan technician with a GPR cart on the Manitoba Legislative Building grounds"
       />
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/gpr-bridge.jpg"
-            imageAlt="Two technicians standing at a marked concrete bridge abutment"
+            imageSrc={media.gprJobs}
+            imageAlt="Structure Scan technician operating a GPR cart in an open field"
           >
             <Eyebrow>Story</Eyebrow>
             <Heading className="text-4xl">
@@ -109,8 +109,8 @@ export default function AboutPage() {
       <DarkBand
         eyebrow="How we like to work"
         title="Straight talk, clear marks, no theatre"
-        imageSrc="/images/locate-tech.jpg"
-        imageAlt="Locate technician marking a line on gravel"
+        imageSrc={media.warehouseTechs}
+        imageAlt="Technicians reviewing scan data on a warehouse slab"
         reverse
       >
         <p>
@@ -144,7 +144,7 @@ export default function AboutPage() {
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/gpr-legislature.jpg"
+            imageSrc={media.brighter}
             imageAlt="GPR cart work on the grounds of the Manitoba Legislative Building"
             reverse
           >

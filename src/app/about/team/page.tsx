@@ -10,7 +10,7 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
-import { leadership, technicians } from "@/lib/site";
+import { leadership, media, technicians } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Team",
@@ -26,13 +26,13 @@ export default function TeamPage() {
         eyebrow="People"
         title="The crew behind the scans"
         lead="Owners, founder, and the technicians who scan and locate. Family-owned, Winnipeg-based, and a little more fun than the average damage-prevention shop."
-        imageSrc="/images/gpr-bridge.jpg"
-        imageAlt="Two Structure Scan technicians at a marked bridge abutment"
+        imageSrc={media.warehouseTechs}
+        imageAlt="Technicians reviewing scan data on a warehouse slab"
       />
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/gpr-legislature.jpg"
+            imageSrc={media.winnipeg}
             imageAlt="Technician with a GPR cart on the Manitoba Legislative Building grounds"
           >
             <Eyebrow>Family first</Eyebrow>
@@ -83,8 +83,8 @@ export default function TeamPage() {
       <DarkBand
         eyebrow="Field team"
         title="The people on the slab and in the gravel"
-        imageSrc="/images/locate-tech.jpg"
-        imageAlt="Lead locate work: electromagnetic locator and paint on gravel"
+        imageSrc={media.gprJobs}
+        imageAlt="Lead field work: Structure Scan technician with a GPR cart"
       >
         <p>
           If you have a safety question, Max is the Safety Officer. If you have

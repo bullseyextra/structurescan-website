@@ -11,7 +11,7 @@ import {
 import { ServiceCard } from "@/components/ServiceCard";
 import { DarkBand, ProofGallery, ServiceRibbon } from "@/components/VisualBands";
 import { pageMeta } from "@/lib/seo";
-import { fieldGallery, services } from "@/lib/site";
+import { fieldGallery, media, services } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Damage prevention services",
@@ -27,14 +27,14 @@ export default function ServicesPage() {
         eyebrow="All services"
         title="Five ways to see what’s below"
         lead="Concrete scanning, utility locating, locate management, thermographic imaging, and sewer camera inspections. Pick a service for methods, deliverables, and who it helps."
-        imageSrc="/images/gpr-bridge.jpg"
-        imageAlt="Technicians at a bridge abutment marked with an orange GPR grid"
+        imageSrc={media.warehouseGrid}
+        imageAlt="Warehouse floor gridded for a concrete scan"
       />
       <ServiceRibbon />
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/marked-slab.jpg"
+            imageSrc={media.rebarGrid}
             imageAlt="Interior slab marked after a ground penetrating radar scan"
           >
             <Eyebrow>How to choose</Eyebrow>
@@ -71,8 +71,8 @@ export default function ServicesPage() {
       <DarkBand
         eyebrow="The point of the work"
         title="A picture the crew can use, not a folder they ignore"
-        imageSrc="/images/locate-tech.jpg"
-        imageAlt="Locate technician marking a buried utility on gravel"
+        imageSrc={media.warehouseTechs}
+        imageAlt="Technicians reviewing locate and scan data on site"
       >
         <p>
           Damage prevention only works if the next person on site can see it.

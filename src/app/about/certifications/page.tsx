@@ -9,7 +9,7 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { pageMeta } from "@/lib/seo";
-import { certifications, technicianTraining, tonyIndustryRoles } from "@/lib/site";
+import { certifications, media, technicianTraining, tonyIndustryRoles } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "Qualifications & certifications",
@@ -25,14 +25,14 @@ export default function CertificationsPage() {
         eyebrow="Qualifications"
         title="Certified crews, current training"
         lead="Company certifications, technician competency, and industry roles. An accurate analysis of a worksite by an experienced technician saves time, prevents mistakes, and avoids hazards."
-        imageSrc="/images/gpr-tower.jpg"
-        imageAlt="Vertically marked masonry tower after GPR scanning"
+        imageSrc={media.gprJobs}
+        imageAlt="Structure Scan technician operating a GPR cart in the field"
       />
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/hydro-site.jpg"
-            imageAlt="Industrial river site with substations and transmission infrastructure"
+            imageSrc={media.map5}
+            imageAlt="Geo-referenced utility mapping used on industrial and civil sites"
           >
             <Eyebrow>Company</Eyebrow>
             <Heading className="text-4xl">Structure Scan is</Heading>

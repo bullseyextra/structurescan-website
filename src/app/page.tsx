@@ -22,6 +22,7 @@ import {
   certifications,
   fieldGallery,
   mapGallery,
+  media,
   services,
   site,
 } from "@/lib/site";
@@ -44,8 +45,8 @@ export default function HomePage() {
           </>
         }
         lead="Contractors, engineers, and owners call Structure Scan when they need a clear picture before anyone cuts, cores, or digs. We’re a Winnipeg family company. We scan concrete, locate utilities, and leave marks and maps the crew can actually use."
-        imageSrc="/images/marked-slab.jpg"
-        imageAlt="Concrete slab marked with GPR findings, tape, notes, and a scanner case on the floor"
+        imageSrc={media.winnipeg}
+        imageAlt="Structure Scan technician pushing a GPR cart across the Manitoba Legislative Building grounds"
       />
 
       <ServiceRibbon />
@@ -89,8 +90,8 @@ export default function HomePage() {
       <DarkBand
         eyebrow="On the ground"
         title="Paint on the pad. Notes on the slab. A map for the file."
-        imageSrc="/images/painted-locates.jpg"
-        imageAlt="Yellow and red utility locate marks painted on concrete in front of fuel pumps"
+        imageSrc={media.rebarGrid}
+        imageAlt="Rebar grid marked on a concrete slab beside a tablet showing the GPR radargram"
         reverse
       >
         <p>
@@ -116,10 +117,11 @@ export default function HomePage() {
             Real scans. Real marks. Real maps.
           </Heading>
           <p className="mt-4 max-w-3xl leading-relaxed text-muted">
-            This is the work: a marked interior slab, a bridge abutment gridded
-            in orange, a masonry tower scanned vertically, locates painted
-            before the excavator rolls, and GPS maps of what we found. No
-            generic skyline. No invented job names.
+            This is the work: a rebar grid marked beside the radargram, dowels
+            chalked on a sidewalk, a warehouse slab gridded for scanning, heat
+            lines painted around shop lifts, locates on the pad, and GPS maps
+            of what we found. Field photos and Structure Scan deliverables—not
+            a stock skyline.
           </p>
           <div className="mt-10">
             <ProofGallery items={fieldGallery} />
@@ -130,8 +132,8 @@ export default function HomePage() {
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/map-5.jpg"
-            imageAlt="Corridor-scale utility mapping along a highway interchange"
+            imageSrc={media.map1}
+            imageAlt="Colour-coded utility paths mapped over a large commercial parking lot"
             reverse
             caption="GPS-mapped utilities, colour-coded for the file"
           >
@@ -190,7 +192,7 @@ export default function HomePage() {
       <Section>
         <Container>
           <MediaSplit
-            imageSrc="/images/gpr-legislature.jpg"
+            imageSrc={media.brighter}
             imageAlt="Structure Scan technician using a GPR cart on the Manitoba Legislative Building grounds"
           >
             <Eyebrow>Family business</Eyebrow>
