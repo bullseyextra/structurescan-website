@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #1c1714;
+  --ink-2: #2a221e;
+  --ink-3: #4a3c36;
+  --paper: #f7f1e8;
+  --paper-2: #efe4d6;
+  --white: #fffaf3;
+  --red: #c8102e;
+  --red-dark: #9a0c23;
+  --muted: #6b5f56;
+  --line: #e4d5c4;
+  --sand: #f3ddc4;
+  --sky: #e7eef2;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-cream: var(--white);
+  --color-brand: var(--red);
+  --color-brand-dark: var(--red-dark);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-sand: var(--sand);
+  --color-sky: var(--sky);
+  --font-sans: var(--font-barlow);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--red);
+  color: white;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+.hero-scrim {
+  background:
+    linear-gradient(
+      105deg,
+      rgb(28 23 20 / 0.55) 0%,
+      rgb(28 23 20 / 0.22) 48%,
+      rgb(28 23 20 / 0.08) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(28 23 20 / 0.18) 0%,
+      transparent 40%,
+      rgb(28 23 20 / 0.42) 100%
+    );
+}
+
+.card-shadow {
+  box-shadow: 0 18px 40px rgb(28 23 20 / 0.08);
+}
+
+.grid-texture {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 20% 30%, black 20%, transparent 78%);
+}
+
+.photo-scrim {
+  background: linear-gradient(
+    180deg,
+    rgb(28 23 20 / 0.08) 0%,
+    rgb(28 23 20 / 0.18) 42%,
+    rgb(28 23 20 / 0.82) 100%
+  );
+}
