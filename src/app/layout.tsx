@@ -62,10 +62,6 @@ export const metadata: Metadata = {
     description: site.description,
     images: [defaultOgImage],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
   category: "construction",
 };
 

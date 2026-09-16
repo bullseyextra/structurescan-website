@@ -26,6 +26,11 @@ export type PageMetaInput = {
   index?: boolean;
 };
 
+export function canonicalUrl(path: string) {
+  if (path === "/") return site.url;
+  return new URL(path, site.url).toString();
+}
+
 export function pageMeta({
   title,
   description,
@@ -33,7 +38,7 @@ export function pageMeta({
   image,
   index = true,
 }: PageMetaInput): Metadata {
-  const url = new URL(path, site.url).toString();
+  const url = canonicalUrl(path);
   const ogImage = image
     ? [
         {
@@ -47,7 +52,7 @@ export function pageMeta({
   const brandedTitle = `${title} | ${site.shortName}`;
 
   return {
-    title,
+    title: { absolute: brandedTitle },
     description,
     alternates: { canonical: url },
     robots: index

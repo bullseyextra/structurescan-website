@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { services, site } from "@/lib/site";
+import { canonicalUrl } from "@/lib/seo";
+import { services } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -20,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return entries.map((entry) => ({
-    url: new URL(entry.path, site.url).toString(),
+    url: canonicalUrl(entry.path),
     lastModified,
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
