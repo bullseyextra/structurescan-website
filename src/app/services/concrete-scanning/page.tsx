@@ -206,7 +206,7 @@ export default function ConcreteScanningPage() {
             the truck—not a mystery “advanced system,” and not someone else’s
             product line.
           </p>
-          <div className="mt-8 mb-8 grid gap-4 sm:grid-cols-3">
+          <div className="mt-8 mb-8 grid gap-4 sm:grid-cols-2">
             <figure className="overflow-hidden rounded-3xl bg-cream p-4 card-shadow">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -229,12 +229,26 @@ export default function ConcreteScanningPage() {
                 GS8000 cart for open-field and deeper work
               </figcaption>
             </figure>
-            <figure className="overflow-hidden rounded-3xl bg-ink p-4 card-shadow">
+          </div>
+          <div className="mb-8 grid gap-4 lg:grid-cols-5">
+            <figure className="overflow-hidden rounded-3xl bg-ink p-5 card-shadow lg:col-span-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={media.gs9000}
-                alt="Proceq GS9000 multichannel GPR cart, Screening Eagle product photography"
-                className="mx-auto h-40 w-auto object-contain"
+                alt="Proceq GS9000 multichannel GPR cart with tablet showing live 3D scan data, Screening Eagle product photography"
+                className="mx-auto h-56 w-auto object-contain sm:h-64"
+              />
+              <figcaption className="mt-3 text-center text-sm text-cream/80">
+                GS9000 with live 3D visualization — Screening Eagle / Proceq
+                product photography
+              </figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-3xl bg-ink p-5 card-shadow lg:col-span-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={media.gs9000Side}
+                alt="Proceq GS9000 cart in three-quarter view, Screening Eagle product photography"
+                className="mx-auto h-56 w-auto object-contain sm:h-64"
               />
               <figcaption className="mt-3 text-center text-sm text-cream/80">
                 GS9000 cart — Screening Eagle / Proceq product photography
