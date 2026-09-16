@@ -54,7 +54,7 @@ export const media = {
   gp8100: "/media/gpr/gp8100.jpg",
   equipmentHandheld: "/media/gpr/equipment-handheld.jpg",
   equipmentCart: "/media/gpr/equipment-cart.jpg",
-  gs9000: "/media/gpr/gs9000.png",
+  gs9000: "/media/gpr/gs9000.jpg",
   map1: "/media/utility/utility-map-1.jpg",
   map2: "/media/utility/utility-map-2.jpg",
   map3: "/media/utility/utility-map-3.jpg",
