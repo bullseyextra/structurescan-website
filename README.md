@@ -23,7 +23,7 @@ npm start
 ## What’s included
 
 - Next.js App Router, TypeScript, Tailwind CSS
-- Pages: home, services (all five), about, team, certifications, contact, privacy
+- Pages: home, services (all five), about, team, contact, privacy
 - Permanent redirects from old WordPress URLs (see `next.config.ts`)
 - Live-site oval radar logo (`public/logo.png`) in the header, footer, and favicon
 - Field photography from Structure Scan jobs (marked slabs, painted locates, GPR carts, GPS maps)—not generic construction stock

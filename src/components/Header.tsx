@@ -9,7 +9,6 @@ import { site, services } from "@/lib/site";
 const aboutLinks = [
   { href: "/about", label: "Our story" },
   { href: "/about/team", label: "Team" },
-  { href: "/about/certifications", label: "Certifications" },
 ];
 
 export function Header() {

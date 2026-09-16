@@ -54,6 +54,7 @@ export const media = {
   gp8100: "/media/gpr/gp8100.jpg",
   equipmentHandheld: "/media/gpr/equipment-handheld.jpg",
   equipmentCart: "/media/gpr/equipment-cart.jpg",
+  gs9000: "/media/gpr/gs9000.png",
   map1: "/media/utility/utility-map-1.jpg",
   map2: "/media/utility/utility-map-2.jpg",
   map3: "/media/utility/utility-map-3.jpg",
@@ -364,6 +365,10 @@ export const equipment = [
   {
     name: "Proceq GS8000",
     use: "Deeper and open-field work: off-road sites, larger areas, and applications such as underground storage tanks or shallow scanning for concrete cover on bridge decks.",
+  },
+  {
+    name: "Proceq GS9000",
+    use: "Large-scale concrete scanning such as bridge deck evaluation or large-scale slab work. Multichannel GPR with real-time 3D visualization, and interchangeable GX1 (500–3000 MHz, structural / road and bridge mapping) and GX2 (30–750 MHz, utilities and geophysics) arrays.",
   },
 ] as const;
 

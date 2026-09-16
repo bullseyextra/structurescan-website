@@ -168,16 +168,6 @@ export const pageSeo = {
       alt: "Structure Scan technicians reviewing scan data on a warehouse slab",
     },
   },
-  certifications: {
-    title: "COR, eRailSafe, ISN & BBB",
-    description:
-      "Structure Scan is COR, eRailSafe, and ISN certified, and an accredited BBB member. Technician training includes Ground Disturbance Level 2 and CAPULC locate management.",
-    path: "/about/certifications",
-    image: {
-      url: media.gprJobs,
-      alt: "Structure Scan technician operating a GPR cart in an open field",
-    },
-  },
   contact: {
     title: "Call or request a quote in Winnipeg",
     description: `Call ${site.phoneDisplay}, email ${site.email}, or request a quote. Structure Scan Inc., 7 Valde Avenue, Winnipeg, MB R2C 2K8.`,

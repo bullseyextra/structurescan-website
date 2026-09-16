@@ -65,7 +65,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/certification",
-        destination: "/about/certifications",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/certifications",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/about/certifications",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/about/certification",
+        destination: "/about",
         permanent: true,
       },
       {

@@ -76,9 +76,6 @@ export default function AboutPage() {
               <ButtonLink href="/about/team" variant="outline">
                 Meet the crew
               </ButtonLink>
-              <ButtonLink href="/about/certifications" variant="outline">
-                Certifications
-              </ButtonLink>
             </div>
           </MediaSplit>
           </div>
@@ -166,11 +163,13 @@ export default function AboutPage() {
                 GP8000 and GP8800 units handle concrete through 24+ inches.
                 The GS8000 is for deeper and open-field work: off-road sites,
                 larger areas, underground storage tanks, and shallow scanning
-                for concrete cover on bridge decks.
+                for concrete cover on bridge decks. The GS9000 is the unit we
+                use for large-scale concrete scanning—bridge deck evaluation
+                or a large-scale slab.
               </p>
             </Prose>
           </MediaSplit>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {equipment.map((item) => (
               <article
                 key={item.name}

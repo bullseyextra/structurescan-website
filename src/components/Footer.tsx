@@ -69,9 +69,6 @@ export function Footer() {
             <Link href="/about/team" className="hover:text-cream">
               Team
             </Link>
-            <Link href="/about/certifications" className="hover:text-cream">
-              Certifications
-            </Link>
             <Link href="/contact" className="hover:text-cream">
               Contact
             </Link>

@@ -106,9 +106,9 @@ export default function ConcreteScanningPage() {
         <Container>
           <MediaSplit
             imageSrc={media.slabThickness}
-            imageAlt="GPR thickness and cover marks on a concrete slab"
+            imageAlt="Technician scanning a large concrete pad with a handheld GPR antenna"
             reverse
-            caption="Thickness, cover, and layout marked from the scan"
+            caption="Handheld GPR on a large concrete pad"
           >
             <Eyebrow>How GPR works</Eyebrow>
             <Heading className="text-4xl">
@@ -184,10 +184,11 @@ export default function ConcreteScanningPage() {
         <p>
           Concrete scanning is not only a tidy interior floor. We scan bridge
           abutments, decks, and vertical masonry when the question is “what’s
-          in this, and where can we cut?” The GS8000 is the unit we reach for
-          on deeper and open-field work, including shallow scanning for
-          concrete cover on bridge decks and applications such as underground
-          storage tanks.
+          in this, and where can we cut?” The GS9000 is the unit we use for
+          large-scale concrete scanning—bridge deck evaluation or a large-scale
+          slab. The GS8000 is the unit we reach for on deeper and open-field
+          work, including underground storage tanks and shallow scanning for
+          concrete cover.
         </p>
         <p>
           Handheld Proceq units handle the close work: columns, walls, and
@@ -205,7 +206,7 @@ export default function ConcreteScanningPage() {
             the truck—not a mystery “advanced system,” and not someone else’s
             product line.
           </p>
-          <div className="mt-8 mb-8 grid gap-4 sm:grid-cols-2">
+          <div className="mt-8 mb-8 grid gap-4 sm:grid-cols-3">
             <figure className="overflow-hidden rounded-3xl bg-cream p-4 card-shadow">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -228,8 +229,19 @@ export default function ConcreteScanningPage() {
                 GS8000 cart for open-field and deeper work
               </figcaption>
             </figure>
+            <figure className="overflow-hidden rounded-3xl bg-ink p-4 card-shadow">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={media.gs9000}
+                alt="Proceq GS9000 multichannel GPR cart, Screening Eagle product photography"
+                className="mx-auto h-40 w-auto object-contain"
+              />
+              <figcaption className="mt-3 text-center text-sm text-cream/80">
+                GS9000 cart — Screening Eagle / Proceq product photography
+              </figcaption>
+            </figure>
           </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {equipment.map((item) => (
               <article
                 key={item.name}
@@ -288,8 +300,8 @@ export default function ConcreteScanningPage() {
                 },
                 {
                   src: media.slabThickness,
-                  alt: "Slab thickness and cover marked from a GPR scan",
-                  caption: "Slab thickness",
+                  alt: "Technician scanning a large concrete pad with a handheld GPR antenna",
+                  caption: "Handheld GPR on a large pad",
                 },
                 {
                   src: media.voids,
