@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaBand, PageHero } from "@/components/PageHero";
+import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
   Eyebrow,
@@ -9,15 +9,10 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { leadership, media, technicians } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Team",
-  description:
-    "Meet Structure Scan’s owners, founder, and lead technicians in Winnipeg: Michael Brunette, Allan Gunter, Janine Gunter, Tony Brunette, and the field team.",
-  path: "/about/team",
-});
+export const metadata: Metadata = pageMeta(pageSeo.team);
 
 export default function TeamPage() {
   return (
@@ -31,6 +26,14 @@ export default function TeamPage() {
       />
       <Section>
         <Container>
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/about/team", label: "Team" },
+            ]}
+          />
+          <div className="mt-10">
           <MediaSplit
             imageSrc={media.winnipeg}
             imageAlt="Technician with a GPR cart on the Manitoba Legislative Building grounds"
@@ -55,11 +58,13 @@ export default function TeamPage() {
               </p>
             </Prose>
           </MediaSplit>
+          </div>
         </Container>
       </Section>
       <Section className="bg-cream">
         <Container>
           <Eyebrow>Leadership</Eyebrow>
+          <Heading className="mt-3 text-4xl">Owners and founder</Heading>
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {leadership.map((person) => (
               <article
@@ -69,7 +74,7 @@ export default function TeamPage() {
                 <p className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-brand">
                   {person.role}
                 </p>
-                <Heading as="h2" className="mt-2 text-3xl">
+                <Heading as="h3" className="mt-2 text-3xl">
                   {person.name}
                 </Heading>
                 <p className="mt-4 text-sm leading-relaxed text-muted">

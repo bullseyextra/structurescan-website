@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServiceJsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
@@ -9,15 +10,10 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { equipment, media } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Concrete scanning & GPR",
-  description:
-    "Non-destructive concrete scanning with ground penetrating radar. Locate rebar, post-tension cables, conduits, voids, and slab thickness before you cut or core.",
-  path: "/services/concrete-scanning",
-});
+export const metadata: Metadata = pageMeta(pageSeo.concreteScanning);
 
 const targets = [
   "Rebar placement",
@@ -47,6 +43,7 @@ const audiences = [
 export default function ConcreteScanningPage() {
   return (
     <>
+      <ServiceJsonLd slug="concrete-scanning" />
       <PageHero
         eyebrow="Ground penetrating radar"
         title="Concrete scanning, without the guesswork"
@@ -60,7 +57,7 @@ export default function ConcreteScanningPage() {
             items={[
               { href: "/", label: "Home" },
               { href: "/services", label: "Services" },
-              { label: "Concrete scanning" },
+              { href: "/services/concrete-scanning", label: "Concrete scanning" },
             ]}
           />
           <div className="mt-10">

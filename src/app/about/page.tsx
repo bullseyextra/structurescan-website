@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/ButtonLink";
-import { CtaBand, PageHero } from "@/components/PageHero";
+import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
   Eyebrow,
@@ -10,15 +10,10 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { equipment, fieldGallery, media, site, values } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "About Structure Scan",
-  description:
-    "Founded in Winnipeg in 1999 by Tony Brunette. Family-owned GPR and utility locating serving Manitoba, Saskatchewan, Western Ontario, and Nunavut.",
-  path: "/about",
-});
+export const metadata: Metadata = pageMeta(pageSeo.about);
 
 export default function AboutPage() {
   return (
@@ -32,6 +27,13 @@ export default function AboutPage() {
       />
       <Section>
         <Container>
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+            ]}
+          />
+          <div className="mt-10">
           <MediaSplit
             imageSrc={media.gprJobs}
             imageAlt="Structure Scan technician operating a GPR cart in an open field"
@@ -79,6 +81,7 @@ export default function AboutPage() {
               </ButtonLink>
             </div>
           </MediaSplit>
+          </div>
         </Container>
       </Section>
       <Section className="bg-cream">

@@ -17,7 +17,7 @@ export function ServiceCard({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={service.image}
-        alt=""
+        alt={service.imageAlt}
         className="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
       />
       <span className="flex flex-1 flex-col p-6">

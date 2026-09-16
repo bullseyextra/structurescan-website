@@ -17,9 +17,9 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <h2 className="font-display text-lg font-semibold tracking-tight text-cream">
+          <p className="font-display text-lg font-semibold tracking-tight text-cream">
             Services
-          </h2>
+          </p>
           <ul className="mt-4 space-y-2 text-sm text-cream/75">
             {services.map((service) => (
               <li key={service.slug}>
@@ -32,9 +32,9 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-4">
-          <h2 className="font-display text-lg font-semibold tracking-tight text-cream">
+          <p className="font-display text-lg font-semibold tracking-tight text-cream">
             Contact
-          </h2>
+          </p>
           <address className="mt-4 space-y-2 text-sm not-italic leading-relaxed text-cream/75">
             <p>{site.address.street}</p>
             <p>
@@ -59,12 +59,18 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link href="/privacy" className="hover:text-cream">
               Privacy
             </Link>
             <Link href="/about" className="hover:text-cream">
               About
+            </Link>
+            <Link href="/about/team" className="hover:text-cream">
+              Team
+            </Link>
+            <Link href="/about/certifications" className="hover:text-cream">
+              Certifications
             </Link>
             <Link href="/contact" className="hover:text-cream">
               Contact

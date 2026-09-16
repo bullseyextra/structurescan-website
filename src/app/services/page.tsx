@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaBand, PageHero } from "@/components/PageHero";
+import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
   Eyebrow,
@@ -10,15 +10,10 @@ import {
 } from "@/components/LayoutBits";
 import { ServiceCard } from "@/components/ServiceCard";
 import { DarkBand, ProofGallery, ServiceRibbon } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { fieldGallery, media, services } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Damage prevention services",
-  description:
-    "Concrete scanning, utility locating, locate management, thermographic imaging, and sewer camera inspections from Structure Scan Inc.",
-  path: "/services",
-});
+export const metadata: Metadata = pageMeta(pageSeo.services);
 
 export default function ServicesPage() {
   return (
@@ -33,6 +28,13 @@ export default function ServicesPage() {
       <ServiceRibbon />
       <Section>
         <Container>
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Home" },
+              { href: "/services", label: "Services" },
+            ]}
+          />
+          <div className="mt-10">
           <MediaSplit
             imageSrc={media.rebarGrid}
             imageAlt="Interior slab marked after a ground penetrating radar scan"
@@ -57,6 +59,7 @@ export default function ServicesPage() {
               </p>
             </Prose>
           </MediaSplit>
+          </div>
         </Container>
       </Section>
       <Section className="bg-cream">

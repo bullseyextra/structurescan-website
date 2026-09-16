@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
-import { PageHero } from "@/components/PageHero";
+import { Breadcrumbs, PageHero } from "@/components/PageHero";
 import {
   Container,
   Eyebrow,
@@ -10,14 +10,10 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { media, site } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Contact",
-  description: `Call ${site.phoneDisplay}, email ${site.email}, or request a quote. Structure Scan Inc., ${site.address.line}.`,
-  path: "/contact",
-});
+export const metadata: Metadata = pageMeta(pageSeo.contact);
 
 const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${
   site.geo.lng - 0.01
@@ -37,6 +33,13 @@ export default function ContactPage() {
       />
       <Section>
         <Container>
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Home" },
+              { href: "/contact", label: "Contact" },
+            ]}
+          />
+          <div className="mt-10">
           <MediaSplit
             imageSrc={media.rebarGrid}
             imageAlt="Marked concrete slab after a GPR scan"
@@ -52,6 +55,7 @@ export default function ContactPage() {
               </p>
             </Prose>
           </MediaSplit>
+          </div>
         </Container>
       </Section>
       <Section className="bg-cream">

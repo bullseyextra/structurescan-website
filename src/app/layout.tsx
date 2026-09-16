@@ -5,8 +5,8 @@ import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { SkipLink } from "@/components/SkipLink";
-import { defaultTitle } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { defaultOgImage, defaultTitle } from "@/lib/seo";
+import { media, site } from "@/lib/site";
 import "./globals.css";
 
 const barlow = Barlow({
@@ -29,6 +29,13 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
+  icons: {
+    icon: [
+      { url: "/media/logos/structure-scan-inc.svg", type: "image/svg+xml" },
+      { url: media.logo, type: "image/png" },
+    ],
+    apple: media.logoOval,
+  },
   keywords: [
     "ground penetrating radar",
     "GPR Winnipeg",
@@ -47,11 +54,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.shortName} | ${site.tagline}`,
     description: site.description,
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.shortName} | ${site.tagline}`,
     description: site.description,
+    images: [defaultOgImage],
   },
   robots: {
     index: true,

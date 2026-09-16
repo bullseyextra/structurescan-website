@@ -89,6 +89,8 @@ export const services = [
       "A non-destructive look inside the slab, wall, or deck before anyone cuts, cores, or drills—then a mark you can work from.",
     image: media.rebarGrid,
     heroImage: media.rebarGrid,
+    imageAlt:
+      "Rebar grid marked on a concrete slab beside a tablet showing GPR data",
   },
   {
     slug: "utility-locating",
@@ -105,6 +107,8 @@ export const services = [
       "Find the pipes and cables before the bucket goes in. Surface marks for the crew on site, maps for the file afterward.",
     image: media.map1,
     heroImage: media.map1,
+    imageAlt:
+      "Colour-coded utility paths mapped over a commercial parking lot",
   },
   {
     slug: "locate-management",
@@ -121,6 +125,8 @@ export const services = [
       "Tickets, public locates, private sweeps, and GPS maps in one package your superintendent can actually use.",
     image: media.warehouseTechs,
     heroImage: media.warehouseTechs,
+    imageAlt:
+      "Two technicians in high-visibility vests reviewing a tablet on a marked warehouse slab",
   },
   {
     slug: "thermography",
@@ -137,6 +143,8 @@ export const services = [
       "Pinpoint in-floor heating in the slab so you can cut or core without a chilly surprise.",
     image: media.thermo1,
     heroImage: media.thermo1,
+    imageAlt:
+      "In-floor heating loops marked in red around blue vehicle lifts",
   },
   {
     slug: "sewer-camera",
@@ -153,6 +161,8 @@ export const services = [
       "Inspect residential drain lines and weeping tile without excavation, so you know what’s actually in the pipe.",
     image: media.sewerCam,
     heroImage: media.sewerCam,
+    imageAlt:
+      "Sewer camera view inside a drain line showing a root intrusion",
   },
 ] as const;
 

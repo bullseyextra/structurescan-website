@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServiceJsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
@@ -9,19 +10,15 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { media } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Sewer camera inspections",
-  description:
-    "Inspect residential sewer laterals and weeping tile for blockages, cracks, and depths—without digging. Pre-renovation and real estate inspections available.",
-  path: "/services/sewer-camera",
-});
+export const metadata: Metadata = pageMeta(pageSeo.sewerCamera);
 
 export default function SewerCameraPage() {
   return (
     <>
+      <ServiceJsonLd slug="sewer-camera" />
       <PageHero
         eyebrow="Sewer & weeping tile"
         title="A camera in the line, not a hole in the yard"
@@ -35,7 +32,7 @@ export default function SewerCameraPage() {
             items={[
               { href: "/", label: "Home" },
               { href: "/services", label: "Services" },
-              { label: "Sewer camera" },
+              { href: "/services/sewer-camera", label: "Sewer camera" },
             ]}
           />
           <div className="mt-10">

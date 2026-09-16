@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaBand, PageHero } from "@/components/PageHero";
+import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
   Eyebrow,
@@ -8,15 +8,10 @@ import {
   Prose,
   Section,
 } from "@/components/LayoutBits";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { certifications, media, technicianTraining, tonyIndustryRoles } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Qualifications & certifications",
-  description:
-    "Structure Scan is eRailSafe, COR, and ISN certified, and an accredited BBB member. Technician training includes Ground Disturbance Level 2, Staking University, and CAPULC locate management.",
-  path: "/about/certifications",
-});
+export const metadata: Metadata = pageMeta(pageSeo.certifications);
 
 export default function CertificationsPage() {
   return (
@@ -30,6 +25,14 @@ export default function CertificationsPage() {
       />
       <Section>
         <Container>
+          <Breadcrumbs
+            items={[
+              { href: "/", label: "Home" },
+              { href: "/about", label: "About" },
+              { href: "/about/certifications", label: "Certifications" },
+            ]}
+          />
+          <div className="mt-10">
           <MediaSplit
             imageSrc={media.map5}
             imageAlt="Geo-referenced utility mapping used on industrial and civil sites"
@@ -45,6 +48,7 @@ export default function CertificationsPage() {
               </p>
             </Prose>
           </MediaSplit>
+          </div>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {certifications.map((item) => (
               <li

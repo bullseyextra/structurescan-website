@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServiceJsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
@@ -10,15 +11,10 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { mapGallery, media } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Locate management",
-  description:
-    "Call Before You Dig ticket coordination, public locates, private sweeps, and GPS-mapped deliverables from Structure Scan’s locate management service.",
-  path: "/services/locate-management",
-});
+export const metadata: Metadata = pageMeta(pageSeo.locateManagement);
 
 const problems = [
   {
@@ -42,6 +38,7 @@ const problems = [
 export default function LocateManagementPage() {
   return (
     <>
+      <ServiceJsonLd slug="locate-management" />
       <PageHero
         eyebrow="Locate management system"
         title="We’ll wrangle the locates"
@@ -55,7 +52,7 @@ export default function LocateManagementPage() {
             items={[
               { href: "/", label: "Home" },
               { href: "/services", label: "Services" },
-              { label: "Locate management" },
+              { href: "/services/locate-management", label: "Locate management" },
             ]}
           />
           <div className="mt-10">

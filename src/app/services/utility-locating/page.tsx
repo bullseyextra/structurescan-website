@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServiceJsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
@@ -9,19 +10,15 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { mapGallery, media } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Utility locating",
-  description:
-    "Electromagnetic locating of water, gas, electric, sewer, and telecom—private and public—with surface marking and geo-referenced GNSS maps.",
-  path: "/services/utility-locating",
-});
+export const metadata: Metadata = pageMeta(pageSeo.utilityLocating);
 
 export default function UtilityLocatingPage() {
   return (
     <>
+      <ServiceJsonLd slug="utility-locating" />
       <PageHero
         eyebrow="Know what’s below"
         title="Utility locating, marked and mapped"
@@ -35,7 +32,7 @@ export default function UtilityLocatingPage() {
             items={[
               { href: "/", label: "Home" },
               { href: "/services", label: "Services" },
-              { label: "Utility locating" },
+              { href: "/services/utility-locating", label: "Utility locating" },
             ]}
           />
           <div className="mt-10">

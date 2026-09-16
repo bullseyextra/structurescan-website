@@ -17,7 +17,7 @@ import {
   ServiceRibbon,
   SplitHero,
 } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import {
   certifications,
   fieldGallery,
@@ -27,11 +27,7 @@ import {
   site,
 } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Damage prevention, GPR & utility locating",
-  description: `${site.tagline}. ${site.promise} Concrete scanning, utility locating, and related subsurface services from Winnipeg.`,
-  path: "/",
-});
+export const metadata: Metadata = pageMeta(pageSeo.home);
 
 export default function HomePage() {
   return (

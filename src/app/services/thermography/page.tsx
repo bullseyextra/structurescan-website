@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ServiceJsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
@@ -9,15 +10,10 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { media } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Thermographic imaging",
-  description:
-    "Locate in-floor and radiant heating lines in concrete without cutting or drilling, using thermographic imaging from Structure Scan Inc.",
-  path: "/services/thermography",
-});
+export const metadata: Metadata = pageMeta(pageSeo.thermography);
 
 const points = [
   {
@@ -41,6 +37,7 @@ const points = [
 export default function ThermographyPage() {
   return (
     <>
+      <ServiceJsonLd slug="thermography" />
       <PageHero
         eyebrow="Non-invasive inspection"
         title="Find the heat lines first"
@@ -54,7 +51,7 @@ export default function ThermographyPage() {
             items={[
               { href: "/", label: "Home" },
               { href: "/services", label: "Services" },
-              { label: "Thermography" },
+              { href: "/services/thermography", label: "Thermography" },
             ]}
           />
           <div className="mt-10">
@@ -97,7 +94,7 @@ export default function ThermographyPage() {
                 key={item.title}
                 className="rounded-3xl border border-line bg-cream p-6"
               >
-                <Heading as="h2" className="text-xl">
+                <Heading as="h3" className="text-xl">
                   {item.title}
                 </Heading>
                 <p className="mt-3 text-sm leading-relaxed text-muted">

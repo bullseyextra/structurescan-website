@@ -1,19 +1,22 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/PageHero";
 import { Container, Section } from "@/components/LayoutBits";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, pageSeo } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = pageMeta({
-  title: "Privacy policy",
-  description: `How ${site.name} collects and uses personal information through this website, in line with Canadian privacy law.`,
-  path: "/privacy",
-});
+export const metadata: Metadata = pageMeta(pageSeo.privacy);
 
 export default function PrivacyPage() {
   return (
     <Section>
       <Container className="max-w-3xl">
-        <p className="font-display text-sm font-semibold uppercase tracking-[0.28em] text-brand">
+        <Breadcrumbs
+          items={[
+            { href: "/", label: "Home" },
+            { href: "/privacy", label: "Privacy" },
+          ]}
+        />
+        <p className="font-display mt-10 text-sm font-semibold uppercase tracking-[0.28em] text-brand">
           Legal
         </p>
         <h1 className="font-display mt-3 text-4xl font-bold tracking-tight">
