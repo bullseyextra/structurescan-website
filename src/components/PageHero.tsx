@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/LayoutBits";
 import { SplitHero } from "@/components/VisualBands";
+import { canonicalUrl } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export function PageHero({
@@ -103,7 +104,7 @@ export function Breadcrumbs({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
-      item: new URL(item.href, site.url).toString(),
+      item: canonicalUrl(item.href),
     })),
   };
 
