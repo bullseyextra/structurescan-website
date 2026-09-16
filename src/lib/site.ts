@@ -78,7 +78,7 @@ export const services = [
     slug: "concrete-scanning",
     href: "/services/concrete-scanning",
     name: "Concrete scanning",
-    shortName: "GPR",
+    shortName: "Ground Penetrating Radar",
     navLabel: "Concrete scanning",
     cardTitle: "Concrete scanning / GPR",
     summary:
@@ -94,7 +94,7 @@ export const services = [
     slug: "utility-locating",
     href: "/services/utility-locating",
     name: "Utility locating",
-    shortName: "Locates",
+    shortName: "Utility Locates",
     navLabel: "Utility locating",
     cardTitle: "Utility locating",
     summary:
@@ -110,7 +110,7 @@ export const services = [
     slug: "locate-management",
     href: "/services/locate-management",
     name: "Locate management",
-    shortName: "LMS",
+    shortName: "Locate Management",
     navLabel: "Locate management",
     cardTitle: "Locate management (LMS)",
     summary:
@@ -142,7 +142,7 @@ export const services = [
     slug: "sewer-camera",
     href: "/services/sewer-camera",
     name: "Sewer camera",
-    shortName: "Camera",
+    shortName: "Sewer Inspections",
     navLabel: "Sewer camera",
     cardTitle: "Sewer camera inspections",
     summary:
