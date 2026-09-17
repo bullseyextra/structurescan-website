@@ -19,7 +19,6 @@ import {
 } from "@/components/VisualBands";
 import { pageMeta, pageSeo } from "@/lib/seo";
 import {
-  certifications,
   fieldGallery,
   mapGallery,
   media,
@@ -166,24 +165,6 @@ export default function HomePage() {
           </div>
         </Container>
       </Section>
-
-      <section className="bg-sand">
-        <Container className="py-12">
-          <p className="font-display text-center text-xs font-semibold uppercase tracking-[0.22em] text-muted">
-            Qualifications we actually hold
-          </p>
-          <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {certifications.map((item) => (
-              <li
-                key={item}
-                className="font-display text-xl font-semibold tracking-tight text-ink"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
 
       <Section>
         <Container>

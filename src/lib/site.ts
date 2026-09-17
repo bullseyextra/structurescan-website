@@ -318,13 +318,6 @@ export const values = [
   },
 ] as const;
 
-export const certifications = [
-  "eRailSafe",
-  "COR",
-  "ISN",
-  "Accredited BBB member",
-] as const;
-
 export const technicianTraining = [
   "Ground Disturbance Supervisors Level 2",
   "Staking University",
