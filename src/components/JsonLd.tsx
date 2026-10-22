@@ -1,4 +1,10 @@
+import { canonicalUrl } from "@/lib/seo";
 import { media, serviceBySlug, services, site, type ServiceSlug } from "@/lib/site";
+
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
 
 export function JsonLd() {
   const businessId = `${site.url}/#business`;
@@ -127,6 +133,56 @@ export function ServiceJsonLd({ slug }: { slug: ServiceSlug }) {
       name,
     })),
     serviceType: service.cardTitle,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function ServiceFaqJsonLd({
+  name,
+  description,
+  path,
+  faqs,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  faqs: readonly FaqItem[];
+}) {
+  const url = canonicalUrl(path);
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name,
+        description,
+        url,
+        serviceType: "Concrete scanning",
+        provider: { "@id": `${site.url}/#business` },
+        areaServed: site.serviceArea.map((area) => ({
+          "@type": "AdministrativeArea",
+          name: area,
+        })),
+      },
+      {
+        "@type": "FAQPage",
+        url,
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
   };
 
   return (

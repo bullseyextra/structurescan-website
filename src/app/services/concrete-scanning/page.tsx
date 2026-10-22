@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ServiceJsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
@@ -60,6 +61,20 @@ export default function ConcreteScanningPage() {
               { href: "/services/concrete-scanning", label: "Concrete scanning" },
             ]}
           />
+          <div className="mt-8 rounded-3xl border border-line bg-cream px-5 py-4 sm:px-6">
+            <p className="text-lg leading-relaxed">
+              <Link
+                href="/services/concrete-scanning/cost"
+                className="font-display font-bold text-brand underline decoration-brand/40 underline-offset-4 hover:text-brand-dark"
+              >
+                Concrete scanning cost in Winnipeg
+              </Link>
+            </p>
+            <p className="mt-1 text-muted">
+              How callouts are billed, what changes the time on site, GPR
+              versus X-ray, and the FAQ.
+            </p>
+          </div>
           <div className="mt-10">
             <MediaSplit
               imageSrc={media.warehouseGrid}
