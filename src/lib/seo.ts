@@ -111,6 +111,16 @@ export const pageSeo = {
       alt: "Rebar grid marked on a concrete slab beside a tablet showing a GPR radargram",
     },
   },
+  concreteScanningCost: {
+    title: "Concrete Scanning Cost in Winnipeg | GPR FAQ",
+    description:
+      "What affects concrete scanning cost in Winnipeg, GPR vs X-ray, how deep GPR scans, and same-day results. Call Structure Scan: 1-204-777-6590.",
+    path: "/services/concrete-scanning/cost",
+    image: {
+      url: media.rebarGrid,
+      alt: "Rebar grid marked on a concrete slab beside a tablet showing a GPR radargram",
+    },
+  },
   utilityLocating: {
     title: "Utility locating in Manitoba",
     description:
