@@ -21,7 +21,7 @@ export default function UtilityLocatingPage() {
       <ServiceJsonLd slug="utility-locating" />
       <PageHero
         eyebrow="Know what’s below"
-        title="Utility locating, marked and mapped"
+        title="Private Utility Locates in Winnipeg"
         lead="Trained technicians use electromagnetic locating equipment to find buried pipes and cables before digging starts—then mark them on the surface and, when you need a record, map them."
         imageSrc={media.map1}
         imageAlt="Colour-coded utility paths mapped over a commercial parking lot"
@@ -104,7 +104,7 @@ export default function UtilityLocatingPage() {
               <p>
                 Paint fades. Tickets expire. A map in the project folder is
                 how the locate still helps six months later. If you also need
-                Call Before You Dig coordination and private sweeps in the same
+                Click Before You Dig MB coordination and private sweeps in the same
                 package, look at locate management.
               </p>
             </Prose>

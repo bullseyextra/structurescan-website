@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ServiceJsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
@@ -42,7 +43,7 @@ export default function LocateManagementPage() {
       <PageHero
         eyebrow="Locate management system"
         title="We’ll wrangle the locates"
-        lead="We coordinate Call Before You Dig tickets, public locates, and private sweeps, then deliver GPS-mapped information your crew can actually use."
+        lead="We coordinate Click Before You Dig MB tickets, public locates, and private sweeps, then deliver GPS-mapped information your crew can actually use."
         imageSrc={media.warehouseTechs}
         imageAlt="Technicians reviewing scan data on a warehouse slab"
       />
@@ -70,7 +71,14 @@ export default function LocateManagementPage() {
                   tickets, PDFs, and paint marks in the same conversation.
                   Public locates are necessary. They are also often incomplete
                   for private plant, and they rarely arrive as one clean
-                  drawing. That’s the scramble we handle.
+                  drawing. That’s the scramble we handle, with{" "}
+                  <Link
+                    href="/services/utility-locating"
+                    className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                  >
+                    private utility locating in Winnipeg
+                  </Link>{" "}
+                  folded into the same file.
                 </p>
                 <p>
                   Structure Scan has been producing GPS-referenced locate
@@ -117,7 +125,7 @@ export default function LocateManagementPage() {
       >
         <ol className="space-y-4">
           {[
-            "Call Before You Dig ticket coordination so public utilities are requested and tracked.",
+            "Click Before You Dig MB ticket coordination so public utilities are requested and tracked.",
             "Public locates gathered and reviewed against the work area.",
             "Private sweeps for services the public process does not cover.",
             "GPS-mapped deliverables that document what was found, where, and in a format you can keep.",

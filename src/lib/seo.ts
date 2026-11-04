@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { media, site } from "@/lib/site";
 
 export const defaultTitle = {
-  default: `${site.shortName} | Winnipeg GPR & utility locating`,
+  default: `${site.shortName} | Concrete Scanning & GPR in Winnipeg`,
   template: `%s | ${site.shortName}`,
 };
 
@@ -24,6 +24,8 @@ export type PageMetaInput = {
     height?: number;
   };
   index?: boolean;
+  /** Use `title` as the full document title, without appending " | Structure Scan". */
+  absoluteTitle?: boolean;
 };
 
 export function canonicalUrl(path: string) {
@@ -37,6 +39,7 @@ export function pageMeta({
   path,
   image,
   index = true,
+  absoluteTitle = false,
 }: PageMetaInput): Metadata {
   const url = canonicalUrl(path);
   const ogImage = image
@@ -49,7 +52,7 @@ export function pageMeta({
         },
       ]
     : [defaultOgImage];
-  const brandedTitle = `${title} | ${site.shortName}`;
+  const brandedTitle = absoluteTitle ? title : `${title} | ${site.shortName}`;
 
   return {
     title: { absolute: brandedTitle },
@@ -85,11 +88,12 @@ export function pageMeta({
 
 export const pageSeo = {
   home: {
-    title: "Winnipeg GPR, utility locating & damage prevention",
+    title: "Structure Scan | Concrete Scanning & GPR in Winnipeg",
     description:
       "Family-owned damage prevention in Winnipeg: concrete scanning (GPR), utility locating, locate management, thermography, and sewer camera inspections across Manitoba, Saskatchewan, Western Ontario, and Nunavut.",
     path: "/",
     image: defaultOgImage,
+    absoluteTitle: true,
   },
   services: {
     title: "Damage prevention services in Manitoba",
@@ -122,9 +126,9 @@ export const pageSeo = {
     },
   },
   utilityLocating: {
-    title: "Utility locating in Manitoba",
+    title: "Utility Locates in Winnipeg | Private Utility Locating",
     description:
-      "Electromagnetic locating of water, gas, electric, sewer, and telecom—private and public—with surface marks and geo-referenced maps from Structure Scan in Winnipeg.",
+      "Private utility locates in Winnipeg, marked on site and GPS-mapped (GNSS, submeter) so crews know where water, gas, electric, sewer, and telecom lines run.",
     path: "/services/utility-locating",
     image: {
       url: media.map1,
@@ -134,7 +138,7 @@ export const pageSeo = {
   locateManagement: {
     title: "Locate management (LMS) in Winnipeg",
     description:
-      "Call Before You Dig tickets, public locates, private sweeps, and GPS-mapped deliverables coordinated by Structure Scan’s locate management service.",
+      "Click Before You Dig MB tickets, public locates, private sweeps, and GPS-mapped deliverables coordinated by Structure Scan’s locate management service.",
     path: "/services/locate-management",
     image: {
       url: media.warehouseTechs,

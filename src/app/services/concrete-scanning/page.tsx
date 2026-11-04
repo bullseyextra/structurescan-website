@@ -99,7 +99,15 @@ export default function ConcreteScanningPage() {
                   new mechanical riser, checking cover on a bridge deck, or
                   confirming what sits inside a masonry shaft before you cut a
                   door. The tool changes with the structure. The point does
-                  not: know what’s in it before you damage it.
+                  not: know what’s in it before you damage it. When the job
+                  also means digging outside the slab, book{" "}
+                  <Link
+                    href="/services/utility-locating"
+                    className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                  >
+                    private utility locates across Winnipeg
+                  </Link>{" "}
+                  as well.
                 </p>
               </Prose>
             </MediaSplit>

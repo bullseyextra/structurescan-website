@@ -119,7 +119,7 @@ export const services = [
     navLabel: "Locate management",
     cardTitle: "Locate management (LMS)",
     summary:
-      "Call Before You Dig tickets, public locates, private sweeps, and GPS-mapped deliverables—one coordinated file instead of a messy inbox.",
+      "Click Before You Dig MB tickets, public locates, private sweeps, and GPS-mapped deliverables—one coordinated file instead of a messy inbox.",
     heroEyebrow: "Locate management system",
     heroTitle: "We’ll wrangle the locates",
     heroLead:
