@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { CtaBand } from "@/components/PageHero";
 import {
@@ -63,10 +64,16 @@ export default function HomePage() {
             </p>
             <p className="max-w-3xl">
               Not sure which service you need? If you’re cutting or coring,
-              start with GPR. If you’re digging, start with locates. If the slab
-              might have in-floor heat, add thermography. If the question is
-              inside a lateral or weeping tile, that’s the camera. Or just call
-              the office—we’ll sort it with you.
+              start with GPR. If you’re digging, start with{" "}
+              <Link
+                href="/services/utility-locating"
+                className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+              >
+                private utility locates in Winnipeg
+              </Link>
+              . If the slab might have in-floor heat, add thermography. If the
+              question is inside a lateral or weeping tile, that’s the camera.
+              Or just call the office—we’ll sort it with you.
             </p>
           </Prose>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-6">
