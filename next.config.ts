@@ -138,6 +138,106 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/gpr-benefits",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/gpr-benefits/gpr-report-2",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/gpr-structure-scan/gpr-scan-hydro-generating-station-2",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/construction-tenders",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/gpr-bridge-decks",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/tender-bridge-repair",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/damage-prevention-canada/logo-mcga",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/damage-prevention-canada/logo-boma",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/reviews",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/reviews/google-review-icon",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/safety-programs",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/whoisrsesponsible",
+        destination: "/services/locate-management",
+        permanent: true,
+      },
+      {
+        source: "/how-to-read-a-locate-sheet",
+        destination: "/services/locate-management",
+        permanent: true,
+      },
+      {
+        source: "/plan-scan-save",
+        destination: "/services/locate-management",
+        permanent: true,
+      },
+      {
+        source: "/dig-safe-canada",
+        destination: "/services/utility-locating",
+        permanent: true,
+      },
+      {
+        source: "/locating-the-top-of-the-world",
+        destination: "/services/utility-locating",
+        permanent: true,
+      },
+      {
+        source: "/private-utility-locator",
+        destination: "/services/utility-locating",
+        permanent: true,
+      },
+      {
+        source: "/jobs",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/gpr-insider",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/boma2022",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };
