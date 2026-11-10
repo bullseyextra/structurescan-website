@@ -24,12 +24,22 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/utility-codes-colours",
+        destination: "/services/utility-locating",
+        permanent: true,
+      },
+      {
         source: "/damage-prevention-services/locate-management-service",
         destination: "/services/locate-management",
         permanent: true,
       },
       {
         source: "/locate",
+        destination: "/services/locate-management",
+        permanent: true,
+      },
+      {
+        source: "/locate-management",
         destination: "/services/locate-management",
         permanent: true,
       },
@@ -95,6 +105,16 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/ground-penetrating-radar",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/ground-penetrating-radar/ground-penetrating-radar",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/ground-penetrating-radar/:path*",
         destination: "/services/concrete-scanning",
         permanent: true,
       },
