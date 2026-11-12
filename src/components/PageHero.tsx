@@ -14,7 +14,7 @@ export function PageHero({
 }: {
   eyebrow?: string;
   title: string;
-  lead: string;
+  lead: React.ReactNode;
   imageSrc?: string;
   imageAlt?: string;
 }) {

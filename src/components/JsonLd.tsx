@@ -143,6 +143,77 @@ export function ServiceJsonLd({ slug }: { slug: ServiceSlug }) {
   );
 }
 
+const utilityLocatingAreas = [
+  { "@type": "City", name: "Winnipeg" },
+  { "@type": "City", name: "Selkirk" },
+  { "@type": "City", name: "Steinbach" },
+  { "@type": "City", name: "Portage la Prairie" },
+  { "@type": "City", name: "Brandon" },
+  { "@type": "AdministrativeArea", name: "Manitoba" },
+  { "@type": "AdministrativeArea", name: "Saskatchewan" },
+  { "@type": "AdministrativeArea", name: "Ontario" },
+  { "@type": "AdministrativeArea", name: "Nunavut" },
+  { "@type": "AdministrativeArea", name: "Northwest Territories" },
+] as const;
+
+export function UtilityLocatingJsonLd({
+  faqs,
+}: {
+  faqs: readonly FaqItem[];
+}) {
+  const url = `${site.url}/services/utility-locating`;
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: "Private utility locates",
+    serviceType: "Utility locating",
+    url,
+    provider: { "@id": `${site.url}/#business` },
+    areaServed: utilityLocatingAreas,
+    offers: {
+      "@type": "Offer",
+      name: "Regular-hours minimum callout",
+      description: "Regular-hours minimum callout, plus GST",
+      price: "300",
+      priceCurrency: "CAD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "300",
+        priceCurrency: "CAD",
+        valueAddedTaxIncluded: false,
+        description: "Regular-hours minimum callout, plus GST",
+      },
+    },
+  };
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    url,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
+      />
+    </>
+  );
+}
+
 export function ServiceFaqJsonLd({
   name,
   description,

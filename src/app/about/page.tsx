@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
@@ -193,9 +194,16 @@ export default function AboutPage() {
             Based in Winnipeg. Happy to travel.
           </Heading>
           <p className="mt-4 max-w-3xl leading-relaxed text-muted">
-            From {site.address.street} we work across the regions below. We do
-            not publish hours or travel minimums here—call the office and we
-            will tell you whether we can be there.
+            From {site.address.street} we work across the regions below. For
+            customer-owned lines in the city, book{" "}
+            <Link
+              href="/services/utility-locating"
+              className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+            >
+              private utility locates in Winnipeg
+            </Link>
+            . We do not publish hours or travel minimums here—call the office
+            and we will tell you whether we can be there.
           </p>
           <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
             {site.serviceArea.map((area) => (

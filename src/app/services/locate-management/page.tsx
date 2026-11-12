@@ -76,7 +76,7 @@ export default function LocateManagementPage() {
                     href="/services/utility-locating"
                     className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
                   >
-                    private utility locating in Winnipeg
+                    private utility locates in Winnipeg
                   </Link>{" "}
                   folded into the same file.
                 </p>

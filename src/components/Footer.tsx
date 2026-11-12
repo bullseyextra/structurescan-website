@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FooterBlurb } from "@/components/FooterBlurb";
 import { Logo } from "@/components/Logo";
 import { services, site } from "@/lib/site";
 
@@ -10,10 +11,7 @@ export function Footer() {
           <Link href="/" className="inline-flex h-[4.5rem]">
             <Logo onDark />
           </Link>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
-            {site.tagline}. A Winnipeg family shop since {site.founded}—still
-            glad you called.
-          </p>
+          <FooterBlurb />
         </div>
 
         <div className="md:col-span-3">

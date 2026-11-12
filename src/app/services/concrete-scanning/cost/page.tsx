@@ -411,7 +411,7 @@ export default function ConcreteScanningCostPage() {
               </TextLink>{" "}
               can help trace them. For buried services outside the building, see{" "}
               <TextLink href="/services/utility-locating">
-                utility locating
+                private utility locates in Winnipeg
               </TextLink>
               .
             </p>

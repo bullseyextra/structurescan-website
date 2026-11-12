@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs, PageHero } from "@/components/PageHero";
 import {
@@ -50,8 +51,15 @@ export default function ContactPage() {
               <p className="mt-5">
                 No maze of menus. If you know the address and what you
                 need—scan, locate, camera, or “not sure”—we’ll take it from
-                there. Site photos, drawings, and a description of the cut or
-                dig help us show up with the right gear.
+                there. For digging, that usually means{" "}
+                <Link
+                  href="/services/utility-locating"
+                  className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                >
+                  private utility locates in Winnipeg
+                </Link>
+                . Site photos, drawings, and a description of the cut or dig
+                help us show up with the right gear.
               </p>
             </Prose>
           </MediaSplit>
