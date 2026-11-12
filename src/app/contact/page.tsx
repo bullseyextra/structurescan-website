@@ -12,7 +12,7 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand } from "@/components/VisualBands";
 import { pageMeta, pageSeo } from "@/lib/seo";
-import { media, site } from "@/lib/site";
+import { media, serviceAreaPhrase, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta(pageSeo.contact);
 
@@ -28,7 +28,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Say hello. We’ll help you book the right scan."
-        lead="The office is in Winnipeg. We work across Manitoba, Saskatchewan, Western Ontario, and Nunavut."
+        lead={`The office is in Winnipeg. We work across ${serviceAreaPhrase}.`}
         imageSrc={media.brighter}
         imageAlt="Structure Scan technician scanning with GPR in Winnipeg"
       />
@@ -93,7 +93,7 @@ export default function ContactPage() {
               </p>
             </address>
             <p className="mt-6 text-sm leading-relaxed text-muted">
-              Service area: {site.serviceArea.join(", ")}. We do not publish
+              Service area: {serviceAreaPhrase}. We do not publish
               hours, pricing, or response times here—call the office for
               scheduling.
             </p>
@@ -145,7 +145,7 @@ export default function ContactPage() {
         imageAlt="Structure Scan field work in Winnipeg"
       >
         <p>
-          {site.address.line}. If the job is in {site.serviceArea.join(", ")},
+          {site.address.line}. If the job is in {serviceAreaPhrase},
           start with a call or the form. We’ll tell you whether we can be there
           and which service belongs on the ticket.
         </p>

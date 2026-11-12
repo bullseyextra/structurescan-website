@@ -12,7 +12,14 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
 import { pageMeta, pageSeo } from "@/lib/seo";
-import { equipment, fieldGallery, media, site, values } from "@/lib/site";
+import {
+  equipment,
+  fieldGallery,
+  media,
+  serviceAreaPhrase,
+  site,
+  values,
+} from "@/lib/site";
 
 export const metadata: Metadata = pageMeta(pageSeo.about);
 
@@ -48,7 +55,7 @@ export default function AboutPage() {
                 Structure Scan Inc. was founded in {site.founded} by Tony
                 Brunette in Winnipeg. What began as a small venture has become a
                 trusted name in ground penetrating radar and utility locating
-                across {site.serviceArea.join(", ")}.
+                across {serviceAreaPhrase}.
               </p>
               <p>
                 From the start, the work was the same: high-quality,
@@ -205,11 +212,11 @@ export default function AboutPage() {
             . We do not publish hours or travel minimums here—call the office
             and we will tell you whether we can be there.
           </p>
-          <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {site.serviceArea.map((area) => (
               <li
                 key={area}
-                className="rounded-2xl bg-paper px-5 py-5 font-display text-2xl font-bold tracking-tight card-shadow"
+                className="rounded-2xl bg-paper px-4 py-5 font-display text-xl font-bold leading-tight tracking-tight card-shadow sm:px-5 sm:text-2xl"
               >
                 {area}
               </li>
