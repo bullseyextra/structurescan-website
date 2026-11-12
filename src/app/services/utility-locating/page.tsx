@@ -328,8 +328,39 @@ export default function UtilityLocatingPage() {
               stable.
             </p>
           </Prose>
-          <div className="mt-6 overflow-x-auto rounded-3xl border border-line bg-paper">
-            <table className="w-full min-w-[44rem] text-left text-sm">
+          <div className="mt-6 space-y-3 md:hidden">
+            <p className="text-sm font-semibold text-ink">
+              Work type (CAD, plus GST)
+            </p>
+            {pricingRows.map((row) => (
+              <article
+                key={row.type}
+                className="rounded-3xl border border-line bg-paper p-4"
+              >
+                <h3 className="font-display text-lg font-semibold text-ink">
+                  {row.type}
+                </h3>
+                <dl className="mt-3 space-y-2 text-sm">
+                  <div className="flex items-start justify-between gap-4">
+                    <dt className="text-muted">Minimum</dt>
+                    <dd className="text-right font-semibold text-ink">
+                      {row.minimum}
+                    </dd>
+                  </div>
+                  <div className="flex items-start justify-between gap-4">
+                    <dt className="text-muted">
+                      Additional time on the same callout
+                    </dt>
+                    <dd className="max-w-[11rem] text-right font-semibold text-ink">
+                      {row.additional}
+                    </dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+          <div className="mt-6 hidden overflow-x-auto rounded-3xl border border-line bg-paper md:block">
+            <table className="w-full text-left text-sm">
               <caption className="sr-only">
                 Utility locate rates in CAD, plus GST
               </caption>
@@ -361,11 +392,14 @@ export default function UtilityLocatingPage() {
                     key={row.type}
                     className="border-b border-line last:border-b-0"
                   >
-                    <th scope="row" className="px-4 py-3 font-semibold text-ink">
+                    <th
+                      scope="row"
+                      className="px-4 py-3 align-top font-semibold text-ink"
+                    >
                       {row.type}
                     </th>
-                    <td className="px-4 py-3">{row.minimum}</td>
-                    <td className="px-4 py-3">{row.additional}</td>
+                    <td className="px-4 py-3 align-top">{row.minimum}</td>
+                    <td className="px-4 py-3 align-top">{row.additional}</td>
                   </tr>
                 ))}
               </tbody>
