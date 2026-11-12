@@ -13,7 +13,7 @@ export function SplitHero({
 }: {
   eyebrow?: string;
   title: React.ReactNode;
-  lead: string;
+  lead: React.ReactNode;
   imageSrc: string;
   imageAlt: string;
   compact?: boolean;

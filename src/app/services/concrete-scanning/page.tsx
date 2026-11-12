@@ -105,7 +105,7 @@ export default function ConcreteScanningPage() {
                     href="/services/utility-locating"
                     className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
                   >
-                    private utility locates across Winnipeg
+                    private utility locates in Winnipeg
                   </Link>{" "}
                   as well.
                 </p>

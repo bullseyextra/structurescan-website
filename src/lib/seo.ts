@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { media, site } from "@/lib/site";
+import { media, serviceAreaPhrase, site } from "@/lib/site";
 
 export const defaultTitle = {
   default: `${site.shortName} | Concrete Scanning & GPR in Winnipeg`,
@@ -90,7 +90,7 @@ export const pageSeo = {
   home: {
     title: "Structure Scan | Concrete Scanning & GPR in Winnipeg",
     description:
-      "Family-owned damage prevention in Winnipeg: concrete scanning (GPR), utility locating, locate management, thermography, and sewer camera inspections across Manitoba, Saskatchewan, Western Ontario, and Nunavut.",
+      `Family-owned damage prevention in Winnipeg: concrete scanning (GPR), utility locating, locate management, thermography, and sewer camera inspections across ${serviceAreaPhrase}.`,
     path: "/",
     image: defaultOgImage,
     absoluteTitle: true,
@@ -168,7 +168,7 @@ export const pageSeo = {
   about: {
     title: "Family-owned damage prevention since 1999",
     description:
-      "Founded in Winnipeg in 1999 by Tony Brunette. Family-owned GPR and utility locating across Manitoba, Saskatchewan, Western Ontario, and Nunavut.",
+      `Founded in Winnipeg in 1999 by Tony Brunette. Family-owned GPR and utility locating across ${serviceAreaPhrase}.`,
     path: "/about",
     image: defaultOgImage,
   },

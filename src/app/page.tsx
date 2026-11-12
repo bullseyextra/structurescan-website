@@ -23,6 +23,7 @@ import {
   fieldGallery,
   mapGallery,
   media,
+  serviceAreaPhrase,
   services,
   site,
 } from "@/lib/site";
@@ -193,8 +194,7 @@ export default function HomePage() {
               </p>
               <p>
                 From the shop at {site.address.street}, we work across{" "}
-                {site.serviceArea.slice(0, 3).join(", ")}, and{" "}
-                {site.serviceArea[3]}. If the job is in those regions, give us a
+                {serviceAreaPhrase}. If the job is in those regions, give us a
                 call. You’ll talk to the people who actually do the work—not a
                 call centre reading a script.
               </p>
@@ -203,7 +203,7 @@ export default function HomePage() {
               {site.serviceArea.map((area) => (
                 <li
                   key={area}
-                  className="rounded-2xl bg-cream px-5 py-5 font-display text-2xl font-bold tracking-tight card-shadow"
+                  className="rounded-2xl bg-cream px-4 py-5 font-display text-xl font-bold leading-tight tracking-tight card-shadow sm:px-5 sm:text-2xl"
                 >
                   {area}
                 </li>

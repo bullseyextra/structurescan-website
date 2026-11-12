@@ -1,11 +1,29 @@
+const serviceArea = [
+  "Manitoba",
+  "Saskatchewan",
+  "Ontario",
+  "Nunavut",
+  "Northwest Territories",
+] as const;
+
+function proseServiceArea(areas: readonly string[]) {
+  const labels = areas.map((name) =>
+    name === "Northwest Territories" ? "the Northwest Territories" : name,
+  );
+  if (labels.length <= 1) return labels.join("");
+  return `${labels.slice(0, -1).join(", ")} and ${labels[labels.length - 1]}`;
+}
+
+/** "Manitoba, Saskatchewan, Ontario, Nunavut and the Northwest Territories" */
+export const serviceAreaPhrase = proseServiceArea(serviceArea);
+
 export const site = {
   name: "Structure Scan Inc.",
   shortName: "Structure Scan",
   url: "https://www.structurescan.ca",
   tagline: "Canada's Leader in Damage Prevention Services",
   promise: "Dig and drill with confidence.",
-  description:
-    "Family-owned damage prevention specialists in Winnipeg. Concrete scanning, utility locating, locate management, thermography, and sewer camera inspections across Manitoba, Saskatchewan, Western Ontario, and Nunavut.",
+  description: `Family-owned damage prevention specialists in Winnipeg. Concrete scanning, utility locating, locate management, thermography, and sewer camera inspections across ${serviceAreaPhrase}.`,
   founded: 1999,
   founder: "Tony Brunette",
   phoneDisplay: "1-204-777-6590",
@@ -23,12 +41,7 @@ export const site = {
     lat: 49.9112187,
     lng: -97.0028772,
   },
-  serviceArea: [
-    "Manitoba",
-    "Saskatchewan",
-    "Western Ontario",
-    "Nunavut",
-  ],
+  serviceArea,
   jotforms: {
     schedule: "https://form.jotform.com/261134632326046",
     consultation: "https://form.jotform.com/261134622246046",

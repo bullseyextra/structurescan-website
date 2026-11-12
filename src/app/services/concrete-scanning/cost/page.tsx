@@ -10,7 +10,7 @@ import {
   Section,
 } from "@/components/LayoutBits";
 import { pageMeta, pageSeo } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { serviceAreaPhrase, site } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta(pageSeo.concreteScanningCost);
 
@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "Do you work outside Winnipeg?",
     answer:
-      "Yes. We work across Manitoba, Saskatchewan, Western Ontario and Nunavut. Travel hours are billed at $200 per hour, with meals and accommodation extra.",
+      `Yes. We work across ${serviceAreaPhrase}. Travel hours are billed at $200 per hour, with meals and accommodation extra.`,
   },
 ] as const satisfies readonly FaqItem[];
 
@@ -163,7 +163,7 @@ export default function ConcreteScanningCostPage() {
             <p>
               Structure Scan is a family company based at 7 Valde Ave in
               Winnipeg. We have been scanning concrete since 1999 and work
-              across Manitoba, Saskatchewan, Western Ontario and Nunavut.
+              across {serviceAreaPhrase}.
             </p>
           </Prose>
 
@@ -411,7 +411,7 @@ export default function ConcreteScanningCostPage() {
               </TextLink>{" "}
               can help trace them. For buried services outside the building, see{" "}
               <TextLink href="/services/utility-locating">
-                utility locating
+                private utility locates in Winnipeg
               </TextLink>
               .
             </p>

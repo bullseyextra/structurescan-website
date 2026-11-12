@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ServiceJsonLd } from "@/components/JsonLd";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
@@ -112,8 +113,15 @@ export default function SewerCameraPage() {
         <p>
           The camera is for when the question is inside the line. If the
           question is beside the line—other buried utilities you might hit on
-          the way down—ask for a locate on the same visit. We would rather
-          mark both than watch a repair turn into a second strike.
+          the way down—ask for{" "}
+          <Link
+            href="/services/utility-locating"
+            className="font-semibold text-white underline decoration-white/50 underline-offset-2"
+          >
+            private utility locates in Winnipeg
+          </Link>{" "}
+          on the same visit. We would rather mark both than watch a repair
+          turn into a second strike.
         </p>
       </DarkBand>
       <CtaBand />

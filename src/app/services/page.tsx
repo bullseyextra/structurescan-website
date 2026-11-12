@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
   Container,
@@ -45,8 +46,14 @@ export default function ServicesPage() {
             </Heading>
             <Prose>
               <p className="mt-5">
-                Cutting or coring concrete? Start with GPR. Digging? Start with
-                locates. Heating lines in a slab? Thermography. A drain you
+                Cutting or coring concrete? Start with GPR. Digging? Start with{" "}
+                <Link
+                  href="/services/utility-locating"
+                  className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                >
+                  private utility locates in Winnipeg
+                </Link>
+                . Heating lines in a slab? Thermography. A drain you
                 don’t want to excavate on a hunch? Camera. If the job is “all of
                 the above, and also the tickets are a mess,” that’s locate
                 management plus the field work.

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Breadcrumbs, CtaBand, PageHero } from "@/components/PageHero";
 import {
@@ -11,7 +12,14 @@ import {
 } from "@/components/LayoutBits";
 import { DarkBand, ProofGallery } from "@/components/VisualBands";
 import { pageMeta, pageSeo } from "@/lib/seo";
-import { equipment, fieldGallery, media, site, values } from "@/lib/site";
+import {
+  equipment,
+  fieldGallery,
+  media,
+  serviceAreaPhrase,
+  site,
+  values,
+} from "@/lib/site";
 
 export const metadata: Metadata = pageMeta(pageSeo.about);
 
@@ -47,7 +55,7 @@ export default function AboutPage() {
                 Structure Scan Inc. was founded in {site.founded} by Tony
                 Brunette in Winnipeg. What began as a small venture has become a
                 trusted name in ground penetrating radar and utility locating
-                across {site.serviceArea.join(", ")}.
+                across {serviceAreaPhrase}.
               </p>
               <p>
                 From the start, the work was the same: high-quality,
@@ -193,15 +201,22 @@ export default function AboutPage() {
             Based in Winnipeg. Happy to travel.
           </Heading>
           <p className="mt-4 max-w-3xl leading-relaxed text-muted">
-            From {site.address.street} we work across the regions below. We do
-            not publish hours or travel minimums here—call the office and we
-            will tell you whether we can be there.
+            From {site.address.street} we work across the regions below. For
+            customer-owned lines in the city, book{" "}
+            <Link
+              href="/services/utility-locating"
+              className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+            >
+              private utility locates in Winnipeg
+            </Link>
+            . We do not publish hours or travel minimums here—call the office
+            and we will tell you whether we can be there.
           </p>
-          <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {site.serviceArea.map((area) => (
               <li
                 key={area}
-                className="rounded-2xl bg-paper px-5 py-5 font-display text-2xl font-bold tracking-tight card-shadow"
+                className="rounded-2xl bg-paper px-4 py-5 font-display text-xl font-bold leading-tight tracking-tight card-shadow sm:px-5 sm:text-2xl"
               >
                 {area}
               </li>
