@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/when-to-call-utility-locator-or-gpr-tech",
+        destination: "/services/utility-locating",
+        permanent: true,
+      },
+      {
         source: "/damage-prevention-services/locate-management-service",
         destination: "/services/locate-management",
         permanent: true,
@@ -154,8 +159,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/gpr-concrete-inspection/concrete-deteriorating",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
         source: "/gpr-concrete-inspection",
-        destination: "/",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
+        source: "/gpr-concrete-inspection/:path*",
+        destination: "/services/concrete-scanning",
         permanent: true,
       },
       {
@@ -189,12 +204,27 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/gpr-programs",
+        destination: "/services/concrete-scanning",
+        permanent: true,
+      },
+      {
         source: "/damage-prevention-canada/logo-mcga",
         destination: "/about",
         permanent: true,
       },
       {
         source: "/damage-prevention-canada/logo-boma",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/damage-prevention-canada/csam-safety-conference",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/damage-prevention-canada/:path*",
         destination: "/about",
         permanent: true,
       },
@@ -210,6 +240,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/safety-programs",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/gpr-media",
         destination: "/about",
         permanent: true,
       },
@@ -245,6 +280,16 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/jobs",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/locate-request",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/gpr-jobs",
         destination: "/contact",
         permanent: true,
       },
