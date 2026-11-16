@@ -212,6 +212,16 @@ export default function AboutPage() {
             . We do not publish hours or travel minimums here—call the office
             and we will tell you whether we can be there.
           </p>
+          <p className="mt-4 max-w-3xl leading-relaxed text-muted">
+            For a camera in a lateral or foundation drain, see{" "}
+            <Link
+              href="/services/sewer-camera"
+              className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+            >
+              sewer camera inspections
+            </Link>
+            .
+          </p>
           <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {site.serviceArea.map((area) => (
               <li

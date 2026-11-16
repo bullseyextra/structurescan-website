@@ -89,10 +89,16 @@ function HeaderBar() {
             {site.phoneDisplay}
           </a>
           <Link
-            href="/contact#quote"
+            href={
+              pathname === "/services/sewer-camera"
+                ? "/contact"
+                : "/contact#quote"
+            }
             className="inline-flex items-center rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark"
           >
-            Book a scan
+            {pathname === "/services/sewer-camera"
+              ? "Get an estimate"
+              : "Book a scan"}
           </Link>
         </div>
 
