@@ -143,7 +143,7 @@ export function ServiceJsonLd({ slug }: { slug: ServiceSlug }) {
   );
 }
 
-const utilityLocatingAreas = [
+const placeAreas = [
   { "@type": "City", name: "Winnipeg" },
   { "@type": "City", name: "Selkirk" },
   { "@type": "City", name: "Steinbach" },
@@ -170,7 +170,61 @@ export function UtilityLocatingJsonLd({
     serviceType: "Utility locating",
     url,
     provider: { "@id": `${site.url}/#business` },
-    areaServed: utilityLocatingAreas,
+    areaServed: placeAreas,
+    offers: {
+      "@type": "Offer",
+      name: "Regular-hours minimum callout",
+      description: "Regular-hours minimum callout, plus GST",
+      price: "300",
+      priceCurrency: "CAD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "300",
+        priceCurrency: "CAD",
+        valueAddedTaxIncluded: false,
+        description: "Regular-hours minimum callout, plus GST",
+      },
+    },
+  };
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    url,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
+      />
+    </>
+  );
+}
+
+export function SewerCameraJsonLd({ faqs }: { faqs: readonly FaqItem[] }) {
+  const url = `${site.url}/services/sewer-camera`;
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: "Sewer camera and weeping tile inspections",
+    serviceType: "Sewer camera inspection",
+    url,
+    provider: { "@id": `${site.url}/#business` },
+    areaServed: placeAreas,
     offers: {
       "@type": "Offer",
       name: "Regular-hours minimum callout",

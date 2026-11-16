@@ -61,6 +61,16 @@ export default function ContactPage() {
                 . Site photos, drawings, and a description of the cut or dig
                 help us show up with the right gear.
               </p>
+              <p>
+                For a camera in the line, see{" "}
+                <Link
+                  href="/services/sewer-camera"
+                  className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                >
+                  sewer camera inspections
+                </Link>
+                .
+              </p>
             </Prose>
           </MediaSplit>
           </div>

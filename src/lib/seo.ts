@@ -156,13 +156,17 @@ export const pageSeo = {
     },
   },
   sewerCamera: {
-    title: "Sewer camera inspections in Winnipeg",
+    title:
+      "Sewer Camera & Weeping Tile Inspection in Winnipeg | Structure Scan",
     description:
-      "Inspect residential sewer laterals and weeping tile for blockages, cracks, and depth without digging. Pre-renovation and real estate inspections available.",
+      "Sewer camera and weeping tile inspections in Winnipeg. Find roots, cracks and blockages, with location and depth. Call 204-777-6590 for an estimate.",
     path: "/services/sewer-camera",
+    absoluteTitle: true,
     image: {
-      url: media.sewerCam,
-      alt: "Sewer camera view of a drain line showing a root intrusion on screen",
+      url: media.sewerSee,
+      alt: "Sewer camera views showing pipe interiors, debris, and standing water",
+      width: 800,
+      height: 480,
     },
   },
   about: {

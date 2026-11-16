@@ -22,7 +22,19 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="All services"
         title="Five ways to see what’s below"
-        lead="Concrete scanning, utility locating, locate management, thermographic imaging, and sewer camera inspections. Pick a service for methods, deliverables, and who it helps."
+        lead={
+          <>
+            Concrete scanning, utility locating, locate management,
+            thermographic imaging, and{" "}
+            <Link
+              href="/services/sewer-camera"
+              className="font-semibold text-white underline decoration-white/50 underline-offset-2"
+            >
+              sewer camera inspections
+            </Link>
+            . Pick a service for methods, deliverables, and who it helps.
+          </>
+        }
         imageSrc={media.warehouseGrid}
         imageAlt="Warehouse floor gridded for a concrete scan"
       />
@@ -57,6 +69,16 @@ export default function ServicesPage() {
                 don’t want to excavate on a hunch? Camera. If the job is “all of
                 the above, and also the tickets are a mess,” that’s locate
                 management plus the field work.
+              </p>
+              <p>
+                See{" "}
+                <Link
+                  href="/services/sewer-camera"
+                  className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                >
+                  sewer camera inspections
+                </Link>{" "}
+                for a lateral or weeping tile.
               </p>
               <p>
                 We talk to contractors and engineers the same way: what’s the

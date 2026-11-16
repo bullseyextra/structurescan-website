@@ -76,6 +76,16 @@ export default function HomePage() {
               question is inside a lateral or weeping tile, that’s the camera.
               Or just call the office—we’ll sort it with you.
             </p>
+            <p className="max-w-3xl">
+              For a lateral or weeping tile, see{" "}
+              <Link
+                href="/services/sewer-camera"
+                className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+              >
+                sewer camera inspections
+              </Link>
+              .
+            </p>
           </Prose>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-6">
             {services.map((service, index) => (

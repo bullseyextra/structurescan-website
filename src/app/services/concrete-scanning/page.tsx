@@ -107,7 +107,14 @@ export default function ConcreteScanningPage() {
                   >
                     private utility locates in Winnipeg
                   </Link>{" "}
-                  as well.
+                  as well. For a camera inside a sewer lateral, see{" "}
+                  <Link
+                    href="/services/sewer-camera"
+                    className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                  >
+                    sewer camera inspections
+                  </Link>
+                  .
                 </p>
               </Prose>
             </MediaSplit>
