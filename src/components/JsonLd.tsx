@@ -268,6 +268,60 @@ export function SewerCameraJsonLd({ faqs }: { faqs: readonly FaqItem[] }) {
   );
 }
 
+export function UtilityColoursJsonLd({
+  faqs,
+}: {
+  faqs: readonly FaqItem[];
+}) {
+  const url = `${site.url}/utility-codes-colours`;
+  const article = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${url}#webpage`,
+    headline: "Utility Locate Colours and Codes in Manitoba | Structure Scan",
+    description:
+      "What each paint and flag colour means on a utility locate in Manitoba: red, yellow, orange, blue, green, purple, pink and white.",
+    url,
+    mainEntityOfPage: url,
+    datePublished: "2026-11-23",
+    dateModified: "2026-11-23",
+    image: new URL(media.paintedLocates, site.url).toString(),
+    publisher: {
+      "@id": `${site.url}/#business`,
+      name: site.name,
+    },
+    provider: {
+      "@id": `${site.url}/#business`,
+    },
+  };
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    url,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
+      />
+    </>
+  );
+}
+
 export function ServiceFaqJsonLd({
   name,
   description,

@@ -18,6 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
       changeFrequency: "monthly",
     },
+    {
+      path: "/utility-codes-colours",
+      priority: 0.75,
+      changeFrequency: "monthly",
+    },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" },
     { path: "/about/team", priority: 0.6, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
