@@ -24,11 +24,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/utility-codes-colours",
-        destination: "/services/utility-locating",
-        permanent: true,
-      },
-      {
         source: "/when-to-call-utility-locator-or-gpr-tech",
         destination: "/services/utility-locating",
         permanent: true,

@@ -11,6 +11,18 @@ const aboutLinks = [
   { href: "/about/team", label: "Team" },
 ];
 
+const estimateCtaPaths = new Set([
+  "/services/sewer-camera",
+  "/utility-codes-colours",
+]);
+
+function headerCta(pathname: string) {
+  if (estimateCtaPaths.has(pathname)) {
+    return { href: "/contact", label: "Get an estimate" };
+  }
+  return { href: "/contact#quote", label: "Book a scan" };
+}
+
 export function Header() {
   const pathname = usePathname();
   return <HeaderBar key={pathname} />;
@@ -18,6 +30,7 @@ export function Header() {
 
 function HeaderBar() {
   const pathname = usePathname();
+  const cta = headerCta(pathname);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -89,16 +102,10 @@ function HeaderBar() {
             {site.phoneDisplay}
           </a>
           <Link
-            href={
-              pathname === "/services/sewer-camera"
-                ? "/contact"
-                : "/contact#quote"
-            }
+            href={cta.href}
             className="inline-flex items-center rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark"
           >
-            {pathname === "/services/sewer-camera"
-              ? "Get an estimate"
-              : "Book a scan"}
+            {cta.label}
           </Link>
         </div>
 

@@ -169,6 +169,19 @@ export const pageSeo = {
       height: 480,
     },
   },
+  utilityCodesColours: {
+    title: "Utility Locate Colours and Codes in Manitoba | Structure Scan",
+    description:
+      "What each paint and flag colour means on a utility locate in Manitoba: red, yellow, orange, blue, green, purple, pink and white.",
+    path: "/utility-codes-colours",
+    absoluteTitle: true,
+    image: {
+      url: media.paintedLocates,
+      alt: "Colour-coded utility locate paint marks on a concrete pad in Winnipeg",
+      width: 1548,
+      height: 1558,
+    },
+  },
   about: {
     title: "Family-owned damage prevention since 1999",
     description:
