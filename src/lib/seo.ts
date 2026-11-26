@@ -98,11 +98,24 @@ export const pageSeo = {
   services: {
     title: "Damage prevention services in Manitoba",
     description:
-      "Concrete scanning, utility locating, locate management, thermography, and sewer camera inspections from Structure Scan Inc. in Winnipeg.",
+      "Advanced GPR, concrete scanning, utility locating, locate management, thermography, and sewer camera inspections from Structure Scan Inc. in Winnipeg.",
     path: "/services",
     image: {
       url: media.warehouseGrid,
       alt: "Warehouse concrete floor marked with a white scan grid before ground penetrating radar work",
+    },
+  },
+  advancedGpr: {
+    title: "Bridge Deck and Roadway GPR Assessments | Structure Scan",
+    description:
+      "GPR bridge deck and road assessments with cover maps, deterioration maps and a written report your engineer can use. Parkades and large slabs too.",
+    path: "/services/advanced-gpr",
+    absoluteTitle: true,
+    image: {
+      url: media.advancedGprDeck,
+      alt: "Augmented-reality overlay of GPR scan data on an asphalt-surfaced bridge deck, with coloured reflection bands across the lanes",
+      width: 522,
+      height: 394,
     },
   },
   concreteScanning: {

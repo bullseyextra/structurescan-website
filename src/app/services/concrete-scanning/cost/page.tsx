@@ -215,7 +215,15 @@ export default function ConcreteScanningCostPage() {
             <p>
               Large areas such as bridge decks are scanned with our GS8000 and
               GS9000 cart systems. Smaller locations are scanned with our Proceq
-              GP8000 and GP8800 handheld units.
+              GP8000 and GP8800 handheld units. For a bridge deck, roadway or
+              parkade condition assessment with a written report, see{" "}
+              <Link
+                href="/services/advanced-gpr"
+                className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+              >
+                Advanced GPR
+              </Link>
+              .
             </p>
           </Prose>
 

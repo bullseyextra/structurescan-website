@@ -171,9 +171,17 @@ export default function AboutPage() {
                 GP8000 and GP8800 units handle concrete through 24+ inches.
                 The GS8000 is for deeper and open-field work: off-road sites,
                 larger areas, underground storage tanks, and shallow scanning
-                for concrete cover on bridge decks. The GS9000 is the unit we
+                for concrete cover on bridge decks.                 The GS9000 is the unit we
                 use for large-scale concrete scanning—bridge deck evaluation
-                or a large-scale slab.
+                or a large-scale slab. For condition assessments on bridge
+                decks, roadways and parkades, see{" "}
+                <Link
+                  href="/services/advanced-gpr"
+                  className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                >
+                  Advanced GPR
+                </Link>
+                .
               </p>
             </Prose>
           </MediaSplit>

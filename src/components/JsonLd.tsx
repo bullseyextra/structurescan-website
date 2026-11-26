@@ -322,6 +322,118 @@ export function UtilityColoursJsonLd({
   );
 }
 
+export function AdvancedGprJsonLd({
+  faqs,
+}: {
+  faqs: readonly FaqItem[];
+}) {
+  const url = `${site.url}/services/advanced-gpr`;
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Advanced GPR condition assessments",
+    serviceType: "Bridge deck and roadway GPR condition assessment",
+    description:
+      "GPR bridge deck and road assessments with cover maps, deterioration maps and a written report your engineer can use. Parkades and large slabs too.",
+    url,
+    provider: { "@id": `${site.url}/#business` },
+    areaServed: [
+      "Manitoba",
+      "Saskatchewan",
+      "Ontario",
+      "Nunavut",
+      "Northwest Territories",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Advanced GPR services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Bridge deck condition assessment",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Roadway and pavement GPR",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Parkade and large-slab GPR",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Corrosion and deterioration assessment",
+          },
+        },
+      ],
+    },
+  };
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+  const breadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${site.url}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${site.url}/services`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Advanced GPR",
+        item: url,
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+    </>
+  );
+}
+
 export function ServiceFaqJsonLd({
   name,
   description,

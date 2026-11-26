@@ -67,12 +67,12 @@ export function SplitHero({
 export function ServiceRibbon() {
   return (
     <div className="border-y border-line bg-cream">
-      <Container className="flex gap-2 overflow-x-auto py-3 sm:grid sm:grid-cols-5 sm:overflow-visible sm:py-1">
+      <Container className="flex gap-2 overflow-x-auto py-3 md:grid md:grid-cols-3 md:overflow-visible md:py-1 lg:grid-cols-6">
         {services.map((service) => (
           <Link
             key={service.slug}
             href={service.href}
-            className="flex min-w-[13.5rem] items-center gap-3 rounded-2xl px-2 py-3 hover:bg-paper sm:min-w-0 sm:justify-center"
+            className="flex min-w-[13.5rem] items-center gap-3 rounded-2xl px-2 py-3 hover:bg-paper md:min-w-0 md:justify-center"
           >
             <Photo
               src={service.image}

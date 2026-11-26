@@ -85,9 +85,28 @@ export const media = {
   gprTower: "/media/field/gpr-tower.jpg",
   markedSlab: "/media/field/marked-slab.jpg",
   gpr3d: "/media/field/gpr-3d.jpg",
+  advancedGprDeck: "/media/advanced-gpr/gpr-ar-overlay-asphalt-deck.jpg",
 } as const;
 
 export const services = [
+  {
+    slug: "advanced-gpr",
+    href: "/services/advanced-gpr",
+    name: "Advanced GPR",
+    shortName: "Advanced GPR",
+    navLabel: "Advanced GPR",
+    cardTitle: "Advanced GPR",
+    summary:
+      "GPR condition assessments for bridge decks, roadways, parkades and large slabs: cover maps, deterioration maps and a written report your engineer can use.",
+    heroEyebrow: "Advanced GPR",
+    heroTitle: "Advanced GPR for Bridge Decks, Roadways and Parkades",
+    heroLead:
+      "Large-scale GPR condition assessments for bridge decks, roadways, parkades and other large concrete structures, with a written report typically within 7 working days.",
+    image: media.advancedGprDeck,
+    heroImage: media.advancedGprDeck,
+    imageAlt:
+      "Augmented-reality overlay of GPR scan data on an asphalt-surfaced bridge deck, with coloured reflection bands across the lanes",
+  },
   {
     slug: "concrete-scanning",
     href: "/services/concrete-scanning",
@@ -374,7 +393,7 @@ export const equipment = [
   },
   {
     name: "Proceq GS9000",
-    use: "Large-scale concrete scanning such as bridge deck evaluation or large-scale slab work. Multichannel GPR with real-time 3D visualization, and interchangeable GX1 (500–3000 MHz, structural / road and bridge mapping) and GX2 (30–750 MHz, utilities and geophysics) arrays.",
+    use: "Large-scale concrete scanning such as bridge deck evaluation or large-scale slab work. Multichannel GPR with real-time 3D visualization, using the GX1 array (500–3000 MHz) for structural, road and bridge mapping.",
   },
 ] as const;
 

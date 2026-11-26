@@ -13,6 +13,7 @@ const aboutLinks = [
 
 const estimateCtaPaths = new Set([
   "/services/sewer-camera",
+  "/services/advanced-gpr",
   "/utility-codes-colours",
 ]);
 

@@ -94,8 +94,11 @@ export function CtaBand({
 
 export function Breadcrumbs({
   items,
+  includeJsonLd = true,
 }: {
   items: { href: string; label: string }[];
+  /** Set false when the page emits its own BreadcrumbList JSON-LD. */
+  includeJsonLd?: boolean;
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -110,10 +113,12 @@ export function Breadcrumbs({
 
   return (
     <nav aria-label="Breadcrumb" className="text-sm text-muted">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {includeJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      ) : null}
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item, index) => {
           const isCurrent = index === items.length - 1;
