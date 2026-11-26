@@ -214,9 +214,17 @@ export default function ConcreteScanningPage() {
         <p>
           Concrete scanning is not only a tidy interior floor. We scan bridge
           abutments, decks, and vertical masonry when the question is “what’s
-          in this, and where can we cut?” The GS9000 is the unit we use for
+          in this, and where can we cut?”           The GS9000 is the unit we use for
           large-scale concrete scanning—bridge deck evaluation or a large-scale
-          slab. The GS8000 is the unit we reach for on deeper and open-field
+          slab. For cover maps, deterioration maps and a written report on a
+          bridge deck, roadway or parkade, see{" "}
+          <Link
+            href="/services/advanced-gpr"
+            className="font-semibold text-white underline decoration-white/50 underline-offset-2"
+          >
+            Advanced GPR
+          </Link>
+          . The GS8000 is the unit we reach for on deeper and open-field
           work, including underground storage tanks and shallow scanning for
           concrete cover.
         </p>

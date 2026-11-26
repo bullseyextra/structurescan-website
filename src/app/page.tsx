@@ -53,7 +53,7 @@ export default function HomePage() {
         <Container>
           <Eyebrow>Services</Eyebrow>
           <Heading className="mt-3 max-w-3xl text-4xl sm:text-5xl">
-            Five ways we keep you out of trouble underground
+            Six ways we keep you out of trouble underground
           </Heading>
           <Prose>
             <p className="mt-4 max-w-3xl">
@@ -88,11 +88,8 @@ export default function HomePage() {
             </p>
           </Prose>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-6">
-            {services.map((service, index) => (
-              <div
-                key={service.slug}
-                className={`lg:col-span-2 ${index === 3 ? "lg:col-start-2" : ""}`}
-              >
+            {services.map((service) => (
+              <div key={service.slug} className="lg:col-span-2">
                 <ServiceCard service={service} />
               </div>
             ))}

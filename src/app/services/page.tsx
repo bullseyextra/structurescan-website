@@ -21,10 +21,16 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="All services"
-        title="Five ways to see what’s below"
+        title="Six ways to see what’s below"
         lead={
           <>
-            Concrete scanning, utility locating, locate management,
+            <Link
+              href="/services/advanced-gpr"
+              className="font-semibold text-white underline decoration-white/50 underline-offset-2"
+            >
+              Advanced GPR
+            </Link>
+            , concrete scanning, utility locating, locate management,
             thermographic imaging, and{" "}
             <Link
               href="/services/sewer-camera"
@@ -85,6 +91,18 @@ export default function ServicesPage() {
                 work, where is it, and what do you need in your hand when we
                 leave—marks, maps, imaging, or a camera recording. Call if you
                 want a human to sort it out with you.
+              </p>
+              <p>
+                For a bridge deck, roadway, parkade or other large concrete
+                structure, with cover maps, deterioration maps and a written
+                report, start with{" "}
+                <Link
+                  href="/services/advanced-gpr"
+                  className="font-semibold text-brand underline decoration-brand/40 underline-offset-2 hover:text-brand-dark"
+                >
+                  Advanced GPR
+                </Link>
+                .
               </p>
             </Prose>
           </MediaSplit>

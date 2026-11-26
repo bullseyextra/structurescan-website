@@ -190,12 +190,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/gpr-bridge-decks",
-        destination: "/services/concrete-scanning",
+        destination: "/services/advanced-gpr",
         permanent: true,
       },
       {
         source: "/tender-bridge-repair",
-        destination: "/services/concrete-scanning",
+        destination: "/services/advanced-gpr",
         permanent: true,
       },
       {
